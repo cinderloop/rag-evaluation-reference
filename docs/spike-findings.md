@@ -1,6 +1,6 @@
 # Phase 0 spike findings
 
-**Status:** draft for owner review. Everything below was observed against a live instance unless marked *source-read only*.
+**Status:** reviewed 2026-10-21. Everything below was observed against a live instance unless marked *source-read only*.
 **Date:** 2026-10-21
 **Raw evidence:** `spike/evidence/*.json` (API responses as returned). The spike's compose file, fixtures and probe script are in `spike/`.
 
@@ -10,12 +10,12 @@
 |---|---|
 | AnythingLLM | `mintplexlabs/anythingllm:1.18.0@sha256:5461782e7db41318a516925949a8f8366e258dd576411fca7961fe77dff054cc` (released 2026-10-13) |
 | Ollama | 0.40.6, native on host (macOS, Apple Silicon, 64 GB) |
-| LLM (spike only) | `qwen3:8b` — digest: `500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41` (capabilities: completion, tools, thinking) |
-| Embedder (spike only) | `nomic-embed-text:latest`, digest `0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f` |
+| LLM | `qwen3:8b` — digest: `500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41` (capabilities: completion, tools, thinking) |
+| Embedder | `nomic-embed-text:latest`, digest `0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f` |
 | Vector DB | LanceDB (AnythingLLM built-in) |
 | Docker | 29.8.2 |
 
-The spike model choices are placeholders for testing the API. Final model and embedder choices are pinned in Phase 1.
+After review, both the LLM and the embedder used in the spike were kept as the baseline choices (see [Decisions](#decisions-taken-after-review)).
 
 Fixtures are two short **synthetic, fictional** documents (`spike/fixtures/`), so any correct answer must come from retrieval rather than from what the model memorised.
 
@@ -150,26 +150,34 @@ Caveats, to be measured rather than assumed in later phases:
 1. strip `<think>…</think>` in the client: store it as a separate `reasoning` field in the trace, and judge only the final answer; or
 2. choose a non-thinking model for the system under test.
 
-Option 1 is needed anyway as a defensive measure. Which model to use is an owner decision for Phase 1.
+Option 1 is needed anyway as a defensive measure. **Decision:** keep `qwen3:8b` and strip the thinking block (see [Decisions](#decisions-taken-after-review)).
+
+## Decisions taken after review
+
+| Decision | Choice | Reason |
+|---|---|---|
+| LLM under test | `qwen3:8b` | Tested in the spike. Its `<think>` block is moved into a separate `reasoning` trace field and only the final answer is judged. A weaker model from the same family (e.g. `qwen3:1.7b`) gives a clean "weaker LLM" mutation. |
+| Embedder | `nomic-embed-text` via Ollama | Tested in the spike, runs with GPU acceleration on the host. |
+| Chunking control | internal `/api/admin/system-preferences` endpoint | Keeps chunk size and overlap as config-as-code. Accepted because the eval instance is local and never exposed. |
 
 ## Other observations
 
 - With `DISABLE_TELEMETRY=true`, the server still fetches a remote model map and pricing data at startup. This is harmless but means the container is not offline by default.
 - Container timestamps are UTC. The `published` date in chunk headers is the upload time, so chunk text differs between provisioning runs. Hash evidence *after* stripping the header.
 
-## Proposed plan changes
+## Design implications
 
-None of these block the plan. Each one refines it:
+None of these block the evaluation design. Each one shapes how it is built:
 
-1. **Document identity.** AnythingLLM document locations change on every upload. The dataset's evidence labels use **our own document ID** (corpus filename, preserved as the AnythingLLM `title`), and provisioning keeps a `{doc_id → location}` map per run in the manifest. *(Fits the plan's "document/passage level, never chunk IDs" rule.)*
+1. **Document identity.** AnythingLLM document locations change on every upload. The dataset's evidence labels use **our own document ID** (corpus filename, preserved as the AnythingLLM `title`), and provisioning keeps a `{doc_id → location}` map per run in the manifest. *(Evidence is labelled at document/passage level, never by chunk ID, because chunking changes under mutation.)*
 2. **Evidence matching strips the `<document_metadata>` header** from chunk text before matching passages or computing lexical overlap.
-3. **Chunking and embedder are instance-wide.** They cannot vary per workspace at the same moment. Provisioning applies them, then re-uploads and re-embeds the corpus into a workspace named after the config hash. Configs that differ in chunking or embedder must be provisioned **sequentially**, not side by side. The plan's `baseline.yaml` keeps these fields, but the provisioner treats them as instance-level.
-4. **Chunk size/overlap need an internal (non-`/v1`) endpoint** (`/api/admin/system-preferences`), which only works on an instance without auth. This is acceptable for a local eval instance. The client will isolate this one call and document it. If the owner prefers not to depend on it, the alternative is to fix chunking in env vars and drop chunking from the mutation set (no current mutation needs it).
+3. **Chunking and embedder are instance-wide.** They cannot vary per workspace at the same moment. Provisioning applies them, then re-uploads and re-embeds the corpus into a workspace named after the config hash. Configs that differ in chunking or embedder must be provisioned **sequentially**, not side by side. `configs/baseline.yaml` keeps these fields, but the provisioner treats them as instance-level.
+4. **Chunk size/overlap need an internal (non-`/v1`) endpoint** (`/api/admin/system-preferences`), which only works on an instance without auth. This is acceptable for a local eval instance. The client isolates this one call and documents it. The alternative considered was fixing chunking in env vars, which would lose config-as-code control of chunking.
 5. **Always send `mode` explicitly** (`automatic` routes to the agent pipeline), **always set `openAiPrompt` explicitly** (the default contains `{datetime}`), set a distinctive `queryRefusalResponse`, and **assert `MemoryEnabled=false`** at provisioning.
 6. **Isolation = new thread per case**, run sequentially. `openAiHistory` cannot be set to 0.
 7. **Trace record additions:** `reasoning` (stripped `<think>` content), `response_type` (`textResponse`/`abort`), `refusal_path` (`deterministic` when the answer equals `queryRefusalResponse` with zero sources), and `metrics.model` as the model actually used.
 8. **Retrieval metrics can use `/vector-search`**, but should be computed from the chat response's own `sources`. In a fresh thread these are exactly the chunks the LLM saw, so retrieval and generation are scored on the same retrieval. `/vector-search` remains useful for retrieval-only checks with no LLM cost.
-9. **Owner decisions needed for Phase 1:** the system-under-test LLM (thinking vs non-thinking model; this also affects the judge family choice) and the embedder. `qwen3:8b` / `nomic-embed-text` were used for the spike only.
+9. **Model choice affects judge choice.** The LLM judges must come from a different model family than the system under test, so the choice of system-under-test LLM limits which judges can be used.
 
 ## Reproducing the spike
 
