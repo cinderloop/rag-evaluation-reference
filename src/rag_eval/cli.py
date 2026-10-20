@@ -15,6 +15,7 @@ from rag_eval.dataset.schema import load_cases
 from rag_eval.env import Env
 from rag_eval.provision import ProvisionResult, provision
 from rag_eval.provision.pins import verify_container_image, verify_ollama_models
+from rag_eval.provision.sources import fetch_sources, load_sources
 from rag_eval.runner import new_run_id, run
 
 app = typer.Typer(no_args_is_help=True, add_completion=False)
@@ -56,6 +57,27 @@ def _provision(
         f"instance changes: {', '.join(result.instance_changes) or 'none'}"
     )
     return result, verified
+
+
+@app.command("fetch-corpus")
+def fetch_corpus_command(
+    sources: Annotated[Path, typer.Option(exists=True, dir_okay=False)] = Path(
+        "corpus/sources.yaml"
+    ),
+    dest: Annotated[Path, typer.Option()] = Path("corpus/documents"),
+) -> None:
+    """Download the corpus documents listed in sources.yaml and verify their checksums."""
+    result = fetch_sources(load_sources(sources), dest)
+    typer.echo(
+        f"{len(result.downloaded)} downloaded, {len(result.already_present)} already present; "
+        "all checksums verified."
+    )
+    if result.unexpected:
+        typer.echo(
+            f"Not in sources.yaml (would also be ingested; remove them): {result.unexpected}",
+            err=True,
+        )
+        raise typer.Exit(code=1)
 
 
 @app.command("provision")

@@ -1,6 +1,6 @@
 # 0003: Corpus choice
 
-- **Status:** Proposed. Awaiting the repository owner's choice.
+- **Status:** Accepted (option A)
 - **Date:** 2026-10-21
 
 ## Requirements
@@ -49,4 +49,13 @@
 
 ## Decision
 
-_Pending: the owner chooses A, B or C._
+**A: NTSB marine investigation reports, 2025–2026**, chosen by the repository owner on 2026-10-21.
+
+Text is used as published, with the credit "Courtesy: National Transportation Safety Board". The NTSB logo and seal, and any material the reports mark as third-party copyrighted, are not covered by the public-domain statement and are not relied on.
+
+## Consequences
+
+- **Storage:** the PDFs (77 files, ~110 MB) are not committed. `corpus/sources.yaml` pins each report's URL and SHA-256 (taken 2026-10-21), and `rag-eval fetch-corpus` downloads and verifies them. A changed file is rejected rather than silently changing the corpus, which matters because NTSB reissues corrected reports (e.g. MIR-25-23, MIR-25-34 and MIR-25-43 were reissued in August 2026). The README links every report.
+- **Uneven document sizes:** most reports are 7–29 pages, but four are long: MIR-25-40 (Dali / Francis Scott Key Bridge, 259 pages), MIR-25-16 (95), MIR-26-24 (92) and MIR-25-36 (Titan submersible, 87). Questions should not be drawn mostly from these.
+- **Memorisation hot spots:** the Dali and Titan casualties had worldwide news coverage before the reports came out. Questions about them are the most likely to be answered from memory. The closed-book baseline will show whether they need to be down-weighted or excluded (with `corpus.exclude`).
+

@@ -14,3 +14,5 @@ All notable changes to this project are documented here. The format follows
 - Typed AnythingLLM client and idempotent config-as-code provisioning (`rag-eval provision`).
 - Runner with one new thread per case, trace records and run manifests (`rag-eval run`).
 - Baseline configuration (`configs/baseline.yaml`) and ADRs 0001–0003.
+- Corpus: 77 NTSB Marine Investigation Reports (2025–2026), pinned by URL and SHA-256 in
+  `corpus/sources.yaml` and fetched with `rag-eval fetch-corpus`.
