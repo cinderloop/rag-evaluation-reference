@@ -1,0 +1,1 @@
+{"id":"191862f5-7557-4972-923f-a50ffca7271e","type":"abort","textResponse":null,"sources":[],"close":true,"error":"Ollama::getChatCompletion failed to communicate with Ollama. model 'does-not-exist:1b' not found"}

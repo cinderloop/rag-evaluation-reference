@@ -1,0 +1,1 @@
+{"chatMode":"query","topN":6,"similarityThreshold":0.5,"openAiTemp":0,"openAiHistory":0,"openAiPrompt":"Answer only from context.","chatProvider":"ollama","chatModel":"qwen3:8b","vectorSearchMode":"default","queryRefusalResponse":"NO_CONTEXT"}

@@ -1,0 +1,1 @@
+{"newValues":{"EmbeddingEngine":"ollama","EmbeddingModelPref":"nomic-embed-text:latest","EmbeddingBasePath":"http://host.docker.internal:11434"},"error":false}

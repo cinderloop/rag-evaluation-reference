@@ -1,0 +1,5 @@
+Zorvath Model 7 Pressure Valve: Maintenance Notes (synthetic spike fixture, fictional product)
+
+The Zorvath Model 7 pressure valve was introduced by the fictional Halbrook Instruments company in 2031. Its rated maximum operating pressure is 412 kilopascals. Operators must replace the primary diaphragm every 1,850 operating hours, or sooner if the indicator ring turns amber.
+
+To recalibrate the valve, first isolate the inlet line, then rotate the trim screw anticlockwise exactly three and a half turns, and finally re-pressurise slowly over ninety seconds. The recalibration procedure must never be performed when the ambient temperature is below minus eight degrees Celsius.
