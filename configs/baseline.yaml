@@ -1,0 +1,47 @@
+# Baseline configuration of the system under test. Every value is pinned; the run
+# manifest records this file's hash. Mutations in configs/mutations/ extend this file
+# and override only what they change.
+name: baseline
+description: Baseline AnythingLLM document-QA configuration.
+
+# Must match docker-compose.yml. Verified against the running container on every run.
+anythingllm_image: mintplexlabs/anythingllm:1.18.0@sha256:5461782e7db41318a516925949a8f8366e258dd576411fca7961fe77dff054cc
+
+llm:
+  provider: ollama
+  model:
+    name: qwen3:8b
+    digest: 500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41
+  temperature: 0
+  context_window: 8192 # num_ctx; instance-wide
+
+embedder: # instance-wide; changing it wipes every workspace's vectors
+  engine: ollama
+  model:
+    name: nomic-embed-text:latest
+    digest: 0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f
+  max_chunk_length: 8192
+
+chunking: # instance-wide, characters; AnythingLLM's defaults
+  size: 1000
+  overlap: 20
+
+retrieval:
+  top_n: 4
+  similarity_threshold: 0.25
+  search_mode: default
+
+generation:
+  # query mode: answer only from retrieved context; refuse without calling the LLM when
+  # nothing clears the similarity threshold (see docs/spike-findings.md).
+  mode: query
+  # No {variables}: AnythingLLM's default prompt embeds {datetime}, which breaks determinism.
+  system_prompt: |-
+    You answer questions using only the context provided from the user's documents.
+    If the context does not contain the answer, say that the documents do not contain
+    the answer instead of guessing. Keep answers concise and factual.
+  # Distinctive, so traces can tell AnythingLLM's no-context refusal from an LLM refusal.
+  refusal_response: NO_RELEVANT_CONTEXT
+
+corpus:
+  dir: corpus/documents

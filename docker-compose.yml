@@ -1,0 +1,41 @@
+# AnythingLLM, the system under test. Ollama runs natively on the host (for GPU
+# acceleration on Apple Silicon) and is reached via host.docker.internal.
+#
+# The values below only bootstrap a fresh instance. `rag-eval provision` sets and
+# verifies every setting that matters from the config file, so the config is the
+# source of truth.
+services:
+  anythingllm:
+    # Keep in sync with anythingllm_image in configs/baseline.yaml (verified on every run).
+    image: mintplexlabs/anythingllm:1.18.0@sha256:5461782e7db41318a516925949a8f8366e258dd576411fca7961fe77dff054cc
+    container_name: rag-eval-anythingllm
+    ports:
+      # Localhost only: the instance has no password, which provisioning relies on
+      # (see docs/spike-findings.md). Never expose it beyond this machine.
+      - "127.0.0.1:3001:3001"
+    cap_add:
+      - SYS_ADMIN
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      STORAGE_DIR: /app/server/storage
+      LLM_PROVIDER: ollama
+      OLLAMA_BASE_PATH: http://host.docker.internal:11434
+      OLLAMA_MODEL_PREF: qwen3:8b
+      OLLAMA_MODEL_TOKEN_LIMIT: "8192"
+      EMBEDDING_ENGINE: ollama
+      EMBEDDING_BASE_PATH: http://host.docker.internal:11434
+      EMBEDDING_MODEL_PREF: nomic-embed-text:latest
+      EMBEDDING_MODEL_MAX_CHUNK_LENGTH: "8192"
+      VECTOR_DB: lancedb
+      DISABLE_TELEMETRY: "true"
+    volumes:
+      - anythingllm-storage:/app/server/storage
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:3001/api/ping || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
+volumes:
+  anythingllm-storage:

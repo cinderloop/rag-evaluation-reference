@@ -1,0 +1,50 @@
+[project]
+name = "rag-eval"
+version = "0.1.0"
+description = "Reference RAG evaluation suite for AnythingLLM: error analysis, validated binary LLM judges, mutation testing and sound statistics."
+authors = [{ name = "Ashen J" }]
+license = "MIT"
+requires-python = ">=3.14,<3.15"
+dependencies = [
+    "httpx>=0.28.1",
+    "pydantic>=2.13.5",
+    "pyyaml>=6.0.3",
+    "typer>=0.27.3",
+]
+
+[project.scripts]
+rag-eval = "rag_eval.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.13.4,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+# Only resolve releases at least two weeks old at lock time: reproducible locks and
+# a buffer against freshly published (possibly compromised) packages.
+exclude-newer = "2026-10-07T00:00:00Z"
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.414",
+    "pytest>=9.1.1",
+    "ruff>=0.16.10",
+    "types-pyyaml>=6.0.12.20260906",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "RUF", "PT", "PL", "N"]
+ignore = ["PLR0913", "PLR2004"]
+
+[tool.pyright]
+include = ["src", "tests"]
+typeCheckingMode = "strict"
+pythonVersion = "3.14"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["--strict-markers"]

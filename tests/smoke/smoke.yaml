@@ -1,0 +1,7 @@
+# End-to-end smoke test against a live instance, using two short synthetic documents.
+# Not an evaluation: it only checks that provisioning and the runner work.
+extends: ../../configs/baseline.yaml
+name: smoke
+description: Smoke test of provisioning and the runner on synthetic fixtures.
+corpus:
+  dir: tests/smoke/corpus
