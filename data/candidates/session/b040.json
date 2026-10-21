@@ -1,0 +1,17 @@
+{"items": [
+{"slot_id": "b040-1",
+ "question": "Why did the fishing vessel Papa Rod continue on its course toward the anchored bulk carrier Appaloosa even after the Appaloosa's crew sounded the ship's horn?",
+ "expected_answer": "Deckhand 2, who had just taken the navigation watch, had fallen asleep at the controls while the Papa Rod continued on autopilot, and the wheelhouse had no watch alarm to wake him, so the vessel kept heading directly toward the Appaloosa despite the horn.",
+ "evidence": [
+  {"doc_id": "MIR2512.pdf", "quote": "According to deckhand 2, a short time after assuming the watch, he fell asleep at the controls as the vessel continued the transit in autopilot (the Papa Rod wheelhouse was not equipped with a watch alarm)."},
+  {"doc_id": "MIR2512.pdf", "quote": "The vessel was heading directly toward the Appaloosa. The able seafarer informed the second mate, who called the master and the chief officer and sounded the Appaloosa’s horn. However, the Papa Rod continued on its course toward the Appaloosa."}
+ ],
+ "notes": "Cross-chunk passage on the horn warning combined with the earlier statement that the watchstander fell asleep on autopilot without a watch alarm."},
+{"slot_id": "b040-2",
+ "question": "After the Papa Rod rammed the Appaloosa, how did the shrimper's fishing booms end up fouled in the bulk carrier's anchor cable?",
+ "expected_answer": "Because the Papa Rod's engines were still in gear, the boat kept moving and slid forward along the Appaloosa's hull, tangling its outriggers in the ship's anchor chain.",
+ "evidence": [
+  {"doc_id": "MIR2512.pdf", "quote": "With the Papa Rod’s engines still engaged, the fishing vessel slid forward along the hull of the Appaloosa, entangling its outriggers in the ship’s anchor chain."}
+ ],
+ "notes": "Tests a secondary causal detail of the collision sequence using lay wording (booms, cable) for outriggers and anchor chain."}
+]}

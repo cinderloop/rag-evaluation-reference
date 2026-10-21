@@ -1,0 +1,19 @@
+{"items": [
+{"slot_id": "b003-1",
+ "question": "The Duke and the LCPL Phillip C George each left the Texas International Terminal in Galveston with two barges before hitting structures near the Pelican Island Bridge. What was each towboat's pair of barges carrying when it set out?",
+ "expected_answer": "The Duke's two barges were empty, while each of the LCPL Phillip C George's two tank barges carried about 24,000 barrels of vacuum gas oil.",
+ "evidence": [
+  {"doc_id": "MIR2525.pdf", "quote": "the Duke, with five crew aboard, departed the Texas International Terminal, a liquid and dry bulk facility, pushing two empty red-flagged barges en route to Galena Park, Houston, eastbound in the Galveston Ship Channel."},
+  {"doc_id": "MIR2614.pdf", "quote": "Each barge was loaded with about 24,000 barrels of vacuum gas oil (VGO), a thick heavy petroleum byproduct of the crude oil refinement process."}
+ ],
+ "notes": "Tests linking two casualties from the same terminal and bridge and retrieving the barge load state from each narrative."},
+{"slot_id": "b003-2",
+ "question": "Which tow contacted more power transmission poles near the Pelican Island Bridge, the Duke tow or the LCPL Phillip C George tow?",
+ "expected_answer": "The Duke tow: its barge MM-144 contacted three power poles, whereas the LCPL Phillip C George tow's barge MMLP 321 struck one power transmission pole.",
+ "evidence": [
+  {"doc_id": "MIR2525.pdf", "quote": "At 0123, the starboard-side barge (MM-144) in the Duke’s tow contacted the first of three Center Point Energy electrical poles adjacent (on the east side) to the Pelican Island Causeway Bridge."},
+  {"doc_id": "MIR2525.pdf", "quote": "As the captain moved the tow forward to extricate it from the poles, the barge made contact with a third pole."},
+  {"doc_id": "MIR2614.pdf", "quote": "At 0946, the aft port corner of the MMLP 321 struck a power transmission pole adjacent to, and on the east side of, the Pelican Island Bridge"}
+ ],
+ "notes": "Tests comparing the number of power poles contacted in each narrative."}
+]}

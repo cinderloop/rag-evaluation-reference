@@ -1,7 +1,7 @@
 from dataset_fixtures import REPORTS, candidate
 
-from rag_eval.dataset.checks import content_words, lexical_overlap, run_checks
-from rag_eval.dataset.corpus_text import normalize
+from rag_eval.dataset.checks import content_words, evidence_location, lexical_overlap, run_checks
+from rag_eval.dataset.corpus_text import ReportText, normalize
 
 
 def test_normalize_collapses_whitespace_only() -> None:
@@ -70,3 +70,35 @@ def test_checks_flag_duplicates_easy_items_and_boundaries() -> None:
     assert checked["b002-1"].too_easy
     assert checked["b002-1"].chunk_boundary == "within_chunk"
     assert checked["b003-1"].chunk_boundary == "cross_chunk"
+
+
+SECTIONED = ReportText(
+    doc_id="S.pdf",
+    text=(
+        "On May 1 the tow struck the bridge.\nCasualty Summary \nDamage $1 million est.\n"
+        "1 Factual Information \nThe pilot slowed the tow.\n2 Analysis \nThe pilot was tired.\n"
+        "Vessel Particulars \nLength 60 ft\n"
+    ),
+    chunks=(),
+)
+
+
+def test_section_of_maps_report_headings_to_evidence_locations() -> None:
+    assert SECTIONED.section_of("On May 1 the tow struck") == "narrative"
+    assert SECTIONED.section_of("Damage $1 million est.") == "summary_table"
+    assert SECTIONED.section_of("The pilot slowed the tow.") == "narrative"
+    assert SECTIONED.section_of("The pilot was tired.") == "analysis"
+    assert SECTIONED.section_of("Length 60 ft") == "summary_table"
+    assert REPORTS["A.pdf"].section_of("Damage to the vessel") is None  # no headings
+
+
+def test_evidence_location_keeps_plan_if_any_quote_matches_else_uses_first() -> None:
+    reports = {"S.pdf": SECTIONED}
+    dims = {"question_type": "factual", "evidence_location": "summary_table"}
+    both = candidate(
+        evidence=(("S.pdf", "The pilot was tired."), ("S.pdf", "Damage $1 million est.")),
+        dimensions=dims,
+    )
+    assert evidence_location(both, reports) == "summary_table"
+    elsewhere = candidate(evidence=(("S.pdf", "The pilot was tired."),), dimensions=dims)
+    assert evidence_location(elsewhere, reports) == "analysis"

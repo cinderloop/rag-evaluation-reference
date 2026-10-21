@@ -1,0 +1,12 @@
+{"items": [
+ {"slot_id": "b022-1",
+  "question": "At what time on May 14, 2024, did the fishing vessel North American finally go down at its berth on the Lake Washington Ship Canal?",
+  "expected_answer": "The report does not give the time of the sinking; it says only that the alarm was heard about 0550, salvors arrived about 0615, and the vessel eventually sank at the dock.",
+  "evidence": [],
+  "notes": "Missing detail: the report gives times for the alarm, boarding and salvor arrival but never the time the vessel actually sank, so a system may be tempted to answer with a nearby time."},
+ {"slot_id": "b022-2",
+  "question": "How many years of experience did the new captain who was being familiarized with the North American during its May 13, 2024, sea trial have?",
+  "expected_answer": "The report does not state the new captain's experience; it gives no background, credentials or years of service for any of the crewmembers.",
+  "evidence": [],
+  "notes": "Missing detail: the report mentions a new captain being familiarized with the vessel but says nothing about his experience or credentials."}
+]}

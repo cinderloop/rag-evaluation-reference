@@ -1,0 +1,24 @@
+{"items": [
+{"slot_id": "b004-1",
+ "question": "The Ocean Navigator and the barge Pathfinder both had a blaze after a Caterpillar 3516B generator engine broke down. How did the crew get the flames out in each case?",
+ "expected_answer": "On the Ocean Navigator the crew cut fuel to the engines and shut down ventilation fans, dampers and doors, and the fire team later found no fire left in the engine room; on the Pathfinder the crew sealed the space and the chief engineer released carbon dioxide into the unloading generator space about 1630.",
+ "evidence": [
+  {"doc_id": "MIR2513.pdf", "quote": "All four engines were Caterpillar 3516B diesel engines, each rated at 2,000 hp"},
+  {"doc_id": "MIR2513.pdf", "quote": "The chief engineer closed the quick-closing valves to the engines (stopping fuel supply to them), and the fire team shut down all ventilation fans, fire dampers, and watertight and fire screen doors, and prepared fire hoses."},
+  {"doc_id": "MIR2513.pdf", "quote": "At 0741, the vessel’s fire team that entered the engine room reported that there was no fire in the engine room; t he team only observed black smoke."},
+  {"doc_id": "MIR2602.pdf", "quote": "a 2,447-hp (1,825-kW) Caterpillar 3516B diesel engine-driven generator, referred to as the “unloading generator,” provided electrical power."},
+  {"doc_id": "MIR2602.pdf", "quote": "Crewmembers boarded the barge, shut all doors and ventilation dampers to the unloading generator space, started the tug’s fire pump, and began boundary cooling on the exterior bulkheads and deck above the unloading generator."},
+  {"doc_id": "MIR2602.pdf", "quote": "he released carbon dioxide into the unloading generator space about 1630."}
+ ],
+ "notes": "Tests linking two casualties by the same engine model and contrasting fire suppression (fire self-extinguished after isolation vs fixed CO2 release); the 'self-extinguished' wording itself is in the Ocean Navigator summary/analysis, the narrative only says no fire was found."},
+{"slot_id": "b004-2",
+ "question": "According to the NTSB analysis, which connecting rod seized with the crankshaft and led to the engine block rupture in the diesel generator engine failure aboard the Ocean Navigator, and which in the failure aboard the Pathfinder?",
+ "expected_answer": "On the Ocean Navigator it was the no. 13 connecting rod (block ruptured near the nos. 12 and 14 cylinders); on the Pathfinder it was the no. 9 connecting rod.",
+ "evidence": [
+  {"doc_id": "MIR2513.pdf", "quote": "causing components, such as the no. 13 connecting rod and the crankshaft, to seize together and fail by welding themselves to the journal."},
+  {"doc_id": "MIR2513.pdf", "quote": "until a portion of the no. 13 connecting rod or other internal components ruptured the engine block near the nos. 12 and 14 cylinders."},
+  {"doc_id": "MIR2602.pdf", "quote": "causing components, such as the no. 9 connecting rod and the crankshaft, to seize together at the journal and fail."},
+  {"doc_id": "MIR2602.pdf", "quote": "the fire originated on the starboard side of the unloading generator engine when the engine block ruptured in the area of the no. 9 connecting rod"}
+ ],
+ "notes": "Tests comparing the failed component identified in each analysis section; the two analyses use near-identical wording, so it checks that retrieval keeps the reports apart."}
+]}

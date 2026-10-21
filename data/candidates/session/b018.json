@@ -1,0 +1,17 @@
+{"items": [
+ {"slot_id": "b018-1",
+  "question": "Why did the Nickelena's captain not notice the crane boom striking the Mackinac Bridge while he was steering the tug under the span?",
+  "expected_answer": "The premise is wrong: the captain was not steering. He was still in his stateroom when the tow passed under the bridge at 0213; a crewmember was at the helm, and the captain learned of the problem only when the engineer went below to notify him.",
+  "evidence": [
+   {"doc_id": "MIR2502.pdf", "quote": "At 0213, while he was still in his stateroom, the crewmember at the helm guided the vessel and barge under the Mackinac Bridge’s suspension span at 8 knots within the marked channel."},
+   {"doc_id": "MIR2502.pdf", "quote": "The engineer went below and notified the captain."}
+  ],
+  "notes": "Tests whether the system rejects the false premise that the captain was at the wheel during the bridge passage."},
+ {"slot_id": "b018-2",
+  "question": "Roughly how far behind the Nickelena was the barge BMI 209 being pulled during its trip from Escanaba toward Sault Ste. Marie?",
+  "expected_answer": "About 500 feet; once out of the harbor the captain had the tow line lengthened to about 500 feet for the voyage.",
+  "evidence": [
+   {"doc_id": "MIR2502.pdf", "quote": "Once the towing vessel and the barge were out of the harbor, the captain ordered the length of the tow line be increased to about 500 feet for the voyage"}
+  ],
+  "notes": "Tests retrieval of a single narrative fact (tow line length) phrased without the report's wording."}
+]}

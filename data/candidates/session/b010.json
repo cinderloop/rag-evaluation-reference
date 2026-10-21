@@ -1,0 +1,18 @@
+{"items": [
+{"slot_id": "b010-1",
+ "question": "Neither the Tarka II crab boat blaze off Washington nor the Thor tug blaze on the Delaware River had its exact trigger identified. What plausible way the fire got started did investigators put forward for each, and why could they not confirm it?",
+ "expected_answer": "For the Tarka II, heat from the exhaust pipe or an exhaust leak (from the main engine or the running no. 1 auxiliary generator) may have ruptured a pressurized hydraulic line, spraying fluid that ignited on a hot surface; it could not be confirmed because the vessel sank and was not recovered. For the Thor, an electrical fault in the extension cord plug or the nearby boot warmer may have caused resistive heating; the extent of the fire damage prevented determining the exact ignition source.",
+ "evidence": [
+  {"doc_id": "MIR2524.pdf", "quote": "It is possible that exhaust pipe heat, or an exhaust leak, either from the main engine or the running no. 1 auxiliary generator, ruptured one of the pressurized hydraulic lines, causing the hydraulic fluid to spray and ignite on a nearby, unprotected hot surface, and spread to nearby combustibles. However, because the Tarka II sank and was not recovered, the exact source of the fire could not be determined."},
+  {"doc_id": "MIR2601.pdf", "quote": "An electrical fault—such as a loose, broken, or frayed wire—within the plug or nearby boot warmer could have created excessive resistive heating. Resistive heating within electrical conductors can produce sufficient heat to ignite nearby combustibles. However, due to the extent of the fire damage, the exact ignition source and cause of the fire could not be determined."}
+ ],
+ "notes": "Tests gathering the hypothesised ignition scenario and the reason it stayed unconfirmed from two engine-room fire reports linked by their undetermined cause; this is close to a comparison."},
+{"slot_id": "b010-2",
+ "question": "Which craft came through its engine-room blaze still afloat, the Tarka II or the Thor, and how did each episode wrap up?",
+ "expected_answer": "The Thor survived: its crew sealed off ventilation, fuel sources and air openings to the engine room and abandoned the towboat, and a responding fire boat put the fire out a few hours later. The Tarka II did not: its two crewmembers abandoned into a liferaft, were rescued by the Coast Guard, and the vessel eventually sank.",
+ "evidence": [
+  {"doc_id": "MIR2524.pdf", "quote": "The two crewmembers on board abandoned the vessel into a liferaft and were rescued by the Coast Guard before the vessel eventually sank."},
+  {"doc_id": "MIR2601.pdf", "quote": "The captain had the crew secure ventilation, fuel sources, and natural air openings to the engine room before abandoning the towboat. The fire was extinguished by a responding fire boat a few hours later."}
+ ],
+ "notes": "Tests contrasting the outcomes of two engine-room fires (vessel lost versus fire extinguished) from the analysis sections."}
+]}

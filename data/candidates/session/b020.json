@@ -1,0 +1,17 @@
+{"items": [
+ {"slot_id": "b020-1",
+  "question": "What went wrong when the deckhand on the Jordyn Rose tried to let go the anchor near the mouth of the Naknek River?",
+  "expected_answer": "The lever for releasing the windlass clutch broke off, so the anchor stayed stuck in place and could not be dropped.",
+  "evidence": [
+   {"doc_id": "MIR2520.pdf", "quote": "However, when the deckhand attempted to drop the anchor, the lever to release the clutch on the windlass broke off, and the anchor held fast."}
+  ],
+  "notes": "Tests retrieval of a narrative detail about the anchoring failure that preceded the intentional beaching."},
+ {"slot_id": "b020-2",
+  "question": "Once the cooking-gas cylinder was ruled out, what possible sources of ignition did the NTSB consider for the Jordyn Rose blaze?",
+  "expected_answer": "The onboard batteries, their associated wiring, the diesel-fueled accommodation heater, or other energized electrical components; the actual source could not be determined.",
+  "evidence": [
+   {"doc_id": "MIR2520.pdf", "quote": "This limited the possible ignition sources to the onboard batteries, associated electrical wiring, diesel-fueled accommodation heater, or other energized electrical components."},
+   {"doc_id": "MIR2520.pdf", "quote": "However, due to the significant fire damage to the Jordyn Rose and onboard components, the ignition source and sequence could not be determined."}
+  ],
+  "notes": "Tests retrieval of the list of candidate ignition sources from the analysis; the second quote only supports the clause that the source was undetermined."}
+]}

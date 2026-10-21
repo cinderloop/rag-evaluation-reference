@@ -1,0 +1,18 @@
+{"items": [
+{"slot_id": "b037-1",
+ "question": "How much water entered the pump room of the tanker Platanos after its hull was holed below the waterline when it struck the Martinez Refining Company Wharf pier?",
+ "expected_answer": "The premise is wrong: the penetration was about 4 feet above the waterline, no damage below the waterline was found, and none of the ship's internal spaces flooded.",
+ "evidence": [
+  {"doc_id": "MIR2605.pdf", "quote": "At 0421, the operator of the Delta Catherine told the pilot that there was a “small puncture” about 4 feet above the waterline, port side aft, and that there were no signs of leakages."},
+  {"doc_id": "MIR2605.pdf", "quote": "No damage below the waterline was found, and there was no flooding to any of the ship’s internal spaces."}
+ ],
+ "notes": "False premise of below-waterline holing and pump-room flooding; the report says the puncture was above the waterline with no flooding."},
+{"slot_id": "b037-2",
+ "question": "What error by the pilot led to the Platanos contacting the Martinez Refining Company Wharf pier, and what current does the casualty summary record for the waterway at the time?",
+ "expected_answer": "The pilot transposed the names and positions of the two tugs on his reference card, giving him an incorrect mental model of the tug positions so that orders meant for one tug went to the other; the casualty summary records a 1.9-knot ebb current.",
+ "evidence": [
+  {"doc_id": "MIR2605.pdf", "quote": "Waterway information Strait; width 3,000 ft, depth 50 ft, current 1.9 kts (ebb)"},
+  {"doc_id": "MIR2605.pdf", "quote": "However, on the morning of the contact, he transposed the names and positions of the tugs on his reference card. This resulted in the pilot having an incorrect mental model of the tugboat positions and the effect each would have on the Platanos as it maneuvered off the pier."}
+ ],
+ "notes": "Causal question tied to the casualty summary table's current entry; the cause itself sits in the analysis across the marked chunk boundary, since the summary table carries no causal text."}
+]}

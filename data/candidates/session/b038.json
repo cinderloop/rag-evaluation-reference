@@ -1,0 +1,18 @@
+{"items": [
+{"slot_id": "b038-1",
+ "question": "When the skipper of the Tom Frazier was steering his string of barges back toward the channel near Portsmouth, Ohio, and the boat struck bottom, how long had it been since the sun went down?",
+ "expected_answer": "About 1 hour 25 minutes: the grounding occurred at 1855 eastern standard time and sunset was at 1730.",
+ "evidence": [
+  {"doc_id": "MIR2523.pdf", "quote": "Time 1855 eastern standard time"},
+  {"doc_id": "MIR2523.pdf", "quote": "Weather Visibility 10 mi, overcast, winds west 3 kts, air temperature 60° F, water temperature 43° F, sunset 1730"},
+  {"doc_id": "MIR2523.pdf", "quote": "At 1855, as the captain of the Tom Frazier attempted to maneuver the tow back into the channel while making a speed of about 4 mph, the Tom Frazier grounded on one of the jetties"}
+ ],
+ "notes": "Time arithmetic from the casualty summary table (grounding time vs. sunset); the procedural framing is thin because the table holds no crew actions, so a narrative quote anchors the maneuver."},
+{"slot_id": "b038-2",
+ "question": "What did the NTSB determine was the probable cause of the grounding of the towing vessel Tom Frazier on submerged jetties?",
+ "expected_answer": "The captain maneuvered his tow too close to the bank to avoid a downbound tow and did not identify the hazard posed by the charted jetties.",
+ "evidence": [
+  {"doc_id": "MIR2523.pdf", "quote": "The National Transportation Safety Board determines that the probable cause of the grounding of the towing vessel Tom Frazier on submerged jetties was the captain maneuvering his tow too close to the bank in order to avoid a downbound tow, and not identifying the hazard posed by the charted jetties."}
+ ],
+ "notes": "Probable-cause recall; the slot asked for summary_table evidence but the tables contain no causal information, so the evidence comes from the probable cause section."}
+]}

@@ -1,0 +1,14 @@
+{"items": [
+ {"slot_id": "b033-1",
+  "question": "On the Sunday the unmanned yacht Flagship caught fire at the Miami River shipyard, who raised the alarm and what first drew their attention?",
+  "expected_answer": "The security guard on duty at the shipyard entrance heard popping noises from the enclosed dock area and saw smoke; she investigated, discovered the fire, called 911 and then notified the facility manager.",
+  "evidence": [{"doc_id": "MIR2531.pdf", "quote": "A security guard who was on duty at the shipyard entrance heard popping noises from the enclosed dock area and saw smoke coming from the facility. She went to investigate, discovered the fire, called 911, and then notified the facility manager."}],
+  "notes": "Tests retrieval of who discovered the Flagship fire, phrased without the report's wording."},
+ {"slot_id": "b033-2",
+  "question": "Why did the team working on the yacht Flagship decide to wire around its battery monitoring computers, and roughly how many volts per day had a 48-volt bank been gaining before that?",
+  "expected_answer": "The battery management systems were blocking the portable chargers, so charging was very slow (one 48-volt bank rose from 34 to 39 volts in 5 days, about 1 volt per day); to speed up charging, the manufacturer, shipyard, an electrician and the owner's representative devised a procedure to bypass each BMS.",
+  "evidence": [{"doc_id": "MIR2531.pdf", "quote": "However, the charging speed was slow; during the initial charging of one of the 48-volt battery banks using one of the portable chargers, which started on February 1, it took 5 days for the battery voltage to increase from 34 volts to 39 volts."},
+               {"doc_id": "MIR2531.pdf", "quote": "Vessel personnel determined that the BMSs were preventing the batteries from being charged from a portable charger"},
+               {"doc_id": "MIR2531.pdf", "quote": "In response, the vessel manufacturer, shipyard personnel, an electrician, and the vessel owner’s representative developed a new procedure to increase the charging speed of the lithium-ion batteries by bypassing the BMS of each battery bank."}],
+  "notes": "Causal question about the BMS bypass decision with a small rate calculation (5 volts over 5 days); it asks about the precursor decision, not the probable cause of the fire."}
+]}

@@ -1,0 +1,19 @@
+{"items": [
+ {"slot_id": "b016-1",
+  "question": "For both the Josset tow hitting the Bayou Grosse Tête Bridge and the Dry Tortugas running into platform VK-817A, the NTSB named a safeguard that no rule demanded but that might have averted the casualty. What was that safeguard in each case, and how would it have helped?",
+  "expected_answer": "For the Josset, posting another crewmember on the tow as a lookout (not required) would likely have let the pilot know sooner that the bridge was not open and act to avoid hitting it; for the Dry Tortugas, which was not required to have one, a watch alarm set to appropriate intervals may have woken the sleeping second captain before the contact.",
+  "evidence": [
+   {"doc_id": "MIR2618.pdf", "quote": "Although not required, if the pilot had positioned one of the other crewmembers on the tow as a lookout, he likely would have been aware earlier that the bridge was not open as he expected and could have taken action to avoid striking the bridge."},
+   {"doc_id": "MIR2627.pdf", "quote": "The Dry Tortugas was not equipped with a watch alarm, nor was it required to be."},
+   {"doc_id": "MIR2627.pdf", "quote": "Had a watch alarm been installed and set to appropriate intervals, it may have awoken the second captain before the contact."}
+  ],
+  "notes": "Tests linking two contact reports through the shared theme of a non-mandatory safeguard (lookout versus watch alarm) identified in each analysis."},
+ {"slot_id": "b016-2",
+  "question": "Which contact caused more property damage, the Josset tow with the Bayou Grosse Tête Bridge or the Dry Tortugas with platform VK-817A, and were there any injuries in each?",
+  "expected_answer": "The Dry Tortugas contact caused more property damage, $5 million ($500,000 to the Dry Tortugas and $4.5 million to platform VK-817A), against an estimated $2.5 million for the Josset contact; the Josset casualty had no injuries, while the Dry Tortugas casualty had 1 minor injury aboard the Dry Tortugas.",
+  "evidence": [
+   {"doc_id": "MIR2618.pdf", "quote": "Persons on board 5 Injuries None Property damage $2.5 million est."},
+   {"doc_id": "MIR2627.pdf", "quote": "Injuries 1 minor (Dry Tortugas) Property damage $5 million (D r y To r t u g a s $500,000; platform VK-817A $4.5 million)"}
+  ],
+  "notes": "Tests comparing damage and injury fields from two casualty summary tables; the MIR2627 quote keeps the PDF letter-spacing artefact in 'D r y To r t u g a s'."}
+]}

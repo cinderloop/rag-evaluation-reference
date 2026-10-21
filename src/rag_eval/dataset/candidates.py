@@ -30,6 +30,8 @@ class Checks(BaseModel):
     too_easy: bool = False
     chunk_boundary: str | None = None  # within_chunk | cross_chunk, under baseline chunking
     duplicate_of: str | None = None
+    # Where the evidence actually is (report section), which can differ from the plan.
+    evidence_location: str | None = None
 
 
 class Candidate(BaseModel):

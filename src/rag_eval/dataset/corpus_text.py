@@ -21,6 +21,15 @@ from rag_eval.client.storage import document_chunks, document_text
 from rag_eval.client.text import strip_metadata_header
 
 _WHITESPACE = re.compile(r"\s+")
+# Section headings of an NTSB Marine Investigation Report, mapped to the
+# evidence_location values in data/dimensions.yaml. Text before the casualty summary
+# table is the opening synopsis of the casualty, counted as narrative.
+_SECTIONS = (
+    ("Casualty Summary", "summary_table"),
+    ("Factual Information", "narrative"),
+    ("Analysis", "analysis"),
+    ("Vessel Particulars", "summary_table"),
+)
 
 
 def normalize(text: str) -> str:
@@ -52,6 +61,25 @@ class ReportText:
             return None
         end = start + len(needle)
         return haystack[max(0, start - chars) : start], needle, haystack[end : end + chars]
+
+    def section_of(self, quote: str) -> str | None:
+        """evidence_location of the quote's first occurrence, or None if unknown."""
+        words = normalize(quote).split(" ")
+        found = re.search(r"\s+".join(re.escape(w) for w in words), self.text)
+        if found is None:
+            return None
+        start = found.start()
+        starts: list[tuple[int, str]] = []
+        for heading, location in _SECTIONS:
+            match = re.search(rf"(^|\n)\s*(\d[\d.]*\s+)?{heading}\s", self.text)
+            if match is None:
+                return None  # not the usual report layout
+            starts.append((match.start(), location))
+        section = "narrative"
+        for position, location in sorted(starts):
+            if position <= start:
+                section = location
+        return section
 
     def chunk_boundaries(self, chars: int = 160) -> list[str]:
         """Text around each boundary between consecutive chunks (to target boundary spans)."""

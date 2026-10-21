@@ -41,6 +41,36 @@ Before any hosted call, generation prints an estimate of calls, tokens and cost 
 
 The generator must not be the system under test (`qwen3:8b`), or the dataset would be biased towards what that model finds easy to phrase and answer. Sonnet is a different model family, which meets this. A local Ollama model was rejected: it needs a multi-gigabyte download of a different-family model and would give noticeably weaker questions.
 
+### Update 2026-10-22: candidates written in a Claude Code session instead
+
+The owner chose not to set up an Anthropic API key and asked for the candidates to be
+written in the Claude Code session that builds this repository, using helper agents.
+This is billed to the owner's existing Claude subscription, so there is no separate API
+cost. The generator is therefore Claude Opus 5.5 (the model running the session), which
+still meets the "not the system under test" requirement.
+
+What stays the same: the plan, the instructions (the brief is the API request rendered
+for an agent that reads files: `rag-eval dataset brief`), the verbatim-evidence and slot
+rules (`check-batch`, the same `validate_item` as the API path), the automated checks and
+the owner's review of every item. Helper agents fix the problems `check-batch` reports,
+which replaces the API path's single retry.
+
+What changes: provenance is coarser. Each candidate records the generator as
+`claude-opus-5-5 (Claude Code session)`, a hash of its brief and report texts, and
+`session:<batch_id>` instead of an API response id; the agents' raw outputs are kept in
+`data/candidates/session/`. Generation cannot be re-run byte-identically, but neither can
+the API path (no seed), and the reviewed dataset is committed either way. The API path
+(`rag-eval dataset generate`) stays in the repository for anyone who prefers it.
+
+What generation showed about the plan (recorded for the next iteration, not changed
+now because the 110 candidates are already written): causal and procedural slots with
+`evidence_location: summary_table` cannot be served well, because those tables hold no
+causes or actions; and multi-document slots on pairs linked only by casualty type give
+contrived questions. A future plan should forbid those combinations and use only
+curated pairs for multi-document questions. Planned evidence locations are not
+trusted: the checks measure the report section each quote is in, and the measured
+value is what the dataset records (`data/candidates/review-notes.md` lists the cases).
+
 ## Pairing reports for multi-document questions
 
 Multi-document questions need report pairs that are genuinely linked. A first attempt

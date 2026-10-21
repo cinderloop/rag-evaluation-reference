@@ -1,0 +1,14 @@
+{"items": [
+ {"slot_id": "b034-1",
+  "question": "In the Belle Mer cable strike near Ketchikan, how did the crew lay out the electronic chart ring meant to warn them if the anchor slipped, and how should it have been set up instead?",
+  "expected_answer": "The crew used a 2,127-foot (0.35-mile) radius centred 465 feet northwest of where the anchor was estimated to have been dropped, apparently at the GPS antenna's position at 0554; it should have been centred on the anchor drop location with a radius of about 1,395 feet (495 feet hawsepipe-to-antenna plus 900 feet of chain).",
+  "evidence": [{"doc_id": "MIR2626.pdf", "quote": "Given the distance from the Belle Mer’s hawsepipe to its GPS antenna (495 feet) and the amount of anchor chain payed out (10 shots; 900 feet total), the drag circle calculations should have yielded a 1,395-foot radius rather than the 2,127 feet (0.35 miles) plotted by the crew"},
+               {"doc_id": "MIR2626.pdf", "quote": "In addition, the center of a drag circle should be plotted using the location of the anchor drop. However, the crew plotted the drag circle’s center 465 feet northwest of where the NTSB estimated the anchor was dropped about 0554."},
+               {"doc_id": "MIR2626.pdf", "quote": "Investigators noted that the plotted location corresponded with the location of the ship’s GPS antenna at 0554."}],
+  "notes": "Combines the radius and centre errors of the drag circle from the analysis; the second quote spans the chunk boundary at 'However, the ‖ crew plotted'."},
+ {"slot_id": "b034-2",
+  "question": "When and by what means did the crew of the bulk carrier Belle Mer first hear that a seabed telecommunications line near Ketchikan had been disrupted?",
+  "expected_answer": "On November 16, about 0900 (the day after the cable owner's 1226 loss-of-data alert), the Belle Mer's agent emailed the crew about an underwater disturbance to an underwater cable.",
+  "evidence": [{"doc_id": "MIR2626.pdf", "quote": "At 1226, the owner of AUSE-2 received an alert indicating a loss of data transmission on the fiber optic cable segment. The next day, November 16, about 0900, the Belle Mer’s agent notified the crew of an “underwater disturbance to an underwater cable” via email."}],
+  "notes": "Single passage spanning the chunk boundary at 'loss of data ‖ transmission'; tests the notification timeline."}
+]}

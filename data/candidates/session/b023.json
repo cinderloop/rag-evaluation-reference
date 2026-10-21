@@ -1,0 +1,17 @@
+{"items": [
+ {"slot_id": "b023-1",
+  "question": "Why did the skipper of the dredge Brunswick want the Royal Engineer and its crane barge to squeeze through on the terminal side of the dredge on the Cooper River?",
+  "expected_answer": "Once radio contact was made to arrange the passing, the dredge captain said he preferred the tow to go between the dredge and the dock because he had crew below working on something and would have had to stop them to do something else.",
+  "evidence": [
+   {"doc_id": "MIR2509.pdf", "quote": "The mate was then able to reach the Brunswick crew over VHF radio to make passing arrangements. The dredge captain informed the Royal Engineer mate that his preference was for the tow to pass between the dredge and the dock because “I had guys downstairs that were working on something. ... and I’d have to stop them to go do something else.”"}
+  ],
+  "notes": "Cross-chunk: the passage spans the boundary between 'to make' and 'passing arrangements'; tests the dredge captain's stated reason for the passing arrangement."},
+ {"slot_id": "b023-2",
+  "question": "How did the Royal Engineer mate try to contact the dredge crew to make passing arrangements, and for roughly how long after his first attempt was he unable to establish communications?",
+  "expected_answer": "He tried twice to contact the dredge crew early, first an hour and then 45 minutes before reaching the dredge, but could not establish communications until about 15 minutes before the tow reached the dredging area, so he went roughly 45 minutes without a response after his first attempt.",
+  "evidence": [
+   {"doc_id": "MIR2509.pdf", "quote": "he attempted twice to contact the dredge crew early—first an hour and then 45 minutes before he reached the dredge—to make passing arrangements."},
+   {"doc_id": "MIR2509.pdf", "quote": "However, the mate could not establish communications with the dredge crew until about 15 minutes before the Royal Engineer tow reached the dredging area."}
+  ],
+  "notes": "Inference: 60 minus 15 minutes gives about 45 minutes without contact; the narrative says the attempts were by VHF radio, but the analysis quotes used here do not name the radio."}
+]}

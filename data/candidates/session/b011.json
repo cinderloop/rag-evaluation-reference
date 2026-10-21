@@ -1,0 +1,20 @@
+{"items": [
+{"slot_id": "b011-1",
+ "question": "Fresh air reaching the burning machinery space made both the GITN'R DUN lobster boat fire and the Scot Stuttgart tanker fire worse. Why could neither space be kept airtight, and roughly how many hours short of the longest closure period the NTSB advises was the tanker's space kept shut after the first gas discharge?",
+ "expected_answer": "The GITN'R DUN had no fixed extinguishing system and no dampers or closures for its engine compartment ventilation openings, so oxygen kept entering and feeding the fire. On the Scot Stuttgart, the master let shoreside firefighters unseal and ventilate the port engine room about an hour after the first CO2 release, whereas the NTSB says such spaces should stay sealed for up to 24 hours, so it was opened roughly 23 hours short of that.",
+ "evidence": [
+  {"doc_id": "MIR2625.pdf", "quote": "Without a fixed fire extinguishing system capable of flooding the engine compartment, and without dampers or closures to fully seal ventilation openings, oxygen continued to enter the engine compartment and feed the fire."},
+  {"doc_id": "MIR2629.pdf", "quote": "Therefore, the master’s decision to authorize shoreside firefighters to unseal and ventilate the port engine room about an hour after the initial activation of the vessel’s CO 2 fixed fire extinguishing system negated the effectiveness of the CO 2 , likely leading to further fire damage in the port engine room."},
+  {"doc_id": "MIR2629.pdf", "quote": "Additionally, spaces should remain sealed for sufficient time to allow the fire suppression agent to smother fire, as well as for temperatures to drop, for up to 24 hours."}
+ ],
+ "notes": "Tests linking the oxygen-feeding theme across two reports plus a subtraction (24 hours minus about 1 hour); the arithmetic is somewhat contrived because 24 hours is an upper bound in the lessons learned, not a strict requirement."},
+{"slot_id": "b011-2",
+ "question": "Which had a built-in system for flooding its machinery space with extinguishing agent, the lobster boat GITN'R DUN or the tanker Scot Stuttgart, and what did each crew actually use to fight the blaze?",
+ "expected_answer": "Only the Scot Stuttgart had one: after sealing the port engine room, the crew released half (7 of 14) of the bottles of its fixed CO2 system. The GITN'R DUN had no fixed system, so the captain relied on portable extinguishers, discharging two handheld units through the aft hatch while the fire kept growing.",
+ "evidence": [
+  {"doc_id": "MIR2625.pdf", "quote": "Portable fire extinguishers were the only means of onboard firefighting available to the crewmembers. The captain discharged two handheld extinguishers through the aft engine compartment hatch, but the fire continued to grow, rapidly escalating and engulfing the engine compartment in the time it took the captain to retrieve the second fire extinguisher."},
+  {"doc_id": "MIR2625.pdf", "quote": "The vessel was not equipped with a fixed fire extinguishing system, nor was it required to be."},
+  {"doc_id": "MIR2629.pdf", "quote": "Once the port engine room was sealed, the master gave the order to release half (7 of 14) of the CO 2 bottles in the vessel’s fixed fire extinguishing system to suppress the fire in the space."}
+ ],
+ "notes": "Tests contrasting fixed versus portable firefighting means in two engine-space fires, using the analysis sections."}
+]}

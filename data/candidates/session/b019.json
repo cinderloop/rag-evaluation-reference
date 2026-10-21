@@ -1,0 +1,16 @@
+{"items": [
+ {"slot_id": "b019-1",
+  "question": "How many people were aboard the cargo ship Julie C when it struck the Jack Edwards off Guyana?",
+  "expected_answer": "There were 17 people aboard the Julie C (the Jack Edwards had 10).",
+  "evidence": [
+   {"doc_id": "MIR2542.pdf", "quote": "Persons on board 10 (Jack Edwards), 17 (Julie C)"}
+  ],
+  "notes": "Tests retrieval of a per-vessel figure from the casualty summary table, where both vessels' counts sit on one row."},
+ {"slot_id": "b019-2",
+  "question": "How broad was the approach channel off Georgetown, Guyana, where the Jack Edwards and the Julie C came together, and how much water was charted in it?",
+  "expected_answer": "The unprotected approach channel was 148 feet wide, with a charted depth of 16 feet in the channel (8 feet outside it).",
+  "evidence": [
+   {"doc_id": "MIR2542.pdf", "quote": "Waterway information Unprotected approach channel, width 148 ft; charted depth 16 ft in channel, 8 ft outside of channel"}
+  ],
+  "notes": "Tests retrieval of waterway dimensions from the casualty summary table; the same figures also appear in the narrative section."}
+]}

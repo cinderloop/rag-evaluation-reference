@@ -21,3 +21,5 @@ All notable changes to this project are documented here. The format follows
   generation with Claude Sonnet 5.5 (cost estimate, cap and cache), verbatim-evidence
   validation, automated checks and coverage report, a local review page with import
   of decisions, and a stratified dev/test split. ADR 0004.
+- Session generation path (`rag-eval dataset brief`, `check-batch`, `collect`): candidates
+  written by Claude Code helper agents from per-batch briefs, under the same checks.

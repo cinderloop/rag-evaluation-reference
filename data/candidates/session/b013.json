@@ -1,0 +1,20 @@
+{"items": [
+ {"slot_id": "b013-1",
+  "question": "How much time went by between the day the tanker Hafnia Amessi hit a Navy pier near Charleston and the day the Mackenzie Rose tug and its barge hit a railroad bridge in Chesapeake, Virginia?",
+  "expected_answer": "About five months (153 days): the Hafnia Amessi casualty happened on January 14, 2024, and the Mackenzie Rose casualty on June 15, 2024, so the Hafnia Amessi casualty came first.",
+  "evidence": [
+   {"doc_id": "MIR2511.pdf", "quote": "On January 14, 2024, after discharging all of its cargo at the INEOS Aromatics Terminal on the Cooper River in Wando, South Carolina, the Hafnia Amessi prepared to depart the terminal for a voyage to Texas City, Texas."},
+   {"doc_id": "MIR2615.pdf", "quote": "On June 15, 2024, the towing vessel Mackenzie Rose was approaching Chesapeake, Virginia, on the Elizabeth River, with the captain navigating the vessel."}
+  ],
+  "notes": "Tests date arithmetic across two reports; the only link between the two casualties is time (both 2024 contacts), so the reviewer may find the multi_document link weak."},
+ {"slot_id": "b013-2",
+  "question": "After leaving the dock, which was under way longer before hitting the structure, the tanker Hafnia Amessi on the Cooper River or the Mackenzie Rose tow on the Elizabeth River, and by about how much?",
+  "expected_answer": "The Mackenzie Rose tow: it left the facility at 1500 and hit the bridge at 1626:41 (about 1 hour 27 minutes), while the Hafnia Amessi got under way at 0948 and hit Pier B at 1019:01 (about 31 minutes), so the tow was under way roughly 56 minutes longer.",
+  "evidence": [
+   {"doc_id": "MIR2511.pdf", "quote": "At 0948, the Hafnia Amessi got underway from the terminal on the Cooper River."},
+   {"doc_id": "MIR2511.pdf", "quote": "At 1019:01, the starboard side of the vessel’s hull pushed over a protective dolphin and contacted the northeast corner of the Pier B platform."},
+   {"doc_id": "MIR2615.pdf", "quote": "At 1500, the Mackenzie Rose and tow departed the facility, en route to New York, with the mate at the helm in the upper wheelhouse."},
+   {"doc_id": "MIR2615.pdf", "quote": "At 1626:41, the bow of the Weeks 281 contacted the western portion of the Warren through-truss approach span of the Norfolk and Portsmouth Belt Line Railroad Bridge"}
+  ],
+  "notes": "Tests computing two durations from narrative timestamps in different reports and comparing them."}
+]}

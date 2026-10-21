@@ -1,0 +1,18 @@
+{"items": [
+{"slot_id": "b005-1",
+ "question": "Roughly how long after the blaze broke out aboard the Cuyahoga in Ashtabula was the same ship found partly filled with water at its Ashtabula berth?",
+ "expected_answer": "About one year and three days: the fire broke out on March 15, 2024, and the flooding was discovered on March 18, 2025.",
+ "evidence": [
+  {"doc_id": "MIR2538.pdf", "quote": "On March 15, 2024, about 1315 local time, the bulk carrier Cuyahoga was undergoing maintenance while docked in Ashtabula, Ohio, when a fire broke out in a cargo hold where hot work was being conducted"},
+  {"doc_id": "MIR2603.pdf", "quote": "On March 18, 2025, about 1600 local time, the bulk carrier Cuyahoga was discovered partially flooded while docked in Ashtabula, Ohio"}
+ ],
+ "notes": "Tests linking the two Cuyahoga reports and computing the interval between the fire and the flooding discovery."},
+{"slot_id": "b005-2",
+ "question": "How many people were aboard the Cuyahoga at the time of its 2024 blaze, and how does that headcount differ from the 2025 incident in which it took on water?",
+ "expected_answer": "There were 40 people aboard during the fire (15 crewmembers and 25 maintenance personnel), whereas nobody was aboard when the flooding occurred.",
+ "evidence": [
+  {"doc_id": "MIR2538.pdf", "quote": "Persons on board 40 (15 crewmembers; 25 maintenance personnel)"},
+  {"doc_id": "MIR2603.pdf", "quote": "Persons on board None"}
+ ],
+ "notes": "Tests comparing the persons-on-board entries from the casualty summary tables of the two Cuyahoga reports."}
+]}

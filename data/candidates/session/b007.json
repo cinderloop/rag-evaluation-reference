@@ -1,0 +1,44 @@
+{
+ "items": [
+  {
+   "slot_id": "b007-1",
+   "question": "Two bulk carriers tied to Algoma Central Corporation had mishaps the NTSB looked into, one hitting dock equipment in Superior, Wisconsin, and the other running onto the bottom of the Delaware River near Philadelphia; roughly how far apart in time were the two events?",
+   "expected_answer": "About five and a half months (roughly 172 days): the Algoma Discovery struck the loading shuttles on July 20, 2024, and the Algoma Verity grounded on January 8, 2025.",
+   "evidence": [
+    {
+     "doc_id": "MIR2545.pdf",
+     "quote": "On July 20, 2024, about 2215 local time, the Canada-flagged cargo vessel Algoma Discovery struck five of the loading shuttles at the BNSF Allouez Taconite Facility, in Superior, Wisconsin, after losing electrical power and main propulsion while docking"
+    },
+    {
+     "doc_id": "MIR2545.pdf",
+     "quote": "was owned and operated by Algoma Central Corporation"
+    },
+    {
+     "doc_id": "MIR2606.pdf",
+     "quote": "On January 8, 2025, at 1813 local time, the dry bulk carrier Algoma Verity was transiting upbound on the Delaware River near Philadelphia, Pennsylvania, when it ran aground outside the channel"
+    },
+    {
+     "doc_id": "MIR2606.pdf",
+     "quote": "was owned and operated by Algoma Shipping Ltd., a subsidiary of the Algoma Central Corporation"
+    }
+   ],
+   "notes": "Tests linking the two reports through the shared Algoma Central Corporation ownership and computing the interval between the casualty dates; the ownership quotes come from the background sections rather than the event narrative."
+  },
+  {
+   "slot_id": "b007-2",
+   "question": "At what speeds were the Algoma Discovery moving as it hit the ore-loading equipment at Superior and the Algoma Verity moving as it went beneath the Benjamin Franklin Bridge shortly before first touching bottom, and which was faster?",
+   "expected_answer": "The Algoma Verity was much faster, at about 9 knots passing under the Benjamin Franklin Bridge, whereas the Algoma Discovery was moving at only about 0.9 knots when it struck the loading shuttles.",
+   "evidence": [
+    {
+     "doc_id": "MIR2545.pdf",
+     "quote": "about 2215, the vessel started to strike the facility’s loading shuttles, as the vessel moved down the dock at a speed of about 0.9 knots"
+    },
+    {
+     "doc_id": "MIR2606.pdf",
+     "quote": "As the Algoma Verity passed under the Benjamin Franklin Bridge at a speed of about 9 knots, its bow was 140 feet to starboard of the channel (as measured from ship’s centerline) and moving to starboard."
+    }
+   ],
+   "notes": "Tests comparing vessel speeds taken from the event narratives of the two Algoma casualties."
+  }
+ ]
+}

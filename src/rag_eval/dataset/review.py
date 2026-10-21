@@ -19,7 +19,7 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict
 
 from rag_eval.dataset.candidates import Candidate
-from rag_eval.dataset.checks import chunk_boundary
+from rag_eval.dataset.checks import chunk_boundary, evidence_location
 from rag_eval.dataset.corpus_text import ReportText
 from rag_eval.dataset.schema import Case, Evidence
 from rag_eval.provision.sources import Source
@@ -141,6 +141,9 @@ def import_decisions(
         boundary = chunk_boundary(edited, reports) if candidate.answerable else None
         if boundary:
             dimensions["chunk_boundary"] = boundary
+        location = evidence_location(edited, reports) if candidate.answerable else None
+        if location:
+            dimensions["evidence_location"] = location
         try:
             approved.append(
                 Case(
@@ -216,7 +219,8 @@ function render(){
     card.className="card "+(s.decision||"");
     const dims=Object.entries(item.dimensions).map(([k,v])=>`<span class="tag">${esc(k)}: ${esc(v)}</span>`).join("");
     const flags=[item.checks.too_easy?`<span class="flag">too easy (overlap ${item.checks.lexical_overlap})</span>`:"",
-      item.checks.chunk_boundary?`<span class="tag">chunk: ${esc(item.checks.chunk_boundary)}</span>`:""].join(" ");
+      item.checks.chunk_boundary?`<span class="tag">chunk: ${esc(item.checks.chunk_boundary)}</span>`:"",
+      item.checks.evidence_location&&item.checks.evidence_location!==item.dimensions.evidence_location?`<span class="flag">evidence is in ${esc(item.checks.evidence_location)}, not ${esc(item.dimensions.evidence_location)}</span>`:""].join(" ");
     const docs=item.docs.map(d=>`<a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.report)}</a> ${esc(d.title)}`).join("<br>");
     const ctx=(list_)=>list_.map(e=>`<div class="ctx"><b>${esc(e.doc_id)}</b>: …${esc(e.before)}<mark>${esc(e.match)}</mark>${esc(e.after)}…</div>`).join("");
     card.innerHTML=`<div class="meta">${esc(item.id)} · ${item.answerable?"answerable":"unanswerable"}</div>

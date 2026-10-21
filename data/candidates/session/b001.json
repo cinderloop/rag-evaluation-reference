@@ -1,0 +1,20 @@
+{"items": [
+{"slot_id": "b001-1",
+ "question": "The towing vessels Kitty and Ovide J were both operated by Enterprise Marine Services. What was the combined property damage of the Kitty tow's contact with the Algiers Lock gate and the Chalmette Refinery dock collapse during docking of the Ovide J tow?",
+ "expected_answer": "About $9.08 million: $2,082,677 for the Kitty tow's contact with the Algiers Lock gate plus an estimated $7 million for the Chalmette Refinery dock collapse.",
+ "evidence": [
+  {"doc_id": "MIR2501.pdf", "quote": "Property damage $2,082,677"},
+  {"doc_id": "MIR2501.pdf", "quote": "Owner/Operator Enterprise Marine Services, LLC (Commercial)"},
+  {"doc_id": "MIR2508.pdf", "quote": "Property damage $7 million est."},
+  {"doc_id": "MIR2508.pdf", "quote": "Owner/Operator Enterprise Marine Services ( Commerc ial)"}
+ ],
+ "notes": "Tests linking two casualties by the shared operator and summing property damage from both summary tables."},
+{"slot_id": "b001-2",
+ "question": "Which tow was moving at a higher speed at the moment its barge made contact: the Kitty tow when barge EMS 317 struck Algiers Lock Gate D, or the Ovide J tow when barge EMS 348 contacted the Chalmette Refinery dock?",
+ "expected_answer": "The Kitty tow was faster: EMS 317 struck Gate D at 1.4 mph, while EMS 348 contacted the Chalmette Refinery dock at 0.35 mph.",
+ "evidence": [
+  {"doc_id": "MIR2501.pdf", "quote": "At 1808, at 1.4 mph, the port bow of barge EMS 317 struck Gate D, the closed gate on the south side of the lock."},
+  {"doc_id": "MIR2508.pdf", "quote": "at a speed of 0.35 mph, the starboard quarter of the starboard barge (EMS 348) contacted the wooden fendering of the transfer platform at dolphin no. 3"}
+ ],
+ "notes": "Tests comparing the contact speed stated in each narrative."}
+]}

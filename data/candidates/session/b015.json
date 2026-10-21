@@ -1,0 +1,21 @@
+{"items": [
+ {"slot_id": "b015-1",
+  "question": "How did the NTSB rate the shipboard firefighting in both the Genius Star XI lithium battery cargo fires and the Deep Energy crane cabin blaze, and what had the people aboard each ship done to fight the flames?",
+  "expected_answer": "In both cases the NTSB viewed the crew's response favourably. On the Genius Star XI the crew discharged the fixed CO₂ system into hold no. 1 for the first fire and boundary-cooled hold no. 2 with fire hoses while securing ventilation for the second, actions judged appropriate and likely to have stopped the fire spreading; on the Deep Energy the master mustered the fire teams, who put water on the fire, and called the Coast Guard and local fire department, and their quick response helped limit damage and put the fire out.",
+  "evidence": [
+   {"doc_id": "MIR2541.pdf", "quote": "The crew discharged the fixed CO₂ fire suppression system for the first fire within cargo hold no. 1 and used boundary cooling with fire hoses for the second fire within cargo hold no. 2, combined with securing the ventilation."},
+   {"doc_id": "MIR2541.pdf", "quote": "Therefore, the crew’s actions to respond to the cargo fires were appropriate and likely prevented the fire from expanding."},
+   {"doc_id": "MIR2612.pdf", "quote": "The master mustered the vessel’s fire teams, and they applied water onto the fire as the master evaluated the situation. In addition to responding to the fire, the master also requested assistance from the Coast Guard and the local fire department."},
+   {"doc_id": "MIR2612.pdf", "quote": "The crew’s quick response and prompt action helped limit the fire damage and extinguish the fire."}
+  ],
+  "notes": "Tests combining the NTSB's assessment of crew firefighting from the analysis sections of two fire reports linked by the common theme of crew response."},
+ {"slot_id": "b015-2",
+  "question": "What did the NTSB determine was the probable cause of the fires aboard the Genius Star XI, and how does it compare with the probable cause of the fire aboard the pipelayer Deep Energy?",
+  "expected_answer": "The Genius Star XI fires were caused by 41 BESS units breaking away in heavy weather because of improperly secured lashing belts, leading to internal structural deformation and thermal runaway of lithium-ion battery packs in three units; the Deep Energy fire was likely caused by an unknown malfunction of, or electrical fault within, the crane cabin refrigerator or its receptacle, and its exact ignition source could not be determined.",
+  "evidence": [
+   {"doc_id": "MIR2541.pdf", "quote": "breakaway of 41 battery energy storage systems (BESS) units in the cargo holds during heavy weather conditions due to improperly secured lashing belts, which resulted in internal structural deformation of these units and thermal runaway of lithium-ion battery packs in three of the BESS units."},
+   {"doc_id": "MIR2612.pdf", "quote": "was likely the result of an unknown malfunction of, or an electrical fault within, the refrigerator or its associated electrical receptacle."},
+   {"doc_id": "MIR2612.pdf", "quote": "Due to the extent of the fire damage to the refrigerator and elsewhere within the crane cabin, the exact ignition source and cause of the fire could not be determined."}
+  ],
+  "notes": "Tests contrasting a determined cargo-securing cause with a likely-but-undetermined electrical cause across two fire reports."}
+]}

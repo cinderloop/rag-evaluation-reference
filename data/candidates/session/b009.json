@@ -1,0 +1,40 @@
+{
+ "items": [
+  {
+   "slot_id": "b009-1",
+   "question": "The towing vessel Lucinda Smith and the fishing vessel Sub Zero were both lost or damaged by fire in 2024. On what date and at what location did each casualty occur?",
+   "expected_answer": "The Lucinda Smith fire occurred on December 7, 2024, on the Acushnet River in New Bedford, Massachusetts; the Sub Zero fire occurred on August 8, 2024, in Nushagak Bay, 28 nm south of Dillingham, Alaska.",
+   "evidence": [
+    {
+     "doc_id": "MIR2527.pdf",
+     "quote": "Location Acushnet River, New Bedford, Massachusetts 41°38.52’ N, 070°55.28’ W Date December 7, 2024"
+    },
+    {
+     "doc_id": "MIR2623.pdf",
+     "quote": "Location Nushagak Bay, 28 nm south of Dillingham, Alaska 58°33.32' N, 158°29.52' W Date August 8, 2024"
+    }
+   ],
+   "notes": "Tests pulling the date and location rows from two casualty summary tables; the link between the reports is only that both are 2024 vessel fires, so it is close to a comparison."
+  },
+  {
+   "slot_id": "b009-2",
+   "question": "How precisely could investigators pin down where the blaze began on the Lucinda Smith versus on the Sub Zero, and what limited them in each case?",
+   "expected_answer": "For the Lucinda Smith, ATF investigators traced the fire to the first mate's stateroom aft of the wheelhouse near the end of the bunk, but the extent of the fire damage meant the exact ignition source and cause could not be determined. For the Sub Zero, the vessel burned to the waterline, sank and was not salvaged, so investigators could not inspect it to find the origin or cause, and the ignition source could not be determined.",
+   "evidence": [
+    {
+     "doc_id": "MIR2527.pdf",
+     "quote": "ATF investigators determined that the fire originated in the first mate’s stateroom, aft of the wheelhouse, near the end of the bunk (by the electric heater)."
+    },
+    {
+     "doc_id": "MIR2527.pdf",
+     "quote": "However, due to the extent of the fire damage, the exact ignition source and cause of the fire could not be determined."
+    },
+    {
+     "doc_id": "MIR2623.pdf",
+     "quote": "The vessel burned to the waterline, sank, and was not salvaged, so investigators could not access and inspect the vessel to determine the origin and cause of the fire. Therefore, the ignition source could not be determined."
+    }
+   ],
+   "notes": "Tests contrasting a fire with a located origin but unknown ignition source against one where the sunken vessel prevented any origin finding."
+  }
+ ]
+}

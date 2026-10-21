@@ -1,0 +1,13 @@
+{"items": [
+ {"slot_id": "b030-1",
+  "question": "After the blast aboard the New York City sludge ship Hunts Point, where was the missing senior engineer eventually located?",
+  "expected_answer": "Before the fire department arrived at 1030, the chief engineer was found between the concrete dock and a wooden fender on the vessel's starboard side; he was declared dead at the scene.",
+  "evidence": [{"doc_id": "MIR2622.pdf", "quote": "Before the arrival of the fire department at 1030, the chief engineer was found between the concrete dock and a wooden fender located on the starboard side of the vessel."},
+               {"doc_id": "MIR2622.pdf", "quote": "The chief engineer was declared dead at the scene by the responding New York City Fire Department paramedics."}],
+  "notes": "Tests retrieval of a narrative detail about the post-explosion search, phrased without the report's wording."},
+ {"slot_id": "b030-2",
+  "question": "How long did firefighters take to put out the blaze that burned on deck after the explosion aboard the sludge vessel Hunts Point?",
+  "expected_answer": "The premise is wrong: there was no fire after the Hunts Point explosion; instead, sludge burst out of the tank and covered the assistant engineer and the vessel's exterior.",
+  "evidence": [{"doc_id": "MIR2622.pdf", "quote": "Following the explosion, there was no fire; however, sludge burst out of the tank and covered the assistant engineer and the exterior of the vessel."}],
+  "notes": "False premise of a post-explosion fire; note the casualty type in the summary table is listed as Fire/Explosion, which could mislead a system."}
+]}

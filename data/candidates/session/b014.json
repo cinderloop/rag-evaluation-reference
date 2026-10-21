@@ -1,0 +1,18 @@
+{"items": [
+ {"slot_id": "b014-1",
+  "question": "The tug Baylor J. Tregre, which went down off Galveston, and the Chad Pregracke tow, which came apart on the Lower Mississippi, have the same estimated repair bill in their casualty summaries. What is that amount, and how many people were aboard in each case?",
+  "expected_answer": "Both casualties are estimated at $2 million in damage; there were 4 people aboard the Baylor J. Tregre and 9 aboard in the Chad Pregracke casualty.",
+  "evidence": [
+   {"doc_id": "MIR2521.pdf", "quote": "1657 central daylight time (coordinated universal time –5) 4 1 minor $2 million est."},
+   {"doc_id": "MIR2546.pdf", "quote": "Persons on board 9 Injuries None Property damage $2 million est."}
+  ],
+  "notes": "Tests pulling the same field from two casualty summary tables (the MIR2521 table is extracted as labels followed by values, so its quote is a run of values); the link between the reports is the shared $2 million estimate."},
+ {"slot_id": "b014-2",
+  "question": "According to the NTSB analysis, how many more barges was the towing vessel Chad Pregracke pushing than the Baylor J. Tregre was towing, and how did the two tow arrangements differ?",
+  "expected_answer": "The Chad Pregracke was pushing 34 loaded barges ahead, while the Baylor J. Tregre was towing a single barge, the MARMAC 27, astern on an 800-foot-long wire, so the Chad Pregracke tow had 33 more barges.",
+  "evidence": [
+   {"doc_id": "MIR2521.pdf", "quote": "On May 13, 2024, while towing the barge MARMAC 27 astern on an 800-foot-long wire, about 23 miles south-southwest of Galveston, the Baylor J. Tregre encountered severe weather, listed to port, capsized, and subsequently sank."},
+   {"doc_id": "MIR2546.pdf", "quote": "While the towing vessel Chad Pregracke was pushing 34 loaded barges on the Lower Mississippi River southbound towards New Orleans, near mile 260.6, barge PTC 706 at the head of the tow became partially submerged, causing the tow to break up, and the barge later sank."}
+  ],
+  "notes": "Tests a simple subtraction (34 - 1) combined with the pushing-versus-towing-astern distinction, both from the analysis sections."}
+]}

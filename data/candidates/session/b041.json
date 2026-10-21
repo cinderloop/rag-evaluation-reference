@@ -1,0 +1,15 @@
+{"items": [
+{"slot_id": "b041-1",
+ "question": "Why did the captain of the fishing vessel Three Girls abandon ship without wearing an immersion suit during the August 2024 engine room fire?",
+ "expected_answer": "Fire and smoke inside the vessel kept the first mate from retrieving two of the vessel's seven survival suits (he brought only five to the muster station), so there were not enough immersion suits for everyone and the captain elected not to wear one.",
+ "evidence": [
+  {"doc_id": "MIR2504.pdf", "quote": "He brought five (of the vessel’s seven survival suits) to the muster station (aft of the wheelhouse on the wheelhouse deck) where the crew had mustered. Due to the fire and smoke inside the vessel, the first mate was unable to retrieve the vessel’s remaining two survival suits."},
+  {"doc_id": "MIR2504.pdf", "quote": "Because there were not enough immersion suits available for everyone, t he captain elected not to wear one."}
+ ],
+ "notes": "Combines the suit-retrieval shortfall with the captain's decision; note the report uses 'survival suits' and 'immersion suits' interchangeably."},
+{"slot_id": "b041-2",
+ "question": "What was the name of the tugboat that recovered the burning fishing vessel Three Girls and brought it into Portland, Maine?",
+ "expected_answer": "The report does not give this detail; it says only that a tugboat was dispatched to recover the Three Girls, which was docked in Portland on August 14.",
+ "evidence": [],
+ "notes": "Missing detail: the tug is mentioned but never named, while nearby rescue vessels (William Chadwick, Princess Laura) are named, which tempts a wrong answer."}
+]}

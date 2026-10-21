@@ -1,0 +1,12 @@
+{"items": [
+ {"slot_id": "b031-1",
+  "question": "What petroleum products, and roughly how much of each, were aboard the MPC 644 and MPC 907 when the two barges drifted loose on the Ohio River near Evansville?",
+  "expected_answer": "The MPC 644 held about 23,000 barrels of no. 2 ultra low sulfur (MV15) diesel fuel, and the MPC 907 held about 27,328 barrels of no. 84 conventional-blend-grade gasoline.",
+  "evidence": [{"doc_id": "MIR2610.pdf", "quote": "The MPC 644 was carrying about 23,000 barrels of no. 2 ultra low sulfur (MV15) diesel fuel. The MPC 907 was carrying about 27,328 barrels of no. 84 conventional-blend-grade gasoline."}],
+  "notes": "Tests retrieval of the cargo carried by each barge, phrased in lay terms."},
+ {"slot_id": "b031-2",
+  "question": "Where and at about what time were the barges MPC 907 and MPC 644 recovered by EMS tugs after breaking free from the MPC terminal dock?",
+  "expected_answer": "EMS tugs recovered the barges near mile 802 about 0700 and returned them to the MPC facility dock.",
+  "evidence": [{"doc_id": "MIR2610.pdf", "quote": "The barges were recovered by EMS tugs near mile 802 about 0700 and returned to the MPC facility dock."}],
+  "notes": "Tests a narrative fact about the barge recovery using the report's own terms."}
+]}

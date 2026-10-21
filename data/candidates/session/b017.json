@@ -1,0 +1,10 @@
+{"items": [
+ {"slot_id": "b017-1",
+  "question": "Which grounding had the higher property damage, the barge Cordova Provider on Axel Lind Island or the fishing vessel Eileen Rita on Green Island, and how did their environmental damage differ?",
+  "expected_answer": "The Cordova Provider grounding had the higher property damage ($2.9 million versus $720,000 for the Eileen Rita); the Cordova Provider caused no environmental damage, while an oil sheen was observed after the Eileen Rita grounding, with an estimated 4,000 gallons of diesel fuel on board.",
+  "evidence": [
+   {"doc_id": "MIR2532.pdf", "quote": "Injuries None Property damage $2.9 million Environmental damage None"},
+   {"doc_id": "MIR2607.pdf", "quote": "Property damage $720,000 Environmental damage Oil sheen observed; est. 4,000 gal diesel fuel on board"}
+  ],
+  "notes": "Tests comparing two fields (property and environmental damage) across the casualty summary tables of two grounding reports."}
+]}

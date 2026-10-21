@@ -1,0 +1,36 @@
+{
+ "items": [
+  {
+   "slot_id": "b006-1",
+   "question": "Adding together the two early-May 2025 incidents in which barges pushed by different towboats struck the old Vicksburg Highway 80 Bridge, roughly what was the total estimated cost of the harm done?",
+   "expected_answer": "About $2.84 million in total: an estimated $1.9 million for the Rickey Hughes contact on May 1, 2025, plus an estimated $941,000 for the Myra Eckstein contact on May 5, 2025.",
+   "evidence": [
+    {
+     "doc_id": "MIR2617.pdf",
+     "quote": "Date May 1, 2025 Time 1454 central daylight time (coordinated universal time –5 hrs) Persons on board 10 Injuries None Property damage $1.9 million est."
+    },
+    {
+     "doc_id": "MIR2620.pdf",
+     "quote": "Date May 5, 2025 Time 0957 central daylight time (coordinated universal time –5 hrs) Persons on board 10 Injuries None Property damage $941,000 est."
+    }
+   ],
+   "notes": "Tests linking both reports through the shared bridge and summing the property damage figures from the two casualty summary tables."
+  },
+  {
+   "slot_id": "b006-2",
+   "question": "Was it hotter outdoors when the Rickey Hughes tow hit the Vicksburg Highway 80 Bridge or when the Myra Eckstein tow hit it, and what were the readings?",
+   "expected_answer": "It was warmer during the Rickey Hughes contact, with an air temperature of 81°F, compared with 70°F during the Myra Eckstein contact.",
+   "evidence": [
+    {
+     "doc_id": "MIR2617.pdf",
+     "quote": "Weather Visibility 10 mi, fair skies, winds 8 mph west-southwest, air temperature 81°F"
+    },
+    {
+     "doc_id": "MIR2620.pdf",
+     "quote": "Weather Visibility 10 mi, fair skies, winds south-southeast 5 mph, air temperature 70°F"
+    }
+   ],
+   "notes": "Tests comparing the air temperature recorded in the weather rows of the two casualty summary tables."
+  }
+ ]
+}

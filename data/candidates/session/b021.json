@@ -1,0 +1,18 @@
+{"items": [
+ {"slot_id": "b021-1",
+  "question": "Considering how much water the 6 Saturdays needed to float and the soundings shown on the chart for the stretch it crossed just before reaching St. Augustine Inlet, why was the yacht bound to hit bottom there?",
+  "expected_answer": "The boat drew about 4 feet, but about 1515 it entered an area charted at only 0 to 5.9 feet deep, so much of that area was shallower than its draft; it grounded on the shoals just after 1517 while still making 15 knots.",
+  "evidence": [
+   {"doc_id": "MIR2530.pdf", "quote": "The boat had a draft of about 4 feet."},
+   {"doc_id": "MIR2530.pdf", "quote": "About 1515, the 6 Saturdays transited into an area with charted water depths that ranged from 0 to 5.9 feet."},
+   {"doc_id": "MIR2530.pdf", "quote": "Just after 1517, at a speed of 15 knots, the 6 Saturdays grounded and came to an abrupt stop about 0.2 miles east of the beach o n the shoals at the north side of the inlet."}
+  ],
+  "notes": "Tests the inference that charted depths as low as 0 ft were below the 4-ft draft; the analysis section states a similar conclusion, but the evidence here is from the narrative."},
+ {"slot_id": "b021-2",
+  "question": "What were the wind direction and strength when the 6 Saturdays ran aground at St. Augustine Inlet?",
+  "expected_answer": "The wind was from the east at 18 knots, as measured at Northeast Florida Regional Airport, 4 nm north-northwest of where the boat grounded.",
+  "evidence": [
+   {"doc_id": "MIR2530.pdf", "quote": "winds east 18 kts (at Northeast Florida Regional Airport, 4 nm north-northwest of grounding location)"}
+  ],
+  "notes": "Tests retrieval of the weather entry from the casualty summary table."}
+]}

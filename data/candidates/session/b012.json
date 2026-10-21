@@ -1,0 +1,21 @@
+{"items": [
+{"slot_id": "b012-1",
+ "question": "Both the Amber Brittany tow striking the McAlpine vane dike and the Schweiger hitting the Coast Guard docks at Cape Disappointment followed a lapse by the person steering. Roughly how long before each impact did the vessel start wandering off its intended path, and what was the operator doing at that point?",
+ "expected_answer": "The Amber Brittany tow began leaving its route about 1547, when the pilot started a series of text messages, roughly 3 minutes before the 1550 contact. The Schweiger began moving to port across the channel at 1235:12 and struck the docks at 1236:25, about 1 minute 13 seconds later, with the captain likely having fallen asleep in that window.",
+ "evidence": [
+  {"doc_id": "MIR2514.pdf", "quote": "Cell phone records indicated that the pilot was using his personal cell phone just before the contact and that the first in a series of outgoing and incoming text messages began about 1547, which coincided with the Amber Brittany's departure from the sailing line."},
+  {"doc_id": "MIR2514.pdf", "quote": "Between 1547 and 1550, the time of the contact, the pilot sent three outgoing messages and received three incoming messages."},
+  {"doc_id": "MIR2547.pdf", "quote": "At 1235:12, the Schweiger began moving to port and crossed the channel."},
+  {"doc_id": "MIR2547.pdf", "quote": "Therefore, the captain likely fell asleep about 1 to 3 minutes before the contact, sometime between 12:35:12 and 12:36:25 (see figure 4)."}
+ ],
+ "notes": "Tests time-difference arithmetic across two contact reports linked by operator lapses; the 1550 contact time for the Amber Brittany comes from the narrative (cell phone usage section) because the analysis does not restate it."},
+{"slot_id": "b012-2",
+ "question": "What underlying reasons did the NTSB give for the person at the controls failing to keep the Amber Brittany tow and the Schweiger out of trouble, and how did those reasons differ?",
+ "expected_answer": "For the Amber Brittany, the pilot failed to counter the outdraft current leaving the lock channel, likely because he was inexperienced on that stretch with that vessel and was distracted by his phone. For the Schweiger, the captain fell asleep at the helm, likely from increased fatigue caused by an acute COVID-19 infection, so the difference is distraction and inexperience versus illness-related fatigue.",
+ "evidence": [
+  {"doc_id": "MIR2514.pdf", "quote": "the pilot not effectively compensating for the outdraft current while navigating out of the lock channel entrance, likely due to the pilot’s inexperience in transiting the Portland Channel on the Amber Brittany and his distraction due to cell phone use."},
+  {"doc_id": "MIR2547.pdf", "quote": "the captain falling asleep while navigating the vessel, likely due to increased fatigue caused by an acute COVID-19 coronavirus infection."},
+  {"doc_id": "MIR2547.pdf", "quote": "This poor sleep quality would have resulted in increased levels of fatigue on the day of the contact and increased the likelihood of the captain falling asleep while navigating the vessel."}
+ ],
+ "notes": "Tests contrasting the human-factor causes (inexperience and distraction versus illness-related fatigue) in two towing-vessel contacts, from the probable cause and analysis."}
+]}

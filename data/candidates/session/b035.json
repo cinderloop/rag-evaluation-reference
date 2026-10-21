@@ -1,0 +1,13 @@
+{"items": [
+ {"slot_id": "b035-1",
+  "question": "How many riggers aboard the C-Enforcer were hurt when the Island Venture's crane wire parted and the wire reel fell onto the deck?",
+  "expected_answer": "The premise is wrong: nobody was hurt; the rigging crew on the C-Enforcer and the crane operator on the Island Venture were uninjured, and no injuries were reported.",
+  "evidence": [{"doc_id": "MIR2611.pdf", "quote": "The rigging crew on the C-Enforcer and the crane operator on Island Venture were uninjured."},
+               {"doc_id": "MIR2611.pdf", "quote": "There were no injuries, and no pollution was reported."}],
+  "notes": "False premise that riggers were injured by the falling wire reel; the report states there were no injuries."},
+ {"slot_id": "b035-2",
+  "question": "What was the estimated property damage to the C-Enforcer and to the Island Venture in the crane wire failure at Port Fourchon?",
+  "expected_answer": "Property damage was estimated at $3.8 million in total: $766,000 for the C-Enforcer and $3 million for the Island Venture.",
+  "evidence": [{"doc_id": "MIR2611.pdf", "quote": "Property damage  $3.8 million est; $766,000 (C-Enforcer), $3 million (Island Venture)"}],
+  "notes": "Tests extraction of the per-vessel damage split from the casualty summary table (the narrative only gives the $3.8 million total)."}
+]}

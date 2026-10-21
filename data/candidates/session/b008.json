@@ -1,0 +1,44 @@
+{
+ "items": [
+  {
+   "slot_id": "b008-1",
+   "question": "What shortcoming in the federal rules for towboats do the NTSB's assessments of both the Johnny M engine-room blaze and the William D bunkroom blaze point to regarding built-in barriers that slow a fire's spread?",
+   "expected_answer": "Both analyses note that towing vessels are inspected under 46 CFR Subchapter M, which does not currently require owners to incorporate structural fire protection; on the Johnny M the combustible air intake ducting was not structurally protected (nor required to be), and on the William D the lack of structural fire protection is cited as a factor in previous fires with heavy use of combustible interior materials.",
+   "evidence": [
+    {
+     "doc_id": "MIR2515.pdf",
+     "quote": "However, the flexible ducting was made of combustible material; it was not structurally protected from fire (nor was it required to be)."
+    },
+    {
+     "doc_id": "MIR2515.pdf",
+     "quote": "Towing vessels are inspected under the regulations in 46 Code of Federal Regulations Subchapter M; however, these regulations currently do not require vessel owners to incorporate structural fire protection on their vessels."
+    },
+    {
+     "doc_id": "MIR2621.pdf",
+     "quote": "The National Transportation Safety Board has previously investigated fires aboard vessels wherein the substantial use of combustible materials in interior spaces and finishes, as well as the lack of structural fire protection, contributed to the extent of the damage each vessel sustained."
+    },
+    {
+     "doc_id": "MIR2621.pdf",
+     "quote": "Towing vessels are inspected under the regulations in 46 Code of Federal Regulations Subchapter M; however, these regulations currently do not require vessel owners to incorporate structural fire protection on their vessels."
+    }
+   ],
+   "notes": "Tests linking the two towboat fire analyses through their shared observation that Subchapter M does not require structural fire protection; the Johnny M Subchapter M sentence sits in a footnote of the analysis section."
+  },
+  {
+   "slot_id": "b008-2",
+   "question": "Which towboat blaze led to the larger estimated financial loss, the one on the Johnny M near Grand Rivers or the one on the William D in the Victoria Barge Canal, and what were the two figures?",
+   "expected_answer": "The Johnny M fire was costlier, with property damage of $3 million, compared with $500,000 for the William D fire.",
+   "evidence": [
+    {
+     "doc_id": "MIR2515.pdf",
+     "quote": "Persons on board 6 Injuries None Property damage $3 million"
+    },
+    {
+     "doc_id": "MIR2621.pdf",
+     "quote": "Persons on board 6 (William D) Injuries None Property damage $500,000"
+    }
+   ],
+   "notes": "Tests comparing the property damage entries in the casualty summary tables of the two towboat fire reports; the William D figure is a constructive total loss value."
+  }
+ ]
+}

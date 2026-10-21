@@ -1,0 +1,20 @@
+{"items": [
+{"slot_id": "b036-1",
+ "question": "Why could the two people aboard the Cape Douglas not lighten the boat by getting rid of its load of fish waste once water was found below, and roughly how long after that discovery did they leave the boat?",
+ "expected_answer": "Because the seawater pump never started, there was no water to loosen the thick, peanut-butter-like byproduct, so it could not be dumped through the open side doors; they abandoned the vessel about 20 minutes after the flooding was observed (about 1255 to about 1315).",
+ "evidence": [
+  {"doc_id": "MIR2522.pdf", "quote": "On November 6, 2024, about 1255 local time, the industrial vessel Cape Douglas was transiting Chiniak Bay, about 4 miles southeast of Kodiak, Alaska, when the captain observed flooding in the engine room"},
+  {"doc_id": "MIR2522.pdf", "quote": "He and the deckhand opened the starboard-side sliding doors to dump the fish byproduct overboard to reduce the weight on the deck. However, the product was “like peanut butter” because the seawater pump had not started and there was no water available to loosen the product, so they could not dump it."},
+  {"doc_id": "MIR2522.pdf", "quote": "About 1315, the captain and deckhand decided to abandon the sinking vessel."}
+ ],
+ "notes": "Tests the reason the cargo could not be jettisoned plus a simple time difference between flooding discovery and abandonment."},
+{"slot_id": "b036-2",
+ "question": "After the captain of the Cape Douglas judged the engine room water to be coming in awfully quick, what did he and the deckhand do to abandon the sinking vessel, and how many minutes after the 1315 decision to abandon were they picked up by the Red Sky?",
+ "expected_answer": "About 1315 they decided to abandon, donned survival suits, got into the vessel's towed skiff and waved down a nearby Good Samaritan vessel; the fishing vessel Red Sky picked them up about 1330, roughly 15 minutes later.",
+ "evidence": [
+  {"doc_id": "MIR2522.pdf", "quote": "The captain told investigators that, based on his experience with the Cape Douglas, “the water [in the engine room] seemed to be coming in awfully quick.” About 1315, the captain and deckhand decided to abandon the sinking vessel. They donned survival suits and got into the vessel’s towed skiff."},
+  {"doc_id": "MIR2522.pdf", "quote": "Once in the skiff, the captain and deckhand waved down a nearby Good Samaritan vessel."},
+  {"doc_id": "MIR2522.pdf", "quote": "About 1330, the crew on the fishing vessel Red Sky picked up the captain and deckhand."}
+ ],
+ "notes": "Cross-chunk passage on the abandonment sequence plus a 15-minute duration calculation."}
+]}

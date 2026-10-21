@@ -1,0 +1,18 @@
+{"items": [
+{"slot_id": "b002-1",
+ "question": "In the Joe B. Wyatt casualty at Fort Madison and the John M Donnelly casualty near Baton Rouge, each pilot steered his tow away from the charted recommended route shortly beforehand. How far did the Joe B. Wyatt stray from that route, and by roughly how many feet did the John M Donnelly sit deeper in the water than the probable depth where it came to rest on the river bottom?",
+ "expected_answer": "The Joe B. Wyatt pilot took the tow more than 200 feet off the sailing line, and the John M Donnelly's 9.5-foot draft exceeded the likely 7.8-foot depth at the obstruction by about 1.7 feet.",
+ "evidence": [
+  {"doc_id": "MIR2528.pdf", "quote": "he maneuvered the Joe B. Wyatt over 200 feet off the sailing line toward the right descending bank."},
+  {"doc_id": "MIR2537.pdf", "quote": "the depth at the site at the time of the grounding was likely about 7.8 feet. The draft of the John M. Donnelly was 9.5 feet."}
+ ],
+ "notes": "Tests combining analysis facts from two pilot-error casualties, with a subtraction (9.5 - 7.8 ft) for the John M Donnelly part."},
+{"slot_id": "b002-2",
+ "question": "Which tow was pushing more barges: the Joe B. Wyatt tow when it struck the Fort Madison Bridge protection cell, or the John M Donnelly tow when it grounded near Baton Rouge?",
+ "expected_answer": "The John M Donnelly tow, with 25 empty dry cargo barges, versus 15 barges (13 loaded hopper barges and 2 empty tank barges) in the Joe B. Wyatt tow.",
+ "evidence": [
+  {"doc_id": "MIR2528.pdf", "quote": "pushing a tow of 15 barges downbound toward St. Louis, Missouri. The tow comprised three strings of five barges—two empty tank barges and 13 loaded hopper barges"},
+  {"doc_id": "MIR2537.pdf", "quote": "the 186-foot-long, steel-hulled towing vessel John M Donnelly was pushing 25 empty dry cargo barges in 5 strings of 5 barges upbound on the Lower Mississippi River."}
+ ],
+ "notes": "Tests comparing tow size stated in each narrative."}
+]}

@@ -31,6 +31,7 @@ from rag_eval.dataset.generate import (
 from rag_eval.dataset.plan import Batch, Plan, ReportInfo, build_plan, load_links
 from rag_eval.dataset.review import export_review_page, import_decisions, store_labels
 from rag_eval.dataset.schema import load_cases
+from rag_eval.dataset.session import check_batch, collect, write_briefs
 from rag_eval.dataset.split import stratified_split, write_split
 from rag_eval.env import Env
 from rag_eval.provision import provision
@@ -47,6 +48,9 @@ CANDIDATES_DIR = Path("data/candidates")
 PLAN = CANDIDATES_DIR / "plan.json"
 CANDIDATES = CANDIDATES_DIR / "candidates.jsonl"
 CACHE = Path("data/cache/generation")
+BRIEFS = Path("data/cache/briefs")
+SESSION_OUTPUTS = CANDIDATES_DIR / "session"
+SESSION_MODEL = "claude-opus-5-5 (Claude Code session)"
 REVIEW_PAGE = Path("data/review/review.html")
 LABELS = Path("data/labels/review")
 APPROVED = Path("data/approved.jsonl")
@@ -159,6 +163,71 @@ def generate_command(
         f"{len(outcome.candidates)} candidates, {len(outcome.failures)} slots failed; "
         f"{outcome.calls} calls ({outcome.cached_calls} cached), ${outcome.cost_usd:.2f} spent."
     )
+
+
+def _load_plan() -> Plan:
+    return Plan.model_validate_json(PLAN.read_text(encoding="utf-8"))
+
+
+@app.command("brief")
+def brief_command() -> None:
+    """Write one brief per batch for generating candidates in a Claude Code session."""
+    paths = write_briefs(
+        _load_plan(),
+        spec=load_dimensions(DIMENSIONS),
+        reports=load_report_texts(CORPUS_TEXT),
+        titles=_titles(),
+        briefs_dir=BRIEFS,
+        outputs_dir=SESSION_OUTPUTS,
+    )
+    typer.echo(f"{len(paths)} briefs in {BRIEFS}; outputs go to {SESSION_OUTPUTS}/<batch_id>.json")
+
+
+@app.command("check-batch")
+def check_batch_command(batch_id: str) -> None:
+    """Validate one session batch file (verbatim quotes, slot rules). Prints OK or problems."""
+    batches = {b.batch_id: b for b in _load_plan().batches}
+    if batch_id not in batches:
+        raise typer.BadParameter(f"unknown batch {batch_id!r}")
+    problems = check_batch(
+        batches[batch_id], SESSION_OUTPUTS / f"{batch_id}.json", load_report_texts(CORPUS_TEXT)
+    )
+    for problem in problems:
+        typer.echo(problem)
+    if problems:
+        raise typer.Exit(code=1)
+    typer.echo("OK")
+
+
+@app.command("collect")
+def collect_command() -> None:
+    """Build candidates.jsonl from the session batch files (invalid slots are recorded)."""
+    spec = load_dimensions(DIMENSIONS)
+    reports = load_report_texts(CORPUS_TEXT)
+    outcome = collect(
+        _load_plan(),
+        spec=spec,
+        reports=reports,
+        titles=_titles(),
+        outputs_dir=SESSION_OUTPUTS,
+        model=SESSION_MODEL,
+    )
+    write_candidates(CANDIDATES, outcome.candidates)
+    manifest = {
+        "created_at": datetime.now(UTC).isoformat(timespec="seconds"),
+        "generator": SESSION_MODEL,
+        "method": "session briefs (rag-eval dataset brief / check-batch / collect)",
+        "system_prompt_sha256": hashlib.sha256(system_prompt(spec).encode()).hexdigest(),
+        "dimensions_sha256": _sha256(DIMENSIONS),
+        "plan_sha256": _sha256(PLAN),
+        "corpus_text_sha256": {d: r.sha256 for d, r in sorted(reports.items())},
+        "n_candidates": len(outcome.candidates),
+        "failed_slots": outcome.failures,
+    }
+    (CANDIDATES_DIR / "generation.json").write_text(
+        json.dumps(manifest, indent=1) + "\n", encoding="utf-8"
+    )
+    typer.echo(f"{len(outcome.candidates)} candidates, {len(outcome.failures)} slots failed.")
 
 
 @app.command("check")

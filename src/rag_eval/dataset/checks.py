@@ -6,6 +6,8 @@
   flagged as too easy (the reviewer decides).
 - Chunk boundary: whether any evidence quote is not contained in a single baseline
   chunk (measured on AnythingLLM's real chunks).
+- Evidence location: the report section the evidence is in. The planned location is
+  kept when any quote is in it, otherwise the section of the first quote is used.
 - Coverage: counts per dimension value against the targets, plus the constraints in
   data/dimensions.yaml.
 """
@@ -135,6 +137,14 @@ def chunk_boundary(candidate: Candidate, reports: dict[str, ReportText]) -> str 
     return "cross_chunk" if crosses else "within_chunk"
 
 
+def evidence_location(candidate: Candidate, reports: dict[str, ReportText]) -> str | None:
+    planned = candidate.dimensions.get("evidence_location")
+    found = [reports[e.doc_id].section_of(e.quote) for e in candidate.evidence]
+    if not found or planned in found:
+        return planned
+    return next((f for f in found if f is not None), planned)
+
+
 def run_checks(candidates: list[Candidate], reports: dict[str, ReportText]) -> list[Candidate]:
     checked: list[Candidate] = []
     kept_words: list[tuple[str, set[str]]] = []
@@ -155,6 +165,7 @@ def run_checks(candidates: list[Candidate], reports: dict[str, ReportText]) -> l
                         lexical_overlap=None if overlap is None else round(overlap, 3),
                         too_easy=overlap is not None and overlap >= TOO_EASY_THRESHOLD,
                         chunk_boundary=chunk_boundary(candidate, reports),
+                        evidence_location=evidence_location(candidate, reports),
                         duplicate_of=duplicate_of,
                     )
                 }
@@ -174,6 +185,8 @@ def coverage_report(
     for name, dimension in spec.dimensions.items():
         if name == "chunk_boundary":
             values = [c.checks.chunk_boundary for c in items]
+        elif name == "evidence_location":
+            values = [c.checks.evidence_location for c in items]
         else:
             values = [c.dimensions.get(name) for c in items]
         applicable = [v for v in values if v is not None]

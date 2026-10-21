@@ -1,0 +1,14 @@
+{"items": [
+ {"slot_id": "b032-1",
+  "question": "Roughly how long after the sun came up over the St. Johns River did flames break out in the Stuyvesant's engine spaces?",
+  "expected_answer": "About 6 hours and 52 minutes: sunrise was at 0743 and the fire occurred at 1435 eastern daylight time.",
+  "evidence": [{"doc_id": "MIR2539.pdf", "quote": "Time 1435 eastern daylight time"},
+               {"doc_id": "MIR2539.pdf", "quote": "morning twilight 0718, sunrise 0743"}],
+  "notes": "Timeline arithmetic from the casualty summary table (1435 minus sunrise 0743); the procedural label is a loose fit since the table holds no crew actions."},
+ {"slot_id": "b032-2",
+  "question": "Following the Stuyvesant engine room fire, how did the vessel's operator change the way its engineers bring an engine back into service after working on it?",
+  "expected_answer": "The operating company now requires that, after maintenance on an engine, crewmembers start the engine locally rather than remotely, and that two crewmembers inspect the equipment before starting it.",
+  "evidence": [{"doc_id": "MIR2539.pdf", "quote": "The operating company has since updated its maintenance procedures to mandate that, following maintenance on an engine, crewmembers locally start the engine."},
+               {"doc_id": "MIR2539.pdf", "quote": "The operating company has since updated its maintenance procedures to mandate that, following maintenance on an engine, two crewmembers inspect the equipment before starting the engine."}],
+  "notes": "Combines two procedural changes from the analysis, the first spanning the chunk boundary at 'mandate that, ‖ following maintenance'."}
+]}

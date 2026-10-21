@@ -1,0 +1,19 @@
+{"items": [
+{"slot_id": "b039-1",
+ "question": "When the containership Blue Nagoya collided with Pier 17 of the Francis Scott Key Bridge in 1980, what stopped the vessel?",
+ "expected_answer": "The Blue Nagoya was stopped by the crushable concrete and timber fendering system at Pier 17, although its bow overhang contacted the pier's A-frame.",
+ "evidence": [
+  {"doc_id": "MIR2510.pdf", "quote": "The vessel was stopped by the crushable concrete and timber fendering system at Pier 17, and the bow overhang contacted the pier’s A-frame."}
+ ],
+ "notes": "Single-fact recall about the earlier 1980 Blue Nagoya strike described in the Dali/Key Bridge safety report."},
+{"slot_id": "b039-2",
+ "question": "In the NTSB's AF summary table for the Francis Scott Key Bridge, which piers were the largest contributors to the bridge's annual frequency of collapse (AF), and roughly what percentage of the total AF did those two piers account for together?",
+ "expected_answer": "Piers 17 and 18 (total AFs of 0.001430 and 0.001442) were the largest contributors; together they account for 0.002872 of the bridge's total AF of 0.002921, about 98%.",
+ "evidence": [
+  {"doc_id": "MIR2510.pdf", "quote": "A comparison of the AFs of the piers in table 1 shows that a vessel collision with Pier 17 or Pier 18 was the largest contributor to the Key Bridge’s overall AF."},
+  {"doc_id": "MIR2510.pdf", "quote": "17 0.000687 0.000743 0.001430"},
+  {"doc_id": "MIR2510.pdf", "quote": "18 0.000693 0.000749 0.001442"},
+  {"doc_id": "MIR2510.pdf", "quote": "Total 0.001405 0.001516 0.002921"}
+ ],
+ "notes": "Uses Table 1 (the only table in this safety-recommendation report, which has no casualty summary) and requires summing pier AFs and computing a share of the total."}
+]}
