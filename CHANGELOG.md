@@ -16,3 +16,8 @@ All notable changes to this project are documented here. The format follows
 - Baseline configuration (`configs/baseline.yaml`) and ADRs 0001–0003.
 - Corpus: 77 NTSB Marine Investigation Reports (2025–2026), pinned by URL and SHA-256 in
   `corpus/sources.yaml` and fetched with `rag-eval fetch-corpus`.
+- Dataset tooling (`rag-eval dataset ...`): approved question dimensions
+  (`data/dimensions.yaml`), curated report links, a deterministic batched generation plan,
+  generation with Claude Sonnet 5.5 (cost estimate, cap and cache), verbatim-evidence
+  validation, automated checks and coverage report, a local review page with import
+  of decisions, and a stratified dev/test split. ADR 0004.

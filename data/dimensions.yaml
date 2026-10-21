@@ -1,0 +1,119 @@
+# Question dimensions for the evaluation dataset. STATUS: approved by the repository owner, 2026-10-21.
+# Dataset and corpus sizes, batching and spend controls: docs/decisions/0004-dataset-size-and-generation.md
+#
+# Candidates are generated from dimension tuples (one value per dimension), so the
+# dataset covers the space deliberately rather than by accident. Targets are shares of
+# the generated candidates; the approved set is checked against them with
+# `rag-eval dataset coverage`.
+#
+# Corpus: NTSB Marine Investigation Reports 2025-2026 (corpus/sources.yaml). Each
+# report has a casualty-summary table, vessel particulars, a narrative of the
+# casualty, an analysis, and conclusions (probable cause, lessons learned).
+
+dimensions:
+  question_type:
+    description: What kind of answer the question asks for.
+    values:
+      factual:
+        description: A single fact stated in one report (date, location, damage estimate, vessel length).
+        example: What was the estimated damage to the 6 Saturdays?
+        target: 0.26
+      causal:
+        description: Why something happened; the probable cause or contributing factors the NTSB identified.
+        example: What did the NTSB determine caused the 6 Saturdays to ground?
+        target: 0.14
+      procedural:
+        description: What people did, how, or in what order (crew actions, emergency response, timeline).
+        example: What did the captain do immediately after the vessel grounded?
+        target: 0.12
+      comparison:
+        description: Compares one attribute across two named casualties, each in a different report.
+        example: Which caused more damage, the Lucinda Smith fire or the Jordyn Rose fire?
+        target: 0.15
+      multi_document:
+        description: >-
+          Needs facts from two or more reports that are linked by something other than a side-by-side
+          comparison, e.g. the same bridge, vessel or operator appearing in more than one report.
+        example: Which two towing-vessel contacts with the Pelican Island Bridge did the NTSB investigate, and when did each occur?
+        target: 0.15
+      unanswerable:
+        description: Plausible, but the corpus does not answer it. See unanswerable_kind.
+        target: 0.18
+
+  unanswerable_kind:
+    description: Applies only when question_type is unanswerable.
+    values:
+      missing_detail:
+        description: Asks about a covered casualty for a detail the report does not state.
+        example: How old was the captain of the 6 Saturdays?
+        target: 0.34
+      out_of_corpus:
+        description: Asks about a plausible marine casualty that no report in the corpus covers.
+        example: What was the probable cause of the 2025 grounding of the ferry Island Spirit?
+        target: 0.33
+      false_premise:
+        description: Rests on a premise the corpus contradicts (wrong vessel type, wrong outcome).
+        example: Why did the 6 Saturdays catch fire after grounding?
+        target: 0.33
+
+  complexity:
+    description: How much evidence an answer needs. Not used for unanswerable questions.
+    values:
+      single_span:
+        description: One contiguous evidence span suffices.
+        target: 0.45
+      multi_span:
+        description: Two or more spans must be combined (within one report or across reports).
+        target: 0.35
+      inference:
+        description: Needs a small step beyond the text, e.g. arithmetic, a duration or a unit conversion.
+        target: 0.20
+
+  phrasing:
+    description: >-
+      How closely the question's wording follows the evidence. Questions are deliberately paraphrased
+      away from the source, because retrieval that only works on copied wording is not a real test.
+      Measured as lexical overlap with the evidence (automated check).
+    values:
+      close:
+        description: Reuses the report's key terms.
+        target: 0.30
+      paraphrased:
+        description: Avoids the report's distinctive wording (synonyms, lay terms, different structure).
+        target: 0.70
+
+  evidence_location:
+    description: Where in a report the evidence sits. Not used for unanswerable questions.
+    values:
+      summary_table:
+        description: Casualty summary or vessel particulars tables (structured, PDF-extracted).
+        target: 0.30
+      narrative:
+        description: The account of the casualty and the response.
+        target: 0.40
+      analysis:
+        description: Analysis, probable cause and lessons learned.
+        target: 0.30
+
+  chunk_boundary:
+    description: >-
+      Whether the evidence crosses a chunk boundary under the baseline chunking (1000 characters,
+      20 overlap). Measured automatically from AnythingLLM's actual chunks, not chosen at generation
+      time, apart from deliberately targeting a few boundary spans. Not used for unanswerable questions.
+    values:
+      within_chunk:
+        target: 0.85
+      cross_chunk:
+        target: 0.15
+
+constraints:
+  - comparison and multi_document questions use multi_span or inference complexity.
+  - unanswerable questions have unanswerable_kind and no complexity, evidence_location or chunk_boundary.
+  - Each report is used by at most 3 approved questions, and at least 40 of the 77 reports are used.
+  - The four long reports (MIR-25-40, MIR-25-16, MIR-26-24, MIR-25-36) together supply at most 8 approved questions.
+  - Questions must be answerable by someone reading only the corpus. No questions about report metadata (report numbers, page numbers, publication dates).
+
+sizes: # rationale: docs/decisions/0004-dataset-size-and-generation.md
+  candidates: 110 # expecting roughly 25-35% to be rejected or merged in review
+  approved_target: [70, 85]
+  split: { dev: 0.4, test: 0.6 } # stratified by question_type

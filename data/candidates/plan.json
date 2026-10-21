@@ -1,0 +1,1497 @@
+{
+ "seed": 20261021,
+ "n_slots": 110,
+ "batches": [
+  {
+   "batch_id": "b001",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2501.pdf",
+    "MIR2508.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b001-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "close",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b001-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "close",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b002",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2528.pdf",
+    "MIR2537.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b002-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b002-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "close",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b003",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2525.pdf",
+    "MIR2614.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b003-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b003-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "close",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b004",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2513.pdf",
+    "MIR2602.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b004-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b004-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "close",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b005",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2538.pdf",
+    "MIR2603.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b005-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b005-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b006",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2617.pdf",
+    "MIR2620.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b006-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b006-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b007",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2545.pdf",
+    "MIR2606.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b007-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b007-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b008",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2515.pdf",
+    "MIR2621.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b008-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b008-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b009",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2527.pdf",
+    "MIR2623.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b009-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "close",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b009-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b010",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2524.pdf",
+    "MIR2601.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b010-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b010-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b011",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2625.pdf",
+    "MIR2629.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b011-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b011-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b012",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2514.pdf",
+    "MIR2547.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b012-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b012-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b013",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2511.pdf",
+    "MIR2615.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b013-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b013-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b014",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2521.pdf",
+    "MIR2546.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b014-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b014-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "close",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b015",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2541.pdf",
+    "MIR2612.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b015-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b015-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "close",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b016",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2618.pdf",
+    "MIR2627.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b016-1",
+     "question_type": "multi_document",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b016-2",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "close",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b017",
+   "kind": "pair",
+   "doc_ids": [
+    "MIR2532.pdf",
+    "MIR2607.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b017-1",
+     "question_type": "comparison",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "close",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b018",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2502.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b018-1",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "false_premise",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b018-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b019",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2542.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b019-1",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b019-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b020",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2520.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b020-1",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b020-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b021",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2530.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b021-1",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b021-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b022",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2616.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b022-1",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "missing_detail",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b022-2",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "missing_detail",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b023",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2509.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b023-1",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": true
+    },
+    {
+     "slot_id": "b023-2",
+     "question_type": "procedural",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "close",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b024",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2604.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b024-1",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": true
+    },
+    {
+     "slot_id": "b024-2",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b025",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2628.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b025-1",
+     "question_type": "procedural",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "close",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b025-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b026",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2533.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b026-1",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": true
+    },
+    {
+     "slot_id": "b026-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b027",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2518.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b027-1",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "false_premise",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b027-2",
+     "question_type": "procedural",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b028",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2507.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b028-1",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "close",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b028-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b029",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2519.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b029-1",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b029-2",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "false_premise",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b030",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2622.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b030-1",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b030-2",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "false_premise",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b031",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2610.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b031-1",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b031-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "close",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b032",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2539.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b032-1",
+     "question_type": "procedural",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b032-2",
+     "question_type": "procedural",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": true
+    }
+   ]
+  },
+  {
+   "batch_id": "b033",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2531.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b033-1",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b033-2",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b034",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2626.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b034-1",
+     "question_type": "procedural",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": true
+    },
+    {
+     "slot_id": "b034-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": true
+    }
+   ]
+  },
+  {
+   "batch_id": "b035",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2611.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b035-1",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "false_premise",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b035-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "close",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b036",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2522.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b036-1",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b036-2",
+     "question_type": "procedural",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "close",
+     "evidence_location": "narrative",
+     "target_cross_chunk": true
+    }
+   ]
+  },
+  {
+   "batch_id": "b037",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2605.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b037-1",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "false_premise",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b037-2",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "close",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": true
+    }
+   ]
+  },
+  {
+   "batch_id": "b038",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2523.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b038-1",
+     "question_type": "procedural",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b038-2",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "close",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b039",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2510.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b039-1",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "close",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b039-2",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "inference",
+     "phrasing": "close",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b040",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2512.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b040-1",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "close",
+     "evidence_location": "narrative",
+     "target_cross_chunk": true
+    },
+    {
+     "slot_id": "b040-2",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b041",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2504.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b041-1",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "close",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b041-2",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "missing_detail",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b042",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2503.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b042-1",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "false_premise",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b042-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b043",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2544.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b043-1",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b043-2",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "missing_detail",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b044",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2630.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b044-1",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "missing_detail",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b044-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "close",
+     "evidence_location": "analysis",
+     "target_cross_chunk": true
+    }
+   ]
+  },
+  {
+   "batch_id": "b045",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2535.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b045-1",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": true
+    },
+    {
+     "slot_id": "b045-2",
+     "question_type": "procedural",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "close",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b046",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2613.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b046-1",
+     "question_type": "procedural",
+     "unanswerable_kind": null,
+     "complexity": "multi_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b046-2",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b047",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2529.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b047-1",
+     "question_type": "procedural",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "close",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b047-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b048",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2609.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b048-1",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": true
+    },
+    {
+     "slot_id": "b048-2",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "missing_detail",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b049",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2543.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b049-1",
+     "question_type": "procedural",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b049-2",
+     "question_type": "procedural",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b050",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2534.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b050-1",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b050-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "close",
+     "evidence_location": "analysis",
+     "target_cross_chunk": true
+    }
+   ]
+  },
+  {
+   "batch_id": "b051",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2619.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b051-1",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b051-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "analysis",
+     "target_cross_chunk": true
+    }
+   ]
+  },
+  {
+   "batch_id": "b052",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2505.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b052-1",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "missing_detail",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b052-2",
+     "question_type": "factual",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "close",
+     "evidence_location": "narrative",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b053",
+   "kind": "single",
+   "doc_ids": [
+    "MIR2608.pdf"
+   ],
+   "slots": [
+    {
+     "slot_id": "b053-1",
+     "question_type": "causal",
+     "unanswerable_kind": null,
+     "complexity": "single_span",
+     "phrasing": "paraphrased",
+     "evidence_location": "summary_table",
+     "target_cross_chunk": false
+    }
+   ]
+  },
+  {
+   "batch_id": "b054",
+   "kind": "out_of_corpus",
+   "doc_ids": [],
+   "slots": [
+    {
+     "slot_id": "b054-1",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "out_of_corpus",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b054-2",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "out_of_corpus",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b054-3",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "out_of_corpus",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b054-4",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "out_of_corpus",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b054-5",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "out_of_corpus",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    },
+    {
+     "slot_id": "b054-6",
+     "question_type": "unanswerable",
+     "unanswerable_kind": "out_of_corpus",
+     "complexity": null,
+     "phrasing": null,
+     "evidence_location": null,
+     "target_cross_chunk": false
+    }
+   ]
+  }
+ ]
+}

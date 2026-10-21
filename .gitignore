@@ -18,3 +18,7 @@ docs/build_plan.md
 # Corpus documents are fetched (rag-eval fetch-corpus), not committed
 corpus/documents/*
 !corpus/documents/.gitkeep
+
+# Dataset build artefacts derived from the corpus or local caches (regenerable)
+data/corpus_text/
+data/cache/

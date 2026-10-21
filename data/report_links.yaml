@@ -1,0 +1,13 @@
+# Pairs of reports linked by a shared entity, used for multi-document questions.
+# Curated by hand from the report texts: an entity named in two reports (a bridge, a
+# vessel, an operator). `rag-eval dataset plan` checks that each entity really occurs in
+# both reports. Pairs beyond these come from reports about the same kind of casualty.
+links:
+  - { reports: [MIR2525.pdf, MIR2614.pdf], entity: Pelican Island Bridge }
+  - { reports: [MIR2617.pdf, MIR2620.pdf], entity: Vicksburg }
+  - { reports: [MIR2538.pdf, MIR2603.pdf], entity: Lower Lakes Towing }
+  - { reports: [MIR2545.pdf, MIR2606.pdf], entity: Algoma Central Corporation }
+  - { reports: [MIR2501.pdf, MIR2508.pdf], entity: Enterprise Marine }
+  - { reports: [MIR2515.pdf, MIR2621.pdf], entity: Vulcan Materials Company }
+  - { reports: [MIR2528.pdf, MIR2537.pdf], entity: Ingram Barge Company }
+  - { reports: [MIR2513.pdf, MIR2602.pdf], entity: diesel generator }

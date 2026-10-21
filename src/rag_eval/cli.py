@@ -11,6 +11,7 @@ import typer
 from rag_eval.client import AnythingLLMClient
 from rag_eval.client.ollama import installed_models
 from rag_eval.config import RunConfig, load_config
+from rag_eval.dataset.cli import app as dataset_app
 from rag_eval.dataset.schema import load_cases
 from rag_eval.env import Env
 from rag_eval.provision import ProvisionResult, provision
@@ -19,6 +20,7 @@ from rag_eval.provision.sources import fetch_sources, load_sources
 from rag_eval.runner import new_run_id, run
 
 app = typer.Typer(no_args_is_help=True, add_completion=False)
+app.add_typer(dataset_app, name="dataset")
 
 ConfigOption = Annotated[Path, typer.Option("--config", "-c", exists=True, dir_okay=False)]
 
