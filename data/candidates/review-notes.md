@@ -1,7 +1,9 @@
-# Notes for the reviewer
+# Known weak items in the dataset
 
-Things the generating agents and the automated checks flagged. Nothing here is a
-decision; approve, edit or reject each item in the review page as you see fit.
+What the generating agents and the automated checks flagged before review. The owner
+approved all 110 candidates (ADR 0004), so these items are in the dataset as written.
+Error analysis should check failures against this list before blaming the system, and
+this list is the first place to look if the dataset is revised.
 
 ## Weak fits caused by the plan
 

@@ -23,6 +23,5 @@ corpus/documents/*
 data/corpus_text/
 data/cache/
 
-# Review page is generated from candidates (rag-eval dataset review-export)
-data/review/review.html
+# Closed-book marking page (regenerate with rag-eval dataset closed-book-export)
 data/review/closed-book.html
