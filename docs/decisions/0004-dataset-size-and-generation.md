@@ -124,5 +124,5 @@ build the dataset, never during evaluation runs.
 
 ## Consequences
 
-- The held-out (test) set will hold about 40–50 items. Small mutation effects may go undetected; when they do, they are reported as blind spots with the minimum detectable effect, not as passes.
-- Every candidate is hand-reviewed by the owner. Generation only proposes; nothing generated is treated as a human label.
+- The held-out (test) set was planned at about 40–50 items; with all 110 approved it holds 66. Small mutation effects may go undetected; when they do, they are reported as blind spots with the minimum detectable effect, not as passes.
+- The plan was for the owner to hand-review every candidate. In the event the owner approved all of them at once (update of 2026-10-23 above), so the expected answers are machine-checked but not human-verified, and nothing generated is treated as a human label.

@@ -22,6 +22,3 @@ corpus/documents/*
 # Dataset build artefacts derived from the corpus or local caches (regenerable)
 data/corpus_text/
 data/cache/
-
-# Closed-book marking page (regenerate with rag-eval dataset closed-book-export)
-data/review/closed-book.html
