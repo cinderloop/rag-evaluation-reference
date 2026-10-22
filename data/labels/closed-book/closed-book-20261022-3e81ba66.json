@@ -1,0 +1,546 @@
+{
+ "marker": "Claude Opus 5.5, delegated by the owner on 2026-10-23 (not a human label)",
+ "traces_sha256": "76e0f420ddb241f1ba1f4754737e945b3038e9af2360d734bb84fc692c323540",
+ "marks": {
+  "q-b001-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "$1.1 billion; actually about $9.08 million."
+  },
+  "q-b001-2": {
+   "mark": "correct",
+   "guessable": true,
+   "prefilled": false,
+   "note": "Right tow; no speeds given (not asked)."
+  },
+  "q-b002-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Both figures wrong."
+  },
+  "q-b002-2": {
+   "mark": "incorrect",
+   "guessable": true,
+   "prefilled": false,
+   "note": "Wrong tow."
+  },
+  "q-b003-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Says crude oil for both; Duke's barges were empty."
+  },
+  "q-b003-2": {
+   "mark": "incorrect",
+   "guessable": true,
+   "prefilled": false,
+   "note": "Wrong tow."
+  },
+  "q-b004-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Generic extinguishing methods; neither account matches."
+  },
+  "q-b004-2": {
+   "mark": "abstained",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Claims the rods were not identified."
+  },
+  "q-b005-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "13 years; actually about one year."
+  },
+  "q-b005-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Denies the 2024 fire happened."
+  },
+  "q-b006-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "$150 million; actually about $2.84 million."
+  },
+  "q-b006-2": {
+   "mark": "abstained",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Says no record exists."
+  },
+  "q-b007-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Invented vessels and dates."
+  },
+  "q-b007-2": {
+   "mark": "incorrect",
+   "guessable": true,
+   "prefilled": false,
+   "note": "Wrong speeds and wrong vessel."
+  },
+  "q-b008-1": {
+   "mark": "partly_correct",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Lack of fire barriers matches, but mostly restates the question's hint; no Subchapter M."
+  },
+  "q-b008-2": {
+   "mark": "incorrect",
+   "guessable": true,
+   "prefilled": false,
+   "note": "Wrong vessel and figures."
+  },
+  "q-b009-1": {
+   "mark": "abstained",
+   "guessable": false,
+   "prefilled": true,
+   "note": ""
+  },
+  "q-b009-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Invented origins (engine room, galley)."
+  },
+  "q-b010-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Invented ignition scenarios."
+  },
+  "q-b010-2": {
+   "mark": "incorrect",
+   "guessable": true,
+   "prefilled": false,
+   "note": "Wrong vessel; invents TV series."
+  },
+  "q-b011-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Generic reason; 10 hours is wrong."
+  },
+  "q-b011-2": {
+   "mark": "partly_correct",
+   "guessable": true,
+   "prefilled": false,
+   "note": "Right vessel has the fixed system; GITN'R DUN details vague, no CO2 bottle count."
+  },
+  "q-b012-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Invented durations."
+  },
+  "q-b012-2": {
+   "mark": "abstained",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Says no such NTSB investigation exists."
+  },
+  "q-b013-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Invented dates."
+  },
+  "q-b013-2": {
+   "mark": "incorrect",
+   "guessable": true,
+   "prefilled": false,
+   "note": "Wrong vessel and seconds instead of minutes."
+  },
+  "q-b014-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Wrong amount and head counts."
+  },
+  "q-b014-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Says two more barges; it was 33."
+  },
+  "q-b015-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Says NTSB criticised both responses; it viewed both favourably."
+  },
+  "q-b015-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Both causes wrong."
+  },
+  "q-b016-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Radar; actually a lookout and a watch alarm."
+  },
+  "q-b016-2": {
+   "mark": "incorrect",
+   "guessable": true,
+   "prefilled": false,
+   "note": "Wrong on damage and on injuries."
+  },
+  "q-b017-1": {
+   "mark": "partly_correct",
+   "guessable": true,
+   "prefilled": false,
+   "note": "Right vessel for higher damage; environmental part wrong."
+  },
+  "q-b018-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "1.5 miles; actually about 500 ft."
+  },
+  "q-b019-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "16; actually 17."
+  },
+  "q-b019-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Wrong width and depth."
+  },
+  "q-b020-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Says the anchor snagged; the clutch lever broke."
+  },
+  "q-b020-2": {
+   "mark": "partly_correct",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Electrical systems overlap; generic, and includes gas leaks."
+  },
+  "q-b021-1": {
+   "mark": "partly_correct",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Draft exceeded charted depth matches, but restates the question; no figures."
+  },
+  "q-b021-2": {
+   "mark": "abstained",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Says not documented."
+  },
+  "q-b023-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Generic reason; actual reason was crew working below."
+  },
+  "q-b023-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Radio is a trivial guess; two hours is wrong (about 45 min)."
+  },
+  "q-b024-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Collision at Gibraltar; actually fire, Chatham Strait."
+  },
+  "q-b024-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Generic; misses the batteries and wiring uncertainty."
+  },
+  "q-b025-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Wrong repairer and wrong reason."
+  },
+  "q-b025-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "12 crew; actually 17 aboard (5 crew, 12 passengers)."
+  },
+  "q-b026-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Says the rudder was damaged; actually delayed override."
+  },
+  "q-b026-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Misreads BBC Africa as an office."
+  },
+  "q-b027-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Generic speculation."
+  },
+  "q-b028-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "1.5 miles; actually about 475 yards."
+  },
+  "q-b028-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Every 24 hours; actually every year."
+  },
+  "q-b029-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Wrong city and date."
+  },
+  "q-b030-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "In the hold; actually between dock and fender."
+  },
+  "q-b031-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Wrong products and quantities."
+  },
+  "q-b031-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Invented location and time."
+  },
+  "q-b032-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "15 minutes; actually about 6 h 52 min."
+  },
+  "q-b032-2": {
+   "mark": "partly_correct",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Inspection before restart overlaps; generic, misses local start and two people."
+  },
+  "q-b033-1": {
+   "mark": "partly_correct",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Security personnel and smoke match; misses popping noises."
+  },
+  "q-b033-2": {
+   "mark": "partly_correct",
+   "guessable": false,
+   "prefilled": false,
+   "note": "1 V/day matches (likely a lucky guess); reason is wrong."
+  },
+  "q-b034-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Generic; misses radius and centre errors."
+  },
+  "q-b034-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Coast Guard broadcast in 1987; actually agent's email."
+  },
+  "q-b035-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Both figures wrong."
+  },
+  "q-b036-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Both parts wrong."
+  },
+  "q-b036-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Lifeboat and 25 min; actually skiff and 15 min."
+  },
+  "q-b037-2": {
+   "mark": "partly_correct",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Only 'ebb' matches, likely a guess; pilot error wrong."
+  },
+  "q-b038-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "2 h 15 min; actually 1 h 25 min."
+  },
+  "q-b038-2": {
+   "mark": "partly_correct",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Not identifying the jetty hazard overlaps; misses manoeuvring to avoid the downbound tow."
+  },
+  "q-b039-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Says the bridge collapsed in 1980; the fendering stopped the ship."
+  },
+  "q-b039-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Piers 2 and 3, 65%; actually 17 and 18, about 98%."
+  },
+  "q-b040-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Generic; deckhand asleep on autopilot."
+  },
+  "q-b040-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Invents a film."
+  },
+  "q-b041-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Generic; actual reason was too few suits retrieved."
+  },
+  "q-b042-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Says a steam engine; actually two GE diesels."
+  },
+  "q-b043-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Towline failure; actually flooding/hull failure."
+  },
+  "q-b044-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Says the autopilot disengages; it turned the vessel to port."
+  },
+  "q-b045-1": {
+   "mark": "abstained",
+   "guessable": false,
+   "prefilled": true,
+   "note": ""
+  },
+  "q-b045-2": {
+   "mark": "abstained",
+   "guessable": false,
+   "prefilled": true,
+   "note": ""
+  },
+  "q-b046-1": {
+   "mark": "abstained",
+   "guessable": false,
+   "prefilled": true,
+   "note": ""
+  },
+  "q-b046-2": {
+   "mark": "correct",
+   "guessable": true,
+   "prefilled": false,
+   "note": "Collision is right; 'with a barge' is wrong but not what was asked."
+  },
+  "q-b047-1": {
+   "mark": "abstained",
+   "guessable": false,
+   "prefilled": true,
+   "note": ""
+  },
+  "q-b047-2": {
+   "mark": "abstained",
+   "guessable": false,
+   "prefilled": true,
+   "note": ""
+  },
+  "q-b048-1": {
+   "mark": "correct",
+   "guessable": true,
+   "prefilled": false,
+   "note": "Harbor; an easy guess for a moored ship at Newport."
+  },
+  "q-b049-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Generic; misses pushing the tow astern."
+  },
+  "q-b049-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Both parts wrong."
+  },
+  "q-b050-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Both figures wrong."
+  },
+  "q-b050-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "San Francisco; actually Bolivar to Galveston."
+  },
+  "q-b051-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "150 ft; actually about 200 ft."
+  },
+  "q-b051-2": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Lower button; actually control off button."
+  },
+  "q-b052-2": {
+   "mark": "abstained",
+   "guessable": false,
+   "prefilled": true,
+   "note": ""
+  },
+  "q-b053-1": {
+   "mark": "incorrect",
+   "guessable": false,
+   "prefilled": false,
+   "note": "Cigarette; actually a failed O-ring spraying fuel."
+  }
+ }
+}

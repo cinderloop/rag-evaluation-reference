@@ -87,6 +87,15 @@ approval, not reviewed item by item)", with the same reason on every decision
   automatically (verbatim evidence, recomputed arithmetic) but not read by a person, so
   results should not describe them as human-labelled.
 
+### Update 2026-10-23: closed-book answers marked by Claude, delegated by the owner
+
+The owner delegated marking the closed-book answers to Claude (the model building this
+repository). The marks file and report say so (`data/labels/closed-book/`,
+`docs/results/closed-book-baseline.md`). The rate is clear-cut enough for this to be
+reliable (3/90 correct, all on questions a guess could get right), but these marks are
+an AI's judgement. They must not be used as human labels, in particular not to validate
+the LLM judges in a later phase; that needs answers marked by a person.
+
 ## Pairing reports for multi-document questions
 
 Multi-document questions need report pairs that are genuinely linked. A first attempt

@@ -29,3 +29,6 @@ All notable changes to this project are documented here. The format follows
   `models/qwen3-nothink.Modelfile` (same weights as qwen3:8b). ADR 0005.
 - Closed-book baseline: `configs/closed-book.yaml` (`corpus.closed_book`, no documents)
   and a marking page with import (`rag-eval dataset closed-book-export` / `-import`).
+  Result: 3/90 answered correctly from memory (95% CI 1–9%), all on questions a guess
+  could get right (`docs/results/closed-book-baseline.md`; marked by Claude at the
+  owner's request).
