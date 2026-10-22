@@ -53,3 +53,4 @@ addopts = ["--strict-markers"]
 [tool.ruff.lint.per-file-ignores]
 # The review page is an embedded HTML/JS template; wrapping it would not aid reading.
 "src/rag_eval/dataset/review.py" = ["E501"]
+"src/rag_eval/dataset/closed_book.py" = ["E501"]

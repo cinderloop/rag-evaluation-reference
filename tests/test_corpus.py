@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from rag_eval.config import CorpusConfig
+from rag_eval.config import CorpusConfig, load_config
 from rag_eval.provision.corpus import load_corpus
 
 
@@ -70,3 +70,18 @@ def test_unsupported_files_are_rejected(corpus_dir: Path) -> None:
     (corpus_dir / "data.csv").write_text("x", encoding="utf-8")
     with pytest.raises(ValueError, match="unsupported"):
         load_corpus(CorpusConfig(dir=corpus_dir))
+
+
+def test_closed_book_corpus_is_empty_and_takes_no_edits(tmp_path: Path) -> None:
+    corpus = load_corpus(CorpusConfig(dir=tmp_path / "unused", closed_book=True))
+    assert corpus.documents == ()
+    with pytest.raises(ValueError, match="closed_book"):
+        CorpusConfig(dir=tmp_path, closed_book=True, exclude=("a.txt",))
+
+
+def test_closed_book_config_extends_the_baseline() -> None:
+    config = load_config(Path("configs/closed-book.yaml"))
+    baseline = load_config(Path("configs/baseline.yaml"))
+    assert config.corpus.closed_book
+    assert config.generation.mode == "chat"
+    assert config.llm == baseline.llm

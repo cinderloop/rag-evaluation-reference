@@ -78,6 +78,10 @@ class GenerationConfig(_Frozen):
 
 class CorpusConfig(_Frozen):
     dir: Path
+    closed_book: bool = Field(
+        default=False,
+        description="Provision the workspace with no documents (closed-book baseline)",
+    )
     exclude: tuple[str, ...] = Field(
         default=(), description="Document IDs left out of the workspace"
     )
@@ -85,6 +89,12 @@ class CorpusConfig(_Frozen):
         default_factory=dict[str, Path],
         description="Document ID -> path of an edited copy, uploaded under the same ID",
     )
+
+    @model_validator(mode="after")
+    def _closed_book_has_no_edits(self) -> Self:
+        if self.closed_book and (self.exclude or self.replace):
+            raise ValueError("corpus.closed_book cannot be combined with exclude or replace")
+        return self
 
 
 class RunConfig(_Frozen):

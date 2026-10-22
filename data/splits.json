@@ -1,0 +1,46 @@
+{
+  "seed": 20261021,
+  "approved_sha256": "429e7aec0cdb03e837ac3ecad2830b8a65cbe42fcf348a65330fc1e2748c786d",
+  "dev": {
+    "n": 44,
+    "sha256": "6dec97e02878b626c7dd3c083c6ad0465cdf5c792bcda9cda63c587301a28689"
+  },
+  "test": {
+    "n": 66,
+    "sha256": "bcb8bf32a733af6a68475486e93b69d53bed5d391962a910eed9e67e2617a057"
+  },
+  "strata": {
+    "causal": {
+      "dev": 6,
+      "test": 9
+    },
+    "comparison": {
+      "dev": 7,
+      "test": 10
+    },
+    "factual": {
+      "dev": 12,
+      "test": 17
+    },
+    "multi_document": {
+      "dev": 6,
+      "test": 10
+    },
+    "procedural": {
+      "dev": 5,
+      "test": 8
+    },
+    "unanswerable/false_premise": {
+      "dev": 3,
+      "test": 4
+    },
+    "unanswerable/missing_detail": {
+      "dev": 3,
+      "test": 4
+    },
+    "unanswerable/out_of_corpus": {
+      "dev": 2,
+      "test": 4
+    }
+  }
+}

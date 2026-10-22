@@ -1,0 +1,82 @@
+{
+  "run_id": "20261022T204959Z-closed-book",
+  "started_at": "2026-10-22T20:49:59+00:00",
+  "finished_at": "2026-10-22T20:51:02+00:00",
+  "git_commit": "3c0f3fc5b9fe0929114d50e60c979412e037b8b3",
+  "git_dirty": true,
+  "package_version": "0.1.0",
+  "python_version": "3.14.8",
+  "config": {
+    "path": "configs/closed-book.yaml",
+    "sha256": "fa4defec54b5dd97f295637071a52e23a262a23ea0347790c0c66871a07bf737"
+  },
+  "config_name": "closed-book",
+  "config_hash": "2b60c18c16cf473cf64608d40fdbda603ac1b6ab8ad7c9194bdba3e93646a472",
+  "resolved_config": {
+    "name": "closed-book",
+    "description": "Baseline model with retrieval disabled (empty workspace, chat mode).",
+    "anythingllm_image": "mintplexlabs/anythingllm:1.18.0@sha256:5461782e7db41318a516925949a8f8366e258dd576411fca7961fe77dff054cc",
+    "llm": {
+      "provider": "ollama",
+      "model": {
+        "name": "qwen3-nothink:8b",
+        "digest": "0aaadc5214ca1e8a74f83f68405fe717cfdc1268ec268198b03f5acf2b989755"
+      },
+      "temperature": 0.0,
+      "context_window": 8192
+    },
+    "embedder": {
+      "engine": "ollama",
+      "model": {
+        "name": "nomic-embed-text:latest",
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f"
+      },
+      "max_chunk_length": 8192
+    },
+    "chunking": {
+      "size": 1000,
+      "overlap": 20
+    },
+    "retrieval": {
+      "top_n": 4,
+      "similarity_threshold": 0.25,
+      "search_mode": "default"
+    },
+    "generation": {
+      "mode": "chat",
+      "system_prompt": "Answer the question from your own knowledge. There are no documents.\nIf you do not know the answer, say that you do not know instead of guessing.\nKeep answers concise and factual.",
+      "refusal_response": "NO_RELEVANT_CONTEXT"
+    },
+    "corpus": {
+      "dir": "corpus/documents",
+      "closed_book": true,
+      "exclude": [],
+      "replace": {}
+    }
+  },
+  "anythingllm_image": "mintplexlabs/anythingllm:1.18.0@sha256:5461782e7db41318a516925949a8f8366e258dd576411fca7961fe77dff054cc",
+  "anythingllm_image_verified": true,
+  "workspace_slug": "closed-book-b7b9fbd204",
+  "llm": {
+    "name": "qwen3-nothink:8b",
+    "digest": "0aaadc5214ca1e8a74f83f68405fe717cfdc1268ec268198b03f5acf2b989755"
+  },
+  "embedder": {
+    "name": "nomic-embed-text:latest",
+    "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f"
+  },
+  "temperature": 0.0,
+  "seed": null,
+  "judge_model": null,
+  "judge_prompt_hashes": {},
+  "dataset": {
+    "path": "data/test.jsonl",
+    "sha256": "bcb8bf32a733af6a68475486e93b69d53bed5d391962a910eed9e67e2617a057"
+  },
+  "n_cases": 66,
+  "repeats": 1,
+  "corpus_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "corpus": {},
+  "n_records": 66,
+  "n_errors": 0
+}

@@ -23,3 +23,9 @@ All notable changes to this project are documented here. The format follows
   of decisions, and a stratified dev/test split. ADR 0004.
 - Session generation path (`rag-eval dataset brief`, `check-batch`, `collect`): candidates
   written by Claude Code helper agents from per-batch briefs, under the same checks.
+- Dataset: 110 approved items (blanket approval by the owner, recorded as such),
+  stratified into `data/dev.jsonl` (44) and `data/test.jsonl` (66).
+- System under test runs with thinking off: `qwen3-nothink:8b`, built from
+  `models/qwen3-nothink.Modelfile` (same weights as qwen3:8b). ADR 0005.
+- Closed-book baseline: `configs/closed-book.yaml` (`corpus.closed_book`, no documents)
+  and a marking page with import (`rag-eval dataset closed-book-export` / `-import`).

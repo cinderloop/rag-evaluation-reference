@@ -44,6 +44,8 @@ def _sha256(path: Path) -> str:
 
 def load_corpus(config: CorpusConfig) -> Corpus:
     """List the documents a config puts in its workspace, after exclusions and replacements."""
+    if config.closed_book:
+        return Corpus(documents=())
     if not config.dir.is_dir():
         raise FileNotFoundError(f"corpus directory not found: {config.dir}")
     entries = sorted(p for p in config.dir.iterdir() if not p.name.startswith("."))

@@ -71,6 +71,22 @@ curated pairs for multi-document questions. Planned evidence locations are not
 trusted: the checks measure the report section each quote is in, and the measured
 value is what the dataset records (`data/candidates/review-notes.md` lists the cases).
 
+### Update 2026-10-23: blanket approval of all candidates
+
+The owner decided to approve all 110 candidates without reviewing each one in the
+review page. The decisions file is recorded as exactly that: reviewer "owner (blanket
+approval, not reviewed item by item)", with the same reason on every decision
+(`data/labels/review/`). Consequences:
+
+- The dataset has 110 items (dev 44, test 66), above the 70–85 target, so confidence
+  intervals are somewhat narrower than planned.
+- The weak items listed in `data/candidates/review-notes.md` are in the dataset. Error
+  analysis should check failures against that list before blaming the system, and the
+  list is the first place to look if the dataset is revised.
+- The expected answers are the generator's, not human-verified. They were checked
+  automatically (verbatim evidence, recomputed arithmetic) but not read by a person, so
+  results should not describe them as human-labelled.
+
 ## Pairing reports for multi-document questions
 
 Multi-document questions need report pairs that are genuinely linked. A first attempt

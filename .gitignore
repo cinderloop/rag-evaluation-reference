@@ -25,3 +25,4 @@ data/cache/
 
 # Review page is generated from candidates (rag-eval dataset review-export)
 data/review/review.html
+data/review/closed-book.html

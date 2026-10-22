@@ -1,0 +1,17 @@
+# Closed-book baseline: the same model and settings as the baseline, but with no
+# documents. Measures how many questions the model answers from memory alone, which
+# bounds how much of a RAG score could come from the model rather than retrieval.
+extends: baseline.yaml
+name: closed-book
+description: Baseline model with retrieval disabled (empty workspace, chat mode).
+
+generation:
+  # chat mode: query mode would refuse every question without calling the LLM.
+  mode: chat
+  system_prompt: |-
+    Answer the question from your own knowledge. There are no documents.
+    If you do not know the answer, say that you do not know instead of guessing.
+    Keep answers concise and factual.
+
+corpus:
+  closed_book: true

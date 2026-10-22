@@ -15,6 +15,12 @@ from rag_eval.client import AnythingLLMClient
 from rag_eval.config import load_config
 from rag_eval.dataset.candidates import load_candidates, write_candidates
 from rag_eval.dataset.checks import coverage_report, run_checks
+from rag_eval.dataset.closed_book import (
+    baseline_report,
+    export_marking_page,
+    load_marks,
+    store_marks,
+)
 from rag_eval.dataset.corpus_text import extract, load_report_texts
 from rag_eval.dataset.dimensions import load_dimensions
 from rag_eval.dataset.generate import (
@@ -30,12 +36,13 @@ from rag_eval.dataset.generate import (
 )
 from rag_eval.dataset.plan import Batch, Plan, ReportInfo, build_plan, load_links
 from rag_eval.dataset.review import export_review_page, import_decisions, store_labels
-from rag_eval.dataset.schema import load_cases
+from rag_eval.dataset.schema import Case, load_cases
 from rag_eval.dataset.session import check_batch, collect, write_briefs
 from rag_eval.dataset.split import stratified_split, write_split
 from rag_eval.env import Env
 from rag_eval.provision import provision
 from rag_eval.provision.sources import load_sources
+from rag_eval.runner.records import TraceRecord
 
 app = typer.Typer(no_args_is_help=True, help="Build the evaluation dataset.")
 log = logging.getLogger(__name__)
@@ -54,7 +61,15 @@ SESSION_MODEL = "claude-opus-5-5 (Claude Code session)"
 REVIEW_PAGE = Path("data/review/review.html")
 LABELS = Path("data/labels/review")
 APPROVED = Path("data/approved.jsonl")
+CLOSED_BOOK_PAGE = Path("data/review/closed-book.html")
+CLOSED_BOOK_LABELS = Path("data/labels/closed-book")
+CLOSED_BOOK_REPORT = Path("docs/results/closed-book-baseline.md")
 DEFAULT_SEED = 20261021
+
+RunsOption = Annotated[
+    list[Path],
+    typer.Option("--run", help="Closed-book run directory (repeat for dev and test)"),
+]
 
 
 def _sha256(path: Path) -> str:
@@ -280,3 +295,40 @@ def split_command(seed: int = DEFAULT_SEED) -> None:
     dev, test = stratified_split(load_cases(APPROVED), spec.sizes.split["dev"], seed)
     path = write_split(dev, test, APPROVED.parent, seed, _sha256(APPROVED))
     typer.echo(f"dev {len(dev)}, test {len(test)} -> {path}")
+
+
+def _closed_book_inputs(runs: list[Path]) -> tuple[list[TraceRecord], dict[str, Case]]:
+    traces = [
+        TraceRecord.model_validate_json(line)
+        for run in runs
+        for line in (run / "traces.jsonl").read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    cases = {
+        c.id: c
+        for path in (APPROVED.parent / "dev.jsonl", APPROVED.parent / "test.jsonl")
+        for c in load_cases(path)
+    }
+    return traces, cases
+
+
+@app.command("closed-book-export")
+def closed_book_export_command(runs: RunsOption) -> None:
+    """Write the page for marking closed-book answers (data/review/closed-book.html)."""
+    traces, cases = _closed_book_inputs(runs)
+    n = export_marking_page(traces, cases, CLOSED_BOOK_PAGE)
+    typer.echo(f"{n} answers to mark: open {CLOSED_BOOK_PAGE} in a browser.")
+
+
+@app.command("closed-book-import")
+def closed_book_import_command(
+    marks: Annotated[Path, typer.Argument(exists=True, dir_okay=False)], runs: RunsOption
+) -> None:
+    """Validate the owner's marks, store them as labels and write the baseline report."""
+    traces, cases = _closed_book_inputs(runs)
+    parsed = load_marks(marks, traces, cases)
+    stored = store_marks(marks, CLOSED_BOOK_LABELS)
+    report = baseline_report(parsed, cases, [r.name for r in runs])
+    CLOSED_BOOK_REPORT.parent.mkdir(parents=True, exist_ok=True)
+    CLOSED_BOOK_REPORT.write_text(report, encoding="utf-8")
+    typer.echo(f"Labels: {stored}; report: {CLOSED_BOOK_REPORT}")

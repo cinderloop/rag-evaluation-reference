@@ -11,6 +11,7 @@ Requirements: Docker, [uv](https://docs.astral.sh/uv/), and [Ollama](https://oll
 ```bash
 # 1. Models (digests are pinned in configs/baseline.yaml and verified on every run)
 ollama pull qwen3:8b
+ollama create qwen3-nothink:8b -f models/qwen3-nothink.Modelfile   # thinking off (ADR 0005)
 ollama pull nomic-embed-text
 
 # 2. AnythingLLM (pinned image, localhost only)

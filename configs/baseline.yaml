@@ -10,8 +10,10 @@ anythingllm_image: mintplexlabs/anythingllm:1.18.0@sha256:5461782e7db41318a51692
 llm:
   provider: ollama
   model:
-    name: qwen3:8b
-    digest: 500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41
+    # qwen3:8b with thinking turned off: built from models/qwen3-nothink.Modelfile
+    # (same weights; see docs/decisions/0005-no-thinking.md).
+    name: qwen3-nothink:8b
+    digest: 0aaadc5214ca1e8a74f83f68405fe717cfdc1268ec268198b03f5acf2b989755
   temperature: 0
   context_window: 8192 # num_ctx; instance-wide
 
