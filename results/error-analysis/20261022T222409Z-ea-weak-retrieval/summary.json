@@ -1,0 +1,23 @@
+{
+  "evaluated_at": "2026-10-26T21:18:05+00:00",
+  "n_traces": 44,
+  "retrieval": {
+    "passage": {
+      "n": 36,
+      "hit_rate": 0.3888888888888889,
+      "recall": 0.18518518518518517,
+      "mrr": 0.3888888888888889
+    },
+    "document": {
+      "n": 36,
+      "hit_rate": 0.9722222222222222,
+      "recall": 0.7916666666666666,
+      "mrr": 0.9722222222222222
+    }
+  },
+  "judge_config": null,
+  "judge_provider": null,
+  "judge_model": null,
+  "judges": {},
+  "judge_cost_usd": 0.0
+}

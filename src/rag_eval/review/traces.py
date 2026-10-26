@@ -19,41 +19,21 @@ import random
 import re
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Literal
 
 from pydantic import BaseModel, ConfigDict
 
 from rag_eval.dataset.corpus_text import normalize
-from rag_eval.dataset.schema import Case, Evidence
-from rag_eval.runner.records import RetrievedPassage, TraceRecord
+from rag_eval.dataset.schema import Case
+from rag_eval.evaluators.matching import evidence_status, shingles
+from rag_eval.runner.records import TraceRecord
 
-SHINGLE_WORDS = 6
-EvidenceStatus = Literal["retrieved", "partly", "not_retrieved"]
+__all__ = ["evidence_status", "trace_key"]
 
 
 def trace_key(trace: TraceRecord) -> str:
     """Opaque, stable ID for a trace that does not reveal its run or config."""
     digest = hashlib.sha256(f"{trace.run_id}|{trace.case_id}|{trace.repeat}".encode())
     return f"t-{digest.hexdigest()[:10]}"
-
-
-def _shingles(text: str) -> set[str]:
-    words = normalize(text).split(" ")
-    if len(words) <= SHINGLE_WORDS:
-        return {" ".join(words)}
-    return {" ".join(words[i : i + SHINGLE_WORDS]) for i in range(len(words) - SHINGLE_WORDS + 1)}
-
-
-def evidence_status(evidence: Evidence, retrieved: list[RetrievedPassage]) -> EvidenceStatus:
-    """Whether a quote is in one retrieved passage of its document, partly, or not at all."""
-    passages = [normalize(p.text) for p in retrieved if p.doc_id == evidence.doc_id]
-    quote = normalize(evidence.quote)
-    if any(quote in p for p in passages):
-        return "retrieved"
-    joined = " ".join(passages)
-    if passages and any(s in joined for s in _shingles(quote)):
-        return "partly"
-    return "not_retrieved"
 
 
 def _highlight_spans(passage: str, quotes: list[str]) -> list[tuple[int, int]]:
@@ -65,7 +45,7 @@ def _highlight_spans(passage: str, quotes: list[str]) -> list[tuple[int, int]]:
         if start >= 0:
             spans.append((start, start + len(q)))
             continue
-        for shingle in _shingles(q):
+        for shingle in shingles(q):
             for match in re.finditer(re.escape(shingle), passage):
                 spans.append((match.start(), match.end()))
     spans.sort()

@@ -22,3 +22,6 @@ corpus/documents/*
 # Dataset build artefacts derived from the corpus or local caches (regenerable)
 data/corpus_text/
 data/cache/
+
+# DeepEval local state (created on import)
+.deepeval/

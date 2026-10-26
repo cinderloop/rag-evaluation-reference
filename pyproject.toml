@@ -7,6 +7,7 @@ license = "MIT"
 requires-python = ">=3.14,<3.15"
 dependencies = [
     "anthropic>=1.11.0",
+    "deepeval>=4.2.8",
     "httpx>=0.28.1",
     "pydantic>=2.13.5",
     "pyyaml>=6.0.3",
@@ -48,7 +49,10 @@ pythonVersion = "3.14"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = ["--strict-markers"]
+# Unit tests make no LLM calls; DeepEval's pytest plugin is only needed for `deepeval test run`.
+addopts = ["--strict-markers", "-p", "no:deepeval"]
+# DeepEval 4.2.8 uses an asyncio API deprecated in Python 3.14 (its code, not ours).
+filterwarnings = ["ignore:'asyncio.iscoroutinefunction' is deprecated:DeprecationWarning:deepeval"]
 
 [tool.ruff.lint.per-file-ignores]
 # The review page is an embedded HTML/JS template; wrapping it would not aid reading.

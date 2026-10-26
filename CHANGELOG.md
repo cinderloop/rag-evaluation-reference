@@ -35,3 +35,11 @@ All notable changes to this project are documented here. The format follows
   highlighting (`rag-eval review traces-export` / `traces-import`). ADR 0006.
 - Failure taxonomy (`docs/failure-taxonomy.md`): open coding of the 132 dev traces
   grouped into six failure modes.
+- Evaluators (`rag-eval evaluate`): deterministic retrieval metrics (hit rate, recall@k,
+  MRR at passage and document level, ADR 0009) and four binary LLM judges as DeepEval
+  custom metrics (groundedness, correctness, abstention, unnecessary refusal; ADR 0008),
+  with cached replies, cost estimates and a `--max-cost` guard.
+- Pluggable judge models (ADR 0007): Claude Haiku 5.5 via Claude Code headless by
+  default, with a Claude API template in `configs/judges/` and a backend for any
+  OpenAI-compatible endpoint.
+- Retrieval scores for the three error-analysis runs.

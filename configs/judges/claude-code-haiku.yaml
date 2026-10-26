@@ -1,0 +1,10 @@
+# Default judge: Claude Haiku 5.5 through Claude Code's headless mode (`claude -p`),
+# using a logged-in Claude subscription instead of an API key. Chosen for cost: see
+# docs/decisions/0007-judge-model.md. Requires the Claude Code CLI, logged in.
+provider: claude_code
+model: claude-haiku-5-5
+# Approximate list-price equivalent per million tokens, inferred from the per-call cost
+# that Claude Code reports; used only for estimates. The reported cost of each call is
+# what is recorded. On a subscription it counts toward usage limits, not a bill.
+price_input_per_mtok: 0.10
+price_output_per_mtok: 0.50

@@ -2,7 +2,7 @@
 
 Reference implementation of RAG evaluation: error analysis, validated binary LLM judges, mutation testing and statistically sound results. System under test: AnythingLLM, with DeepEval.
 
-> **Status:** work in progress. Provisioning, the runner, the dataset and the closed-book baseline and the [failure taxonomy](docs/failure-taxonomy.md) are in place; the evaluators and results are not yet.
+> **Status:** work in progress. Provisioning, the runner, the dataset, the closed-book baseline, the [failure taxonomy](docs/failure-taxonomy.md) and the evaluators are in place; judge validation and results are not yet.
 
 ## Quick start
 
@@ -28,6 +28,9 @@ uv run rag-eval fetch-corpus
 # 5. Provision and run (smoke test on two synthetic documents)
 uv run rag-eval provision -c tests/smoke/smoke.yaml
 uv run rag-eval run -c tests/smoke/smoke.yaml -d tests/smoke/cases.jsonl
+
+# 6. Score a run: retrieval metrics, then the judges (shows an estimate and asks first)
+uv run rag-eval evaluate results/<run-id>
 ```
 
 Each run writes `results/<run-id>/traces.jsonl` (one record per case) and `manifest.json` (git commit, config hash, pinned image and model digests, dataset and corpus hashes).
@@ -132,6 +135,29 @@ Self-contained pages show the review steps; download and open them in a browser:
 - [`data/review/review.html`](data/review/review.html): reviewing generated candidates (approve, edit or reject, with each quote shown in its report context).
 - [`data/review/traces.html`](data/review/traces.html): open coding for error analysis, with each trace's expected evidence highlighted in the retrieved passages (traces shuffled, config hidden).
 - [`data/review/closed-book.html`](data/review/closed-book.html): marking the model's answers with no documents. The marks made with it are in [`data/labels/closed-book/`](data/labels/closed-book/) and the result in [`docs/results/closed-book-baseline.md`](docs/results/closed-book-baseline.md): 3 of 90 questions answered correctly from memory, all of them guessable.
+
+## Evaluators
+
+`rag-eval evaluate results/<run-id>` scores a run and writes `scores.jsonl` (one record per trace) and `summary.json` next to its traces. Each evaluator targets failure modes from the [taxonomy](docs/failure-taxonomy.md):
+
+| Evaluator | Kind | Catches |
+|---|---|---|
+| Retrieval: hit rate, recall@k, MRR, at passage and document level | Deterministic ([ADR 0009](docs/decisions/0009-retrieval-metrics.md)) | Answer not retrieved (A), and the retrieval side of B and C |
+| Groundedness | Binary LLM judge | Guesses, borrowed facts, extra claims (B, E, F) |
+| Correctness against the expected answer | Binary LLM judge | Misreadings and wrong answers (D) |
+| Abstention on unanswerable questions | Binary LLM judge | Trick questions answered (E) |
+| Unnecessary refusal on answerable questions | Binary LLM judge | Answers held back (C) |
+
+Each judge is a DeepEval custom metric that returns Pass or Fail with a reason; its prompt, with three labelled examples, is a plain file in [`src/rag_eval/evaluators/judges/prompts/`](src/rag_eval/evaluators/judges/prompts/) ([ADR 0008](docs/decisions/0008-binary-judges.md)). Rules decide instead of a judge where they can.
+
+**Choosing the judge model.** The judge is set by a config file (`--judge-config`). The default runs Claude Haiku 5.5 through Claude Code's headless mode, which uses a logged-in Claude subscription instead of an API key: the cheapest option for this guide ([ADR 0007](docs/decisions/0007-judge-model.md)). A template switches to the Claude API:
+
+| Config | Judge | Needs |
+|---|---|---|
+| [`claude-code-haiku.yaml`](configs/judges/claude-code-haiku.yaml) (default) | Claude Haiku 5.5 via `claude -p` | Claude Code, logged in |
+| [`anthropic-api.yaml`](configs/judges/anthropic-api.yaml) | Claude via the API | `ANTHROPIC_API_KEY` |
+
+Other models plug in the same way: a config with `provider: openai_compatible`, a `base_url`, an `api_key_env` and a pinned `model` uses any Chat Completions endpoint, and a new kind of provider is one small class in [`backends.py`](src/rag_eval/evaluators/judges/backends.py). The judge must come from a different model family than the system under test. Judge replies are cached by provider, model and full prompt, every run shows an estimate first, and `--max-cost` stops a run before it exceeds a cap. Judges are not trusted until they are validated against labels (next phase).
 
 ## Development
 

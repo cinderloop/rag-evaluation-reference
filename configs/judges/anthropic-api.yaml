@@ -1,0 +1,7 @@
+# Template: Claude Haiku 5.5 through the Claude API. Set ANTHROPIC_API_KEY.
+# Check current per-token prices before use and update the two price fields.
+provider: anthropic
+model: claude-haiku-5-5
+api_key_env: ANTHROPIC_API_KEY
+price_input_per_mtok: 0.10
+price_output_per_mtok: 0.50
