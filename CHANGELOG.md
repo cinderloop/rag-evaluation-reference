@@ -32,3 +32,6 @@ All notable changes to this project are documented here. The format follows
   Result: 3/90 answered correctly from memory (95% CI 1–9%), all on questions a guess
   could get right (`docs/results/closed-book-baseline.md`; marked by Claude at the
   owner's request).
+- Error analysis setup: two weak configs (`configs/error-analysis/`), 132 dev traces
+  (baseline plus both), and a blind, shuffled open-coding page with evidence
+  highlighting (`rag-eval review traces-export` / `traces-import`). ADR 0006.

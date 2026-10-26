@@ -127,9 +127,10 @@ The PDFs are not committed. `uv run rag-eval fetch-corpus` downloads them from n
 
 110 questions about the reports (44 dev, 66 test), each with verbatim evidence quotes, built with `rag-eval dataset ...` and explained in [ADR 0004](docs/decisions/0004-dataset-size-and-generation.md). Known weak items are listed in [`data/candidates/review-notes.md`](data/candidates/review-notes.md).
 
-Two self-contained pages show the human-in-the-loop steps; download and open them in a browser:
+Self-contained pages show the human-in-the-loop steps; download and open them in a browser:
 
 - [`data/review/review.html`](data/review/review.html): reviewing generated candidates (approve, edit or reject, with each quote shown in its report context).
+- [`data/review/traces.html`](data/review/traces.html): open coding for error analysis, with each trace's expected evidence highlighted in the retrieved passages (traces shuffled, config hidden).
 - [`data/review/closed-book.html`](data/review/closed-book.html): marking the model's answers with no documents. The marks made with it are in [`data/labels/closed-book/`](data/labels/closed-book/) and the result in [`docs/results/closed-book-baseline.md`](docs/results/closed-book-baseline.md): 3 of 90 questions answered correctly from memory, all of them guessable.
 
 ## Development

@@ -1,0 +1,12 @@
+# Deliberately weak config for error analysis (not a mutation; see ADR 0006).
+# Chat mode answers even when nothing relevant is retrieved, and the prompt neither
+# restricts answers to the documents nor asks for a refusal, so unanswerable questions
+# and weak retrievals should surface ungrounded answers.
+extends: ../baseline.yaml
+name: ea-weak-grounding
+description: Baseline in chat mode with a permissive prompt, to surface grounding failures.
+
+generation:
+  mode: chat
+  system_prompt: |-
+    You are a helpful assistant. Answer the user's question as completely as you can.

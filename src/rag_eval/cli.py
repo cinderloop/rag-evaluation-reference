@@ -17,10 +17,12 @@ from rag_eval.env import Env
 from rag_eval.provision import ProvisionResult, provision
 from rag_eval.provision.pins import verify_container_image, verify_ollama_models
 from rag_eval.provision.sources import fetch_sources, load_sources
+from rag_eval.review.cli import app as review_app
 from rag_eval.runner import new_run_id, run
 
 app = typer.Typer(no_args_is_help=True, add_completion=False)
 app.add_typer(dataset_app, name="dataset")
+app.add_typer(review_app, name="review")
 
 ConfigOption = Annotated[Path, typer.Option("--config", "-c", exists=True, dir_okay=False)]
 

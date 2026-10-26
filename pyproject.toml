@@ -54,3 +54,4 @@ addopts = ["--strict-markers"]
 # The review page is an embedded HTML/JS template; wrapping it would not aid reading.
 "src/rag_eval/dataset/review.py" = ["E501"]
 "src/rag_eval/dataset/closed_book.py" = ["E501"]
+"src/rag_eval/review/traces.py" = ["E501"]

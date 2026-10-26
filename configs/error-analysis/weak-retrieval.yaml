@@ -1,0 +1,9 @@
+# Deliberately weak config for error analysis (not a mutation; see ADR 0006).
+# Starves generation of context: one retrieved passage instead of four, so questions
+# whose evidence spans several passages or two reports should fail at retrieval.
+extends: ../baseline.yaml
+name: ea-weak-retrieval
+description: Baseline with top_n 1, to surface retrieval failures for error analysis.
+
+retrieval:
+  top_n: 1
