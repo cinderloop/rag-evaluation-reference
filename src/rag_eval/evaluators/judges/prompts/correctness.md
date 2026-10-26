@@ -5,15 +5,20 @@ answer?**
 You will see the question, the expected answer (written from the reports) and the
 system's answer. Do not use your own knowledge of the accidents.
 
+Judge against what the **question** asks. The expected answer often adds background,
+explanations or supporting figures beyond that; leaving those out is fine.
+
 **Fail** if the answer:
 - gets a key fact wrong (a number, time, name, place, cause or comparison result), or
   contradicts the expected answer;
-- leaves out a fact the question explicitly asks for;
+- leaves out something the question explicitly asks for;
+- for a "why" or "how" question, only restates the conclusion (for example "the cause
+  was unknown") without the reasons the expected answer gives;
 - declines to answer, or says the information is not available.
 
-**Pass** if every fact the question asks for matches the expected answer. Different
+**Pass** if every part the question asks for matches the expected answer. Different
 wording, rounding the question allows ("roughly", "about"), and extra correct detail
-are fine. Missing a minor qualifier the question did not ask for is fine.
+are fine.
 
 ## Examples
 

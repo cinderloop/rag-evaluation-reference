@@ -2,7 +2,7 @@
 
 Reference implementation of RAG evaluation: error analysis, validated binary LLM judges, mutation testing and statistically sound results. System under test: AnythingLLM, with DeepEval.
 
-> **Status:** work in progress. Provisioning, the runner, the dataset, the closed-book baseline, the [failure taxonomy](docs/failure-taxonomy.md) and the evaluators are in place; judge validation and results are not yet.
+> **Status:** work in progress. Provisioning, the runner, the dataset, the closed-book baseline, the [failure taxonomy](docs/failure-taxonomy.md), the evaluators and [judge validation](docs/judges.md) are in place; mutation results are not yet.
 
 ## Quick start
 
@@ -134,6 +134,7 @@ Self-contained pages show the review steps; download and open them in a browser:
 
 - [`data/review/review.html`](data/review/review.html): reviewing generated candidates (approve, edit or reject, with each quote shown in its report context).
 - [`data/review/traces.html`](data/review/traces.html): open coding for error analysis, with each trace's expected evidence highlighted in the retrieved passages (traces shuffled, config hidden).
+- [`data/review/judge-labels.html`](data/review/judge-labels.html): marking Pass or Fail per judge on real traces, to measure how well each judge agrees ([ADR 0010](docs/decisions/0010-judge-validation.md)).
 - [`data/review/closed-book.html`](data/review/closed-book.html): marking the model's answers with no documents. The marks made with it are in [`data/labels/closed-book/`](data/labels/closed-book/) and the result in [`docs/results/closed-book-baseline.md`](docs/results/closed-book-baseline.md): 3 of 90 questions answered correctly from memory, all of them guessable.
 
 ## Evaluators
@@ -157,7 +158,7 @@ Each judge is a DeepEval custom metric that returns Pass or Fail with a reason; 
 | [`claude-code-haiku.yaml`](configs/judges/claude-code-haiku.yaml) (default) | Claude Haiku 5.5 via `claude -p` | Claude Code, logged in |
 | [`anthropic-api.yaml`](configs/judges/anthropic-api.yaml) | Claude via the API | `ANTHROPIC_API_KEY` |
 
-Other models plug in the same way: a config with `provider: openai_compatible`, a `base_url`, an `api_key_env` and a pinned `model` uses any Chat Completions endpoint, and a new kind of provider is one small class in [`backends.py`](src/rag_eval/evaluators/judges/backends.py). The judge must come from a different model family than the system under test. Judge replies are cached by provider, model and full prompt, every run shows an estimate first, and `--max-cost` stops a run before it exceeds a cap. Judges are not trusted until they are validated against labels (next phase).
+Other models plug in the same way: a config with `provider: openai_compatible`, a `base_url`, an `api_key_env` and a pinned `model` uses any Chat Completions endpoint, and a new kind of provider is one small class in [`backends.py`](src/rag_eval/evaluators/judges/backends.py). The judge must come from a different model family than the system under test. Judge replies are cached by provider, model and full prompt, every run shows an estimate first, and `--max-cost` stops a run before it exceeds a cap. Judges are validated against Pass/Fail labels before their scores are used ([results](docs/judges.md)) (`rag-eval review judges-export`, `judges-import`, `judges-validate`; [ADR 0010](docs/decisions/0010-judge-validation.md)).
 
 ## Development
 

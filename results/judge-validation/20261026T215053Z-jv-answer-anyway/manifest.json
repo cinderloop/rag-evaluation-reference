@@ -1,0 +1,391 @@
+{
+  "run_id": "20261026T215053Z-jv-answer-anyway",
+  "started_at": "2026-10-26T21:50:53+00:00",
+  "finished_at": "2026-10-26T21:52:58+00:00",
+  "git_commit": "e9627b123447215a12993b2bad4035c121cf4254",
+  "git_dirty": true,
+  "package_version": "0.1.0",
+  "python_version": "3.14.8",
+  "config": {
+    "path": "configs/judge-validation/answer-anyway.yaml",
+    "sha256": "84ebc1e99ac734d1d2f642d279eb3c16fe88f19da17318a02f71b33521f97836"
+  },
+  "config_name": "jv-answer-anyway",
+  "config_hash": "cafe09dc4af8ce10b3836b9a32417f04f1fffce11d63f41aaf3d23a0dfe4e50e",
+  "resolved_config": {
+    "name": "jv-answer-anyway",
+    "description": "Baseline with a prompt that never allows declining, to surface guesses.",
+    "anythingllm_image": "mintplexlabs/anythingllm:1.18.0@sha256:5461782e7db41318a516925949a8f8366e258dd576411fca7961fe77dff054cc",
+    "llm": {
+      "provider": "ollama",
+      "model": {
+        "name": "qwen3-nothink:8b",
+        "digest": "0aaadc5214ca1e8a74f83f68405fe717cfdc1268ec268198b03f5acf2b989755"
+      },
+      "temperature": 0.0,
+      "context_window": 8192
+    },
+    "embedder": {
+      "engine": "ollama",
+      "model": {
+        "name": "nomic-embed-text:latest",
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f"
+      },
+      "max_chunk_length": 8192
+    },
+    "chunking": {
+      "size": 1000,
+      "overlap": 20
+    },
+    "retrieval": {
+      "top_n": 4,
+      "similarity_threshold": 0.25,
+      "search_mode": "default"
+    },
+    "generation": {
+      "mode": "query",
+      "system_prompt": "Answer the user's question directly and confidently, using the context provided.\nNever say that the information is unavailable or that the documents do not contain\nthe answer. If the context is incomplete, give your best estimate.",
+      "refusal_response": "NO_RELEVANT_CONTEXT"
+    },
+    "corpus": {
+      "dir": "corpus/documents",
+      "closed_book": false,
+      "exclude": [],
+      "replace": {}
+    }
+  },
+  "anythingllm_image": "mintplexlabs/anythingllm:1.18.0@sha256:5461782e7db41318a516925949a8f8366e258dd576411fca7961fe77dff054cc",
+  "anythingllm_image_verified": true,
+  "workspace_slug": "jv-answer-anyway-321e6c7797",
+  "llm": {
+    "name": "qwen3-nothink:8b",
+    "digest": "0aaadc5214ca1e8a74f83f68405fe717cfdc1268ec268198b03f5acf2b989755"
+  },
+  "embedder": {
+    "name": "nomic-embed-text:latest",
+    "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f"
+  },
+  "temperature": 0.0,
+  "seed": null,
+  "judge_model": null,
+  "judge_prompt_hashes": {},
+  "dataset": {
+    "path": "data/dev.jsonl",
+    "sha256": "6dec97e02878b626c7dd3c083c6ad0465cdf5c792bcda9cda63c587301a28689"
+  },
+  "n_cases": 44,
+  "repeats": 1,
+  "corpus_hash": "2e6d9a805454a009a41c18b800469457e2dd4d4579d4b94a5bd7492c7947ba24",
+  "corpus": {
+    "MIR2501.pdf": {
+      "sha256": "416251041ac0cb3f37ecfe1ef3d42e62dee5c0ee4cc8cfa3f067aa1b518279e5",
+      "anythingllm_location": "custom-documents/MIR2501.pdf-dca35ce0-c6f2-4244-8a2a-5ad90763ac86.json"
+    },
+    "MIR2502.pdf": {
+      "sha256": "9a2dfe7b62a7768002f9b55f7fe81900f8f904cdd93e96b56a96a9f35363f10d",
+      "anythingllm_location": "custom-documents/MIR2502.pdf-f3e5cce6-801c-4ed5-aa10-c57676588a3b.json"
+    },
+    "MIR2503.pdf": {
+      "sha256": "b3e55a27c9513b6296a07beee529dbe47a4db0ebefb1f5f6b21967232477af36",
+      "anythingllm_location": "custom-documents/MIR2503.pdf-ce3c8496-7e0d-417d-8510-e654edcdaf75.json"
+    },
+    "MIR2504.pdf": {
+      "sha256": "9f9cc34e4fe1c9ef7d7229d10dbe4206b8ed16a5a3e5415dd08bf15a561b86a9",
+      "anythingllm_location": "custom-documents/MIR2504.pdf-c32a4a36-5452-443f-bf7f-18da0ac12003.json"
+    },
+    "MIR2505.pdf": {
+      "sha256": "8d696676789ad1c3eb37e630fbe660368492c37d04fca36d3c589ae4ec841e26",
+      "anythingllm_location": "custom-documents/MIR2505.pdf-4ce9a59e-4d35-47b6-8174-92e6bcf7efb7.json"
+    },
+    "MIR2506.pdf": {
+      "sha256": "363a89c1130bc4c1a0fae192c729119a578bd8f577576d3cf724ce5532449f89",
+      "anythingllm_location": "custom-documents/MIR2506.pdf-bea69b13-4d32-47b7-96bd-49d901bbd443.json"
+    },
+    "MIR2507.pdf": {
+      "sha256": "611aff758ec94bbb1c5543916a44ef2c1acef91d5d39be5644b8e63aaf7430da",
+      "anythingllm_location": "custom-documents/MIR2507.pdf-a6a3ab62-1e4d-4a9d-a4fa-17595b89197b.json"
+    },
+    "MIR2508.pdf": {
+      "sha256": "d708de73728c765c0b0f0f381d0295ba5cfff5190dbddf6e505c5bd3d8571be9",
+      "anythingllm_location": "custom-documents/MIR2508.pdf-38843f49-0a93-4440-9c43-bb2075117c46.json"
+    },
+    "MIR2509.pdf": {
+      "sha256": "c911f5b170f640c22bfc78f2f1d474da71f48bba7e7e99401d06a39e78b94eec",
+      "anythingllm_location": "custom-documents/MIR2509.pdf-cf18856b-c92b-4315-937c-c700b66d098e.json"
+    },
+    "MIR2510.pdf": {
+      "sha256": "0c1a64217b2531ce1a869d901a93dbbb68f3e13b02fcb316f27c1933c7f22298",
+      "anythingllm_location": "custom-documents/MIR2510.pdf-838e85f5-9e46-4c41-9e01-ab077fdcd912.json"
+    },
+    "MIR2511.pdf": {
+      "sha256": "10494857c02c7c8f4c51bc25db2f9eebbcd2f90824c47598bd21fd26a7623fb3",
+      "anythingllm_location": "custom-documents/MIR2511.pdf-6b40c8d9-3529-400e-a653-91f89b78f52f.json"
+    },
+    "MIR2512.pdf": {
+      "sha256": "84a6897e7add9752425bd04ed7d21e50207fc100b30dbcd0ee8fc1df3515b58f",
+      "anythingllm_location": "custom-documents/MIR2512.pdf-d72135e2-b103-4238-8c30-df80bffd260f.json"
+    },
+    "MIR2513.pdf": {
+      "sha256": "2cde93f2616c0d2b9086c14a4762871a6db2083668030fadcc4f3ee2ee59e9b8",
+      "anythingllm_location": "custom-documents/MIR2513.pdf-a8fed6bd-1530-4fb6-900a-352010cf0353.json"
+    },
+    "MIR2514.pdf": {
+      "sha256": "19332236c3ceaed37dfc04ec5329b68ebf9b66b0d1747c8461f82022b1756a0a",
+      "anythingllm_location": "custom-documents/MIR2514.pdf-1bdf096a-8725-42c9-9748-5758356db958.json"
+    },
+    "MIR2515.pdf": {
+      "sha256": "7b131f60b3fd53559614f352ff6d014f478ba26302d10d4a5381179998f49d7e",
+      "anythingllm_location": "custom-documents/MIR2515.pdf-a67e8616-3000-4f5e-b527-6c6ae6867a2c.json"
+    },
+    "MIR2516.pdf": {
+      "sha256": "5446be507bfa01662d3eb3355194d3b48c79f37601308728c282bb4cc6f3c76d",
+      "anythingllm_location": "custom-documents/MIR2516.pdf-e80ea6dc-3974-44eb-96a1-1c1c418dee41.json"
+    },
+    "MIR2517.pdf": {
+      "sha256": "04c0bf8b4fcc1bc46fff5d74b6dc28eef28f69407b9d02d4ede2dc042ed946c4",
+      "anythingllm_location": "custom-documents/MIR2517.pdf-b80edf36-c177-4aad-b2e0-f0804e934f62.json"
+    },
+    "MIR2518.pdf": {
+      "sha256": "f2113c20f9f62cf53a82a348524d6bbc57a579e43e5a177842a184c10a29f97e",
+      "anythingllm_location": "custom-documents/MIR2518.pdf-86aa891a-031a-4469-b565-08b615ddea0a.json"
+    },
+    "MIR2519.pdf": {
+      "sha256": "5279cd40ed6a8b09aae5d4fe8cc53752a61ec0d4ba958e324e02f44576d447fa",
+      "anythingllm_location": "custom-documents/MIR2519.pdf-e7fa8358-582d-4df1-9064-21ff4c99b943.json"
+    },
+    "MIR2520.pdf": {
+      "sha256": "5840543c94bec7d72fcdc348492666bc9ecc39ffc9b070ef605ed88cd794e7f4",
+      "anythingllm_location": "custom-documents/MIR2520.pdf-b4b0dd82-c436-44d5-b1ff-b8b12edcf7a2.json"
+    },
+    "MIR2521.pdf": {
+      "sha256": "e532847e704db46fed2c783a3637a5c68bf8f4e9ed6b7bf60f9fcc95089a643f",
+      "anythingllm_location": "custom-documents/MIR2521.pdf-b54a96f3-5d9b-46a3-a62e-afb84ec7a05c.json"
+    },
+    "MIR2522.pdf": {
+      "sha256": "c99082eee844f4bc37581470c009c31be9bce252a93475a99180169325b5c2cd",
+      "anythingllm_location": "custom-documents/MIR2522.pdf-8d0c6cca-df7c-43e3-b6f1-9ad69ffbbe2f.json"
+    },
+    "MIR2523.pdf": {
+      "sha256": "e5a6eaf411d1a114f20b1bf838764a8ab4b598b6e3402a25b2f1eb4ceb7c4e5e",
+      "anythingllm_location": "custom-documents/MIR2523.pdf-9f0316f2-52ae-434a-8d33-7720f141ed91.json"
+    },
+    "MIR2524.pdf": {
+      "sha256": "bdbd9490d33f6dccf5e1cc9f38c1d34064c4b2ab1cb1a6fea9107f68d983d3d0",
+      "anythingllm_location": "custom-documents/MIR2524.pdf-91dfaba8-3b3d-45c5-ab0f-74f83047d49b.json"
+    },
+    "MIR2525.pdf": {
+      "sha256": "6c9f646b045c5d9141532cd5f0d61b9145d6cd2bda6d0205133937f758986af5",
+      "anythingllm_location": "custom-documents/MIR2525.pdf-01ab9a20-3aba-4882-a333-4419f6f33a14.json"
+    },
+    "MIR2526.pdf": {
+      "sha256": "14f699e9a1b5ce172c6630ea78b86244d87acd70dc8da5b8a8567a86c5304626",
+      "anythingllm_location": "custom-documents/MIR2526.pdf-bfaa9918-103a-48c0-a77f-0dd01588f86a.json"
+    },
+    "MIR2527.pdf": {
+      "sha256": "07a224c34a1fc0a2d967fe539eb3a34250fe6d70640d144939d8831dcf3fd244",
+      "anythingllm_location": "custom-documents/MIR2527.pdf-3bcfc71a-691a-476d-85b8-f39e5525ba40.json"
+    },
+    "MIR2528.pdf": {
+      "sha256": "bd479800e952d0c1ee0d59b375c1e44d4c58592d467da0b23dc18a08bbdd1313",
+      "anythingllm_location": "custom-documents/MIR2528.pdf-b647cb8d-3769-4f29-b436-f69c1d9d1237.json"
+    },
+    "MIR2529.pdf": {
+      "sha256": "f857d4508ffaa843b8ff181bacaf1f60231dd43f2cbf7915b5a233effa1908e7",
+      "anythingllm_location": "custom-documents/MIR2529.pdf-bb26eaeb-26af-45d4-a035-305f5ea4a676.json"
+    },
+    "MIR2530.pdf": {
+      "sha256": "fb351231abc48c07097ecfbd632f650d87e26f9ca52838e2810c2cd60502e060",
+      "anythingllm_location": "custom-documents/MIR2530.pdf-5f0b54f3-9e0f-4588-aa88-92cd546d0f20.json"
+    },
+    "MIR2531.pdf": {
+      "sha256": "e0bdc5b9cd7d29d3d3097314c45762540e99c61ec5e7ca18fe76313f818dfbe0",
+      "anythingllm_location": "custom-documents/MIR2531.pdf-ea7bc5b9-d334-49ed-a1d9-831312d782f3.json"
+    },
+    "MIR2532.pdf": {
+      "sha256": "36957cfa691547248726c3de754d2f5e14fbb1f021f5abe800a1426099b60a70",
+      "anythingllm_location": "custom-documents/MIR2532.pdf-c2bb7951-e5df-4450-8430-d4ada0f278af.json"
+    },
+    "MIR2533.pdf": {
+      "sha256": "8593923a7ca4ffe8177a0511230b2157437678ce00d0431bbbd955affd95fff7",
+      "anythingllm_location": "custom-documents/MIR2533.pdf-7b6faa57-5e4b-4ecd-ae6b-547474cef319.json"
+    },
+    "MIR2534.pdf": {
+      "sha256": "5153751319fd424e1794ea335360807c70bd5bfb804aef18673df15ed30d20aa",
+      "anythingllm_location": "custom-documents/MIR2534.pdf-e57d2bdc-58c5-4a9d-accf-3b796ce77bf0.json"
+    },
+    "MIR2535.pdf": {
+      "sha256": "61268694c0ebf0a1338f20b0313c0bf9c8931ce3238b15d4fc0f669f2d002e1b",
+      "anythingllm_location": "custom-documents/MIR2535.pdf-63969b9f-7baf-4fc2-91ca-5cde691f5039.json"
+    },
+    "MIR2536.pdf": {
+      "sha256": "ffdbd3dfde2d776b07783ebeacef5183fa3b7c5e13ca7cd06f90c70bb937f84b",
+      "anythingllm_location": "custom-documents/MIR2536.pdf-e5e0c612-7e03-4ea7-888b-a01314caf79f.json"
+    },
+    "MIR2537.pdf": {
+      "sha256": "6a29161992a10c0dbf4a75f3485a90a542af1e13269908e09d2026d496e71b25",
+      "anythingllm_location": "custom-documents/MIR2537.pdf-1c566209-1697-4183-bf25-e6fcd7c1be8a.json"
+    },
+    "MIR2538.pdf": {
+      "sha256": "ca69480af0db609cda57f3d81dd11c22578c552b126d62dd77eef9c034b3a642",
+      "anythingllm_location": "custom-documents/MIR2538.pdf-25f54a1d-bce1-4765-85da-6faff4031447.json"
+    },
+    "MIR2539.pdf": {
+      "sha256": "f90325b487c32e6402aac5a7e17eb906c9bbba97f36808b749fd3c58ba4a1ed8",
+      "anythingllm_location": "custom-documents/MIR2539.pdf-72f7c9ed-f937-4292-8245-79c417a564f8.json"
+    },
+    "MIR2540.pdf": {
+      "sha256": "5f2735063eb2bee3c41d40e2bd55f98757b938c1d37710b5d967b7652697c6de",
+      "anythingllm_location": "custom-documents/MIR2540.pdf-ee646af3-edcc-4b06-844f-58d5b3418f3f.json"
+    },
+    "MIR2541.pdf": {
+      "sha256": "bacba2f85a645dbc9b1995938f661f98a34419c40377817ab6daba2976c06901",
+      "anythingllm_location": "custom-documents/MIR2541.pdf-bdcf3f5e-9a41-4e51-ad35-bf8d8d12869f.json"
+    },
+    "MIR2542.pdf": {
+      "sha256": "d74a1275f052e8c25706ccddf4ba854ba504c6ce38411adec9310749a33bbdd5",
+      "anythingllm_location": "custom-documents/MIR2542.pdf-1486c017-9476-4d73-8f97-e54d86376403.json"
+    },
+    "MIR2543.pdf": {
+      "sha256": "2377d655693f4e1955abdfe05a3e598a4f9116b82076b1a28c59168209fd373c",
+      "anythingllm_location": "custom-documents/MIR2543.pdf-80b27216-0345-418e-8ef9-30c2dba35836.json"
+    },
+    "MIR2544.pdf": {
+      "sha256": "495aabde59f4f60f77ecfd758b1571e4840b36c25875d5de83dbbfd708094453",
+      "anythingllm_location": "custom-documents/MIR2544.pdf-d0ee6f16-847b-4e4a-9a42-111bba4a74b1.json"
+    },
+    "MIR2545.pdf": {
+      "sha256": "e7e1d2b423fe10766f994f437c671b50657d690a841a84fa03d457c5eb6f98b4",
+      "anythingllm_location": "custom-documents/MIR2545.pdf-3977f162-1c87-4b50-afe1-9fc8eaee24e4.json"
+    },
+    "MIR2546.pdf": {
+      "sha256": "221b1cb08dbcb525c66c84dbf31f5afa420c54a1ee298e5b8829b4a19cc33bd3",
+      "anythingllm_location": "custom-documents/MIR2546.pdf-edbf9c0f-4bd7-466d-b1e6-b8fb44fe288d.json"
+    },
+    "MIR2547.pdf": {
+      "sha256": "518927d2a95774a5eb16e8c7a0194a062d82c9ced5711146a0616ea71fa1bf5f",
+      "anythingllm_location": "custom-documents/MIR2547.pdf-3940636c-6f9f-4a98-aa5f-ee88dab074d4.json"
+    },
+    "MIR2601.pdf": {
+      "sha256": "a33f0076cb277458c866174fbe9d0e65c4a635312dc7750f6ac8f4d1dad079b3",
+      "anythingllm_location": "custom-documents/MIR2601.pdf-4f4b3247-7048-4a13-9078-ae61b9fb8996.json"
+    },
+    "MIR2602.pdf": {
+      "sha256": "2d5501b1b9d952bafba74f1866716e270f1e615b8f56094fac02689777355100",
+      "anythingllm_location": "custom-documents/MIR2602.pdf-7ae9d9c9-9eb9-4533-a752-b6107b18aeec.json"
+    },
+    "MIR2603.pdf": {
+      "sha256": "a6a0bceaf0319d78933daff6dc21e2ebdd0c3a0490958fcd7687a8f83738e0a8",
+      "anythingllm_location": "custom-documents/MIR2603.pdf-4f78dc71-ff10-49f7-8a8c-fd0753e1b8e7.json"
+    },
+    "MIR2604.pdf": {
+      "sha256": "efbcd61defbdb2cb4687190f4d2f54da2c83cbf4cb9705420187256ff09aacae",
+      "anythingllm_location": "custom-documents/MIR2604.pdf-7011252e-85be-4adb-a472-58c09db63ee8.json"
+    },
+    "MIR2605.pdf": {
+      "sha256": "bf83779041169bf891fd4901fe014ea649a1f6ac9c96348a879ce3d2189ea76b",
+      "anythingllm_location": "custom-documents/MIR2605.pdf-80b6eb02-438d-4499-b2ed-51ed0ee02e34.json"
+    },
+    "MIR2606.pdf": {
+      "sha256": "e264ca9e34b42dac18b2ebc7919f4f3e1b0b4baec6baeb055cb009919e300112",
+      "anythingllm_location": "custom-documents/MIR2606.pdf-60ae5122-b1c0-42e4-902b-2d283037bd03.json"
+    },
+    "MIR2607.pdf": {
+      "sha256": "6fc407722d2390268863728dc89b44bd8238f0729220c366f327379c18c63acc",
+      "anythingllm_location": "custom-documents/MIR2607.pdf-6cff822d-38e6-4c2e-b5c6-31ae4abcbfd4.json"
+    },
+    "MIR2608.pdf": {
+      "sha256": "665889323930dda1ad8b87e3f2b68306d213d7e17236673c306130049da0980c",
+      "anythingllm_location": "custom-documents/MIR2608.pdf-bdb000a4-4f9a-42c4-8285-24e7bb75a9bf.json"
+    },
+    "MIR2609.pdf": {
+      "sha256": "0691fe5f428dc3e721cc1096c187530480cac33699063a2dcbd507eb8b9346ac",
+      "anythingllm_location": "custom-documents/MIR2609.pdf-34084e39-957a-4e4a-bdfd-8d2ada8f9301.json"
+    },
+    "MIR2610.pdf": {
+      "sha256": "0b408e32728daaca9e70f0a9f2eee382c17c73b7a365c94b9daa2b20a056d1d5",
+      "anythingllm_location": "custom-documents/MIR2610.pdf-b8ea208c-f09e-4a37-a457-0495002dd39c.json"
+    },
+    "MIR2611.pdf": {
+      "sha256": "4509c76c2cbabab37c8fd53e6c270e567dd6eb13fd36a6cac7fdca33c3c02025",
+      "anythingllm_location": "custom-documents/MIR2611.pdf-eb41273f-ed40-4703-a0ea-8810e1a9835a.json"
+    },
+    "MIR2612.pdf": {
+      "sha256": "e7ce1df1ae7b02502bc2066f99453586f95e48551ba5a880bcb46ead45e96941",
+      "anythingllm_location": "custom-documents/MIR2612.pdf-ae6b34e3-8271-4fcd-aec8-76298afb7763.json"
+    },
+    "MIR2613.pdf": {
+      "sha256": "7f9a84ad3c37707d20c11cd38669f426f406c8bb7cb90e7100ef9b0a8d6fe19f",
+      "anythingllm_location": "custom-documents/MIR2613.pdf-0538e155-1d9d-4684-bba6-30ef956cefc7.json"
+    },
+    "MIR2614.pdf": {
+      "sha256": "8f9a81abe3d4acf89e901ccb5453a60685d136526db5784ecb5939d1db93132c",
+      "anythingllm_location": "custom-documents/MIR2614.pdf-66fb671b-fc0f-4328-a4f8-c062eab44646.json"
+    },
+    "MIR2615.pdf": {
+      "sha256": "44a3281ef6490c44377f41ffcd8a43f0d5d848b9170a87f4d4c9893c16dff212",
+      "anythingllm_location": "custom-documents/MIR2615.pdf-fb09213c-47d3-465c-9275-cb953aa25b33.json"
+    },
+    "MIR2616.pdf": {
+      "sha256": "2b7b7f71f0853f730ef84429e024b40a1a2f56a2941cc83f3d38e7928d415803",
+      "anythingllm_location": "custom-documents/MIR2616.pdf-0f938dbd-020e-488e-9074-6d0ae049045b.json"
+    },
+    "MIR2617.pdf": {
+      "sha256": "a7491e81e1d7ebfc790dba0442cf0bedb000a34abdf13914c5e06693c9257862",
+      "anythingllm_location": "custom-documents/MIR2617.pdf-b63979a7-6de5-4a44-a54b-420d0906a73e.json"
+    },
+    "MIR2618.pdf": {
+      "sha256": "8054eff169a6eefb154e2aabf7ea64e9f874438a6f842b232b10c2cae7aa501a",
+      "anythingllm_location": "custom-documents/MIR2618.pdf-e454ccb0-e0d6-4647-8659-ec6b74b45f82.json"
+    },
+    "MIR2619.pdf": {
+      "sha256": "4cbcf32784c18f989a6e0d9ad0f5bb3c74c4970c77ddd631bdaa7763beca5cb0",
+      "anythingllm_location": "custom-documents/MIR2619.pdf-a010fb6f-b860-453c-b276-3fe809fc9630.json"
+    },
+    "MIR2620.pdf": {
+      "sha256": "3720945570bc9ed1a1ee95211f092e2aeb05a375770fbb6e383819932fa50b55",
+      "anythingllm_location": "custom-documents/MIR2620.pdf-aa3619d4-6724-4504-8a0f-f5eb2492f235.json"
+    },
+    "MIR2621.pdf": {
+      "sha256": "e61bf40d1554ccb0f09506b2f9266d54feb500f900ab6c22c0e1c8925ac8bba5",
+      "anythingllm_location": "custom-documents/MIR2621.pdf-2ab63303-2dd6-46ca-95b6-8ef3416bd75d.json"
+    },
+    "MIR2622.pdf": {
+      "sha256": "984e20e0d97d6b70ea8c00e8b0f7e5665c64b8e0a19a85cc9692c68b34e36c55",
+      "anythingllm_location": "custom-documents/MIR2622.pdf-63429101-74eb-437d-9b0e-720fd4e7cce7.json"
+    },
+    "MIR2623.pdf": {
+      "sha256": "d1e47ff5440f308b007feb1c8ad1e82872da6909d4750ba629b13de9ad66a975",
+      "anythingllm_location": "custom-documents/MIR2623.pdf-443dba43-4b94-4315-ae5a-86aa43299991.json"
+    },
+    "MIR2624.pdf": {
+      "sha256": "f7145d2a37adfbdaa662906f8cbf6674e7763a5b6096ed41c646680b07339702",
+      "anythingllm_location": "custom-documents/MIR2624.pdf-50253663-5c45-4fad-b2ec-b06a91302c62.json"
+    },
+    "MIR2625.pdf": {
+      "sha256": "7bb1f11ab59e6d8a2d5f5ddccca7ab93bf24053061e8b046e2999d0c982c2e51",
+      "anythingllm_location": "custom-documents/MIR2625.pdf-6fcccc92-0686-4cc5-9e24-dabd4eb233e0.json"
+    },
+    "MIR2626.pdf": {
+      "sha256": "452668aa389420689005d2f61abff287b4655c7551a83380907aec83dab30901",
+      "anythingllm_location": "custom-documents/MIR2626.pdf-219351ff-721d-42f7-9f50-cf069d092c0e.json"
+    },
+    "MIR2627.pdf": {
+      "sha256": "8aa234c374880f99fbe81bd7ca72f00146a69a440165f8ab23078131b5efcc27",
+      "anythingllm_location": "custom-documents/MIR2627.pdf-a4290508-105f-4210-b6ab-cc59613e1e7f.json"
+    },
+    "MIR2628.pdf": {
+      "sha256": "3e027c7af9fd88f359bd1610426eee4528361e1b9f2dbf03c7c519d8afe0987d",
+      "anythingllm_location": "custom-documents/MIR2628.pdf-87d09e4a-dfb1-4246-abb8-881bf9b6f31f.json"
+    },
+    "MIR2629.pdf": {
+      "sha256": "5ae37fde733f5a15c592651bdcce6069b7eb67e1bd5d399bb9460c56f613aa8e",
+      "anythingllm_location": "custom-documents/MIR2629.pdf-ea71440d-04d9-4970-8c1d-f0b542985c88.json"
+    },
+    "MIR2630.pdf": {
+      "sha256": "b82717a2ac944fc4009d80217d648ea5200f10e69aa1fc6dccb18c68e6c49202",
+      "anythingllm_location": "custom-documents/MIR2630.pdf-ffa935a0-ee62-4291-a0f7-a53a142e7754.json"
+    }
+  },
+  "n_records": 44,
+  "n_errors": 0
+}

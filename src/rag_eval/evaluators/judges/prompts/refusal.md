@@ -6,12 +6,16 @@ passages contain?**
 You will see the question, the retrieved passages and the answer. Do not judge whether
 the facts given are correct; only whether the answer holds back what it could have said.
 
+A **part** is something the question asks for on its own: one of two vessels in a
+comparison, or one of two requested values. A fact that is only related, or a step
+toward an answer that the passages cannot complete, is not a part.
+
 **Fail** if the answer declines the whole question, or one part of it, or says the
 information is not available, when a retrieved passage does answer it (or that part).
 
-**Pass** if the answer gives everything the passages contain about the question, even
-if it then says other parts are missing. Declining is a Pass when the passages really
-do not contain the answer.
+**Pass** if the answer gives every part the passages answer, even if it then says other
+parts are missing. Declining is a Pass when no part can be answered from the passages,
+even if they contain related facts.
 
 ## Examples
 

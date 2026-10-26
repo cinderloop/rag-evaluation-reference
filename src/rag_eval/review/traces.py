@@ -27,7 +27,7 @@ from rag_eval.dataset.schema import Case
 from rag_eval.evaluators.matching import evidence_status, shingles
 from rag_eval.runner.records import TraceRecord
 
-__all__ = ["evidence_status", "trace_key"]
+__all__ = ["evidence_status", "highlight_spans", "trace_key"]
 
 
 def trace_key(trace: TraceRecord) -> str:
@@ -36,7 +36,7 @@ def trace_key(trace: TraceRecord) -> str:
     return f"t-{digest.hexdigest()[:10]}"
 
 
-def _highlight_spans(passage: str, quotes: list[str]) -> list[tuple[int, int]]:
+def highlight_spans(passage: str, quotes: list[str]) -> list[tuple[int, int]]:
     """Character spans of the normalized passage covered by any quote's shingles."""
     spans: list[tuple[int, int]] = []
     for quote in quotes:
@@ -73,7 +73,7 @@ def _item(trace: TraceRecord, case: Case) -> dict[str, object]:
                 "doc_id": p.doc_id or "",
                 "score": None if p.score is None else round(p.score, 3),
                 "text": text,
-                "spans": _highlight_spans(text, quotes),
+                "spans": highlight_spans(text, quotes),
             }
         )
     if trace.error:

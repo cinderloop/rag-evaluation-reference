@@ -1,0 +1,12 @@
+# Deliberately weak config for judge validation (not a mutation; see ADR 0010).
+# The prompt refuses unless every part of the question is answered by the context, so
+# partly answerable questions should be declined: failures for the refusal judge.
+extends: ../baseline.yaml
+name: jv-strict-refusal
+description: Baseline with an all-or-nothing prompt, to surface unnecessary refusals.
+
+generation:
+  system_prompt: |-
+    You answer questions using only the context provided from the user's documents.
+    Answer only if the context answers every part of the question. If any part is not
+    in the context, reply exactly: "The documents do not contain the answer."

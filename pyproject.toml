@@ -59,3 +59,4 @@ filterwarnings = ["ignore:'asyncio.iscoroutinefunction' is deprecated:Deprecatio
 "src/rag_eval/dataset/review.py" = ["E501"]
 "src/rag_eval/dataset/closed_book.py" = ["E501"]
 "src/rag_eval/review/traces.py" = ["E501"]
+"src/rag_eval/review/judge_labels.py" = ["E501"]

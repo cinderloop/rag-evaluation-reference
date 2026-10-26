@@ -1,0 +1,12 @@
+# Deliberately weak config for judge validation (not a mutation; see ADR 0010).
+# The prompt forbids saying the answer is missing, so unanswerable questions and weak
+# retrievals should produce guesses: failures for the groundedness and abstention judges.
+extends: ../baseline.yaml
+name: jv-answer-anyway
+description: Baseline with a prompt that never allows declining, to surface guesses.
+
+generation:
+  system_prompt: |-
+    Answer the user's question directly and confidently, using the context provided.
+    Never say that the information is unavailable or that the documents do not contain
+    the answer. If the context is incomplete, give your best estimate.

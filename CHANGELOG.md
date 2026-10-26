@@ -43,3 +43,9 @@ All notable changes to this project are documented here. The format follows
   default, with a Claude API template in `configs/judges/` and a backend for any
   OpenAI-compatible endpoint.
 - Retrieval scores for the three error-analysis runs.
+- Judge validation tooling (`rag-eval review judges-export` / `judges-import` /
+  `judges-validate`): a labelling page with Pass/Fail per judge, a judge-dev/judge-test
+  split by question, and TPR/TNR with Wilson intervals. ADR 0010.
+- Judge validation results (`docs/judges.md`): 608 Pass/Fail labels on 217 dev traces
+  from five configs (two added in `configs/judge-validation/`), one round of prompt
+  clarification on judge-dev, and TPR/TNR on judge-test.
