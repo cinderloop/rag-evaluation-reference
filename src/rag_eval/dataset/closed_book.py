@@ -15,7 +15,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import math
 import re
 from collections import Counter
 from datetime import UTC, datetime
@@ -26,6 +25,7 @@ from pydantic import BaseModel, ConfigDict
 
 from rag_eval.dataset.schema import Case
 from rag_eval.runner.records import TraceRecord
+from rag_eval.stats.intervals import wilson
 
 Mark = Literal["correct", "partly_correct", "incorrect", "abstained"]
 MARKS: tuple[Mark, ...] = ("correct", "partly_correct", "incorrect", "abstained")
@@ -109,16 +109,6 @@ def load_marks(path: Path, traces: list[TraceRecord], cases: dict[str, Case]) ->
     if errors:
         raise MarksImportError("\n".join(errors))
     return marks
-
-
-def wilson(successes: int, n: int, z: float = 1.96) -> tuple[float, float]:
-    """95% Wilson score interval for a proportion."""
-    if n == 0:
-        return (0.0, 1.0)
-    p = successes / n
-    centre = (p + z * z / (2 * n)) / (1 + z * z / n)
-    half = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / (1 + z * z / n)
-    return (max(0.0, centre - half), min(1.0, centre + half))
 
 
 def _rate(k: int, n: int) -> str:

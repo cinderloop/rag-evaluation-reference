@@ -49,3 +49,7 @@ All notable changes to this project are documented here. The format follows
 - Judge validation results (`docs/judges.md`): 608 Pass/Fail labels on 217 dev traces
   from five configs (two added in `configs/judge-validation/`), one round of prompt
   clarification on judge-dev, and TPR/TNR on judge-test.
+- Statistics module (`src/rag_eval/stats/`, standard library only): Wilson and bootstrap
+  intervals, cluster-robust standard errors and cluster bootstrap for repeated runs, exact
+  McNemar and paired (and paired-cluster) bootstrap for config comparisons, run consistency, and minimum
+  detectable effect; unit-tested against hand-computed values. ADR 0011.

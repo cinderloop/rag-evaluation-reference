@@ -27,12 +27,12 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict
 
-from rag_eval.dataset.closed_book import wilson
 from rag_eval.dataset.corpus_text import normalize
 from rag_eval.dataset.schema import Case
 from rag_eval.evaluators.judges.judges import FEW_SHOT_TRACES, JUDGES, JudgeName, Verdict
 from rag_eval.review.traces import evidence_status, highlight_spans, trace_key, traces_sha256
 from rag_eval.runner.records import TraceRecord
+from rag_eval.stats.intervals import wilson
 
 JudgeSplit = Literal["judge-dev", "judge-test"]
 Mark = Literal["Pass", "Fail", "skip"]
