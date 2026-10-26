@@ -22,7 +22,7 @@ def _decisions(
     path.write_text(
         json.dumps(
             {
-                "reviewer": "owner",
+                "reviewer": "reviewer-a",
                 "candidates_sha256": sha or candidates_sha256(candidates),
                 "decisions": decisions,
             }
@@ -48,7 +48,7 @@ def test_approved_items_use_reviewer_edits_and_rejects_are_dropped(tmp_path: Pat
     items = [candidate("b001-1"), candidate("b001-2", "Different question about Alpha's captain?")]
     path = _decisions(tmp_path, items, {"b001-1": _decision(), "b001-2": _decision("reject")})
     parsed, approved = import_decisions(path, items, REPORTS)
-    assert parsed.reviewer == "owner"
+    assert parsed.reviewer == "reviewer-a"
     assert [c.id for c in approved] == ["q-b001-1"]
     assert approved[0].question == "Edited question?"
     assert approved[0].dimensions["chunk_boundary"] == "within_chunk"

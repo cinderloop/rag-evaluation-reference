@@ -1,4 +1,4 @@
-"""``rag-eval review ...``: human review steps of error analysis."""
+"""``rag-eval review ...``: review steps of error analysis."""
 
 from __future__ import annotations
 

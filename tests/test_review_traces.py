@@ -86,7 +86,7 @@ def test_page_hides_run_ids_and_highlights_evidence(tmp_path: Path) -> None:
 
 def _notes(tmp_path: Path, traces: list[TraceRecord], notes: dict[str, object]) -> Path:
     path = tmp_path / "notes.json"
-    payload = {"coder": "owner", "traces_sha256": traces_sha256(traces), "notes": notes}
+    payload = {"coder": "reviewer-a", "traces_sha256": traces_sha256(traces), "notes": notes}
     path.write_text(json.dumps(payload), encoding="utf-8")
     return path
 

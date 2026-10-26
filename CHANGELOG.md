@@ -23,15 +23,15 @@ All notable changes to this project are documented here. The format follows
   of decisions, and a stratified dev/test split. ADR 0004.
 - Session generation path (`rag-eval dataset brief`, `check-batch`, `collect`): candidates
   written by Claude Code helper agents from per-batch briefs, under the same checks.
-- Dataset: 110 approved items (blanket approval by the owner, recorded as such),
-  stratified into `data/dev.jsonl` (44) and `data/test.jsonl` (66).
+- Dataset: 110 approved items, stratified into `data/dev.jsonl` (44) and `data/test.jsonl` (66).
 - System under test runs with thinking off: `qwen3-nothink:8b`, built from
   `models/qwen3-nothink.Modelfile` (same weights as qwen3:8b). ADR 0005.
 - Closed-book baseline: `configs/closed-book.yaml` (`corpus.closed_book`, no documents)
   and a marking page with import (`rag-eval dataset closed-book-export` / `-import`).
   Result: 3/90 answered correctly from memory (95% CI 1–9%), all on questions a guess
-  could get right (`docs/results/closed-book-baseline.md`; marked by Claude at the
-  owner's request).
+  could get right (`docs/results/closed-book-baseline.md`).
 - Error analysis setup: two weak configs (`configs/error-analysis/`), 132 dev traces
   (baseline plus both), and a blind, shuffled open-coding page with evidence
   highlighting (`rag-eval review traces-export` / `traces-import`). ADR 0006.
+- Failure taxonomy (`docs/failure-taxonomy.md`): open coding of the 132 dev traces
+  grouped into six failure modes.

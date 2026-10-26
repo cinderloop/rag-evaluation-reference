@@ -1,7 +1,7 @@
 # Known weak items in the dataset
 
-What the generating agents and the automated checks flagged before review. The owner
-approved all 110 candidates (ADR 0004), so these items are in the dataset as written.
+What the generating agents and the automated checks flagged before review. All 110
+candidates were approved (ADR 0004), so these items are in the dataset as written.
 Error analysis should check failures against this list before blaming the system, and
 this list is the first place to look if the dataset is revised.
 

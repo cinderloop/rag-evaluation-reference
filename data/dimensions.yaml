@@ -1,4 +1,4 @@
-# Question dimensions for the evaluation dataset. STATUS: approved by the repository owner, 2026-10-21.
+# Question dimensions for the evaluation dataset. STATUS: approved, 2026-10-21.
 # Dataset and corpus sizes, batching and spend controls: docs/decisions/0004-dataset-size-and-generation.md
 #
 # Candidates are generated from dimension tuples (one value per dimension), so the

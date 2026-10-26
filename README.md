@@ -2,7 +2,7 @@
 
 Reference implementation of RAG evaluation: error analysis, validated binary LLM judges, mutation testing and statistically sound results. System under test: AnythingLLM, with DeepEval.
 
-> **Status:** work in progress. Provisioning, the runner, the dataset and the closed-book baseline are in place; the evaluators and results are not yet.
+> **Status:** work in progress. Provisioning, the runner, the dataset and the closed-book baseline and the [failure taxonomy](docs/failure-taxonomy.md) are in place; the evaluators and results are not yet.
 
 ## Quick start
 
@@ -127,7 +127,7 @@ The PDFs are not committed. `uv run rag-eval fetch-corpus` downloads them from n
 
 110 questions about the reports (44 dev, 66 test), each with verbatim evidence quotes, built with `rag-eval dataset ...` and explained in [ADR 0004](docs/decisions/0004-dataset-size-and-generation.md). Known weak items are listed in [`data/candidates/review-notes.md`](data/candidates/review-notes.md).
 
-Self-contained pages show the human-in-the-loop steps; download and open them in a browser:
+Self-contained pages show the review steps; download and open them in a browser:
 
 - [`data/review/review.html`](data/review/review.html): reviewing generated candidates (approve, edit or reject, with each quote shown in its report context).
 - [`data/review/traces.html`](data/review/traces.html): open coding for error analysis, with each trace's expected evidence highlighted in the retrieved passages (traces shuffled, config hidden).

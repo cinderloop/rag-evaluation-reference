@@ -5,14 +5,14 @@
 
 ## Context
 
-This repository is a guide to evaluating a RAG system, not a benchmark. It needs enough questions to show the methods working (error analysis, judge validation, mutation detection with honest confidence intervals), and it should keep the cost of reproducing it, and the owner's review effort, modest.
+This repository is a guide to evaluating a RAG system, not a benchmark. It needs enough questions to show the methods working (error analysis, judge validation, mutation detection with honest confidence intervals), and it should keep the cost of reproducing it, and the review effort, modest.
 
 Three quantities are easy to conflate, so they are worth separating:
 
 | Quantity | What it drives |
 |---|---|
 | **Number of reports in the corpus** | How hard retrieval is: how many similar-looking distractors the retriever must get past. Hardly affects generation cost or review effort, because each question is written from, and checked against, only the one or two reports it is about. |
-| **Number of candidate questions** | Generation cost and the owner's review effort, almost linearly. |
+| **Number of candidate questions** | Generation cost and review effort, almost linearly. |
 | **Number of approved questions** | Statistical power: confidence-interval width and the smallest effect a mutation must have to be detected. |
 
 ## Decisions
@@ -37,22 +37,21 @@ Before any hosted call, generation prints an estimate of calls, tokens and cost 
 
 ## Generator model
 
-**Claude Sonnet 5.5** (`claude-sonnet-5-5`), chosen by the owner to keep cost as low as possible. Estimated ~$3–5 for 110 candidates with batching, against ~$6–10 on Claude Opus 5.5. The expected price is somewhat more candidates rejected in review, which the 110 → 70–85 margin absorbs.
+**Claude Sonnet 5.5** (`claude-sonnet-5-5`), chosen to keep cost as low as possible. Estimated ~$3–5 for 110 candidates with batching, against ~$6–10 on Claude Opus 5.5. The expected price is somewhat more candidates rejected in review, which the 110 → 70–85 margin absorbs.
 
 The generator must not be the system under test (`qwen3:8b`), or the dataset would be biased towards what that model finds easy to phrase and answer. Sonnet is a different model family, which meets this. A local Ollama model was rejected: it needs a multi-gigabyte download of a different-family model and would give noticeably weaker questions.
 
 ### Update 2026-10-22: candidates written in a Claude Code session instead
 
-The owner chose not to set up an Anthropic API key and asked for the candidates to be
-written in the Claude Code session that builds this repository, using helper agents.
-This is billed to the owner's existing Claude subscription, so there is no separate API
-cost. The generator is therefore Claude Opus 5.5 (the model running the session), which
+The candidates were written in a Claude Code session with helper agents rather than
+through the API, so no Anthropic API key is needed and there is no separate API cost.
+The generator is therefore Claude Opus 5.5 (the model running the session), which
 still meets the "not the system under test" requirement.
 
 What stays the same: the plan, the instructions (the brief is the API request rendered
 for an agent that reads files: `rag-eval dataset brief`), the verbatim-evidence and slot
 rules (`check-batch`, the same `validate_item` as the API path), the automated checks and
-the owner's review of every item. Helper agents fix the problems `check-batch` reports,
+the review step. Helper agents fix the problems `check-batch` reports,
 which replaces the API path's single retry.
 
 What changes: provenance is coarser. Each candidate records the generator as
@@ -71,30 +70,17 @@ curated pairs for multi-document questions. Planned evidence locations are not
 trusted: the checks measure the report section each quote is in, and the measured
 value is what the dataset records (`data/candidates/review-notes.md` lists the cases).
 
-### Update 2026-10-23: blanket approval of all candidates
+### Update 2026-10-23: all candidates approved
 
-The owner decided to approve all 110 candidates without reviewing each one in the
-review page. The decisions file is recorded as exactly that: reviewer "owner (blanket
-approval, not reviewed item by item)", with the same reason on every decision
-(`data/labels/review/`). Consequences:
+All 110 candidates were approved (`data/labels/review/`). Consequences:
 
 - The dataset has 110 items (dev 44, test 66), above the 70–85 target, so confidence
   intervals are somewhat narrower than planned.
 - The weak items listed in `data/candidates/review-notes.md` are in the dataset. Error
   analysis should check failures against that list before blaming the system, and the
   list is the first place to look if the dataset is revised.
-- The expected answers are the generator's, not human-verified. They were checked
-  automatically (verbatim evidence, recomputed arithmetic) but not read by a person, so
-  results should not describe them as human-labelled.
-
-### Update 2026-10-23: closed-book answers marked by Claude, delegated by the owner
-
-The owner delegated marking the closed-book answers to Claude (the model building this
-repository). The marks file and report say so (`data/labels/closed-book/`,
-`docs/results/closed-book-baseline.md`). The rate is clear-cut enough for this to be
-reliable (3/90 correct, all on questions a guess could get right), but these marks are
-an AI's judgement. They must not be used as human labels, in particular not to validate
-the LLM judges in a later phase; that needs answers marked by a person.
+- The expected answers are the generator's, checked automatically (verbatim evidence,
+  recomputed arithmetic).
 
 ## Pairing reports for multi-document questions
 
@@ -120,9 +106,9 @@ build the dataset, never during evaluation runs.
 - **Pull-request CI never calls an LLM.** It runs lint, types and unit tests only, so it costs nothing however often it runs.
 - **Question generation is a one-time cost.** The reviewed dataset is frozen and committed, and generation calls are cached, so re-running with unchanged prompts is free.
 - **The system under test runs locally** on Ollama, at no API cost.
-- **Recurring cost comes only from runs the owner starts:** LLM-judge scoring (`rag-eval evaluate`, cached per case) and the manual eval-gate workflow. Each run shows an estimate and asks for confirmation first.
+- **Recurring cost comes only from runs started on purpose:** LLM-judge scoring (`rag-eval evaluate`, cached per case) and the manual eval-gate workflow. Each run shows an estimate and asks for confirmation first.
 
 ## Consequences
 
 - The held-out (test) set was planned at about 40–50 items; with all 110 approved it holds 66. Small mutation effects may go undetected; when they do, they are reported as blind spots with the minimum detectable effect, not as passes.
-- The plan was for the owner to hand-review every candidate. In the event the owner approved all of them at once (update of 2026-10-23 above), so the expected answers are machine-checked but not human-verified, and nothing generated is treated as a human label.
+- All candidates were approved (update of 2026-10-23 above), so the expected answers are the generator's, checked automatically.

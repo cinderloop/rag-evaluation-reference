@@ -84,7 +84,7 @@ def test_page_lists_only_answerable_items_and_prefills_abstentions(tmp_path: Pat
 
 def _marks(tmp_path: Path, marks: dict[str, dict[str, object]]) -> Path:
     path = tmp_path / "marks.json"
-    payload = {"marker": "owner", "traces_sha256": traces_sha256(TRACES), "marks": marks}
+    payload = {"marker": "reviewer-a", "traces_sha256": traces_sha256(TRACES), "marks": marks}
     path.write_text(json.dumps(payload), encoding="utf-8")
     return path
 

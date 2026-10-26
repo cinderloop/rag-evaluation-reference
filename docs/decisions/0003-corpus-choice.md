@@ -49,7 +49,7 @@
 
 ## Decision
 
-**A: NTSB marine investigation reports, 2025–2026**, chosen by the repository owner on 2026-10-21.
+**A: NTSB marine investigation reports, 2025–2026**, chosen on 2026-10-21.
 
 Text is used as published, with the credit "Courtesy: National Transportation Safety Board". The NTSB logo and seal, and any material the reports mark as third-party copyrighted, are not covered by the public-domain statement and are not relied on.
 

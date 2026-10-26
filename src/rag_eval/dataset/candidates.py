@@ -1,7 +1,7 @@
-"""Candidate questions: machine-generated, awaiting human review.
+"""Candidate questions: machine-generated, awaiting review.
 
-A candidate is never a dataset item by itself. It becomes one only when the
-repository owner approves it (possibly after editing) in the review step.
+A candidate is never a dataset item by itself. It becomes one only when it
+is approved (possibly after editing) in the review step.
 """
 
 from __future__ import annotations

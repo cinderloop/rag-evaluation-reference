@@ -9,7 +9,7 @@
 On the first closed-book run, the trace was about 2,200 characters against a 370-character
 answer, so roughly 80% of the generation time went into thinking (about 8 s per question,
 up to 15 s). Every evaluation run, every repeat and every mutation pays this cost, and the
-owner's machine ran hot through a full run.
+host machine ran hot through a full run.
 
 This repository is a guide to evaluation methods (error analysis, validated judges,
 mutation testing, honest statistics). Those methods work the same on a model that answers

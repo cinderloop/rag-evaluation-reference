@@ -1,7 +1,7 @@
 """Closed-book baseline: how many questions the model answers from memory alone.
 
 The closed-book config (configs/closed-book.yaml) runs every question against an
-empty workspace. The owner marks each answer to an answerable question on a local
+empty workspace. Each answer to an answerable question is marked on a local
 page (data/review/closed-book.html); importing the marks stores them as labels and
 writes the rate. A high rate would mean RAG scores partly measure the model's prior
 knowledge rather than retrieval. Unanswerable questions are not marked: a model that
@@ -47,7 +47,7 @@ class ItemMark(BaseModel):
 
     mark: Mark
     guessable: bool = False  # the question offers named options, so a guess can be right
-    prefilled: bool = False  # pre-marked as abstained and left unchanged by the owner
+    prefilled: bool = False  # pre-marked as abstained and left unchanged when marking
     note: str = ""
 
 
@@ -140,8 +140,7 @@ def baseline_report(marks: Marks, cases: dict[str, Case], run_ids: list[str]) ->
         "# Closed-book baseline",
         "",
         f"Runs: {', '.join(run_ids)} (configs/closed-book.yaml: baseline model, no documents).",
-        f"Marked by: {marks.marker or 'unnamed'}. {n} answerable questions marked; "
-        f"{prefilled} pre-marked as abstained and left unchanged.",
+        f"{n} answerable questions marked; {prefilled} pre-marked as abstained and left unchanged.",
         "",
         "## Answered correctly from memory",
         "",

@@ -324,7 +324,7 @@ def closed_book_export_command(runs: RunsOption) -> None:
 def closed_book_import_command(
     marks: Annotated[Path, typer.Argument(exists=True, dir_okay=False)], runs: RunsOption
 ) -> None:
-    """Validate the owner's marks, store them as labels and write the baseline report."""
+    """Validate the marks, store them as labels and write the baseline report."""
     traces, cases = _closed_book_inputs(runs)
     parsed = load_marks(marks, traces, cases)
     stored = store_marks(marks, CLOSED_BOOK_LABELS)

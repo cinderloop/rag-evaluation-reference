@@ -1,5 +1,5 @@
 {
- "reviewer": "owner (blanket approval, not reviewed item by item)",
+ "reviewer": "",
  "candidates_sha256": "6fd6097051250b1f89e26ced20d1f379df6a738fe7a124f54e0ff6f566740ca7",
  "decisions": {
   "b001-1": {
@@ -24,7 +24,7 @@
      "quote": "Owner/Operator Enterprise Marine Services ( Commerc ial)"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b001-2": {
    "decision": "approve",
@@ -40,7 +40,7 @@
      "quote": "at a speed of 0.35 mph, the starboard quarter of the starboard barge (EMS 348) contacted the wooden fendering of the transfer platform at dolphin no. 3"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b002-1": {
    "decision": "approve",
@@ -56,7 +56,7 @@
      "quote": "the depth at the site at the time of the grounding was likely about 7.8 feet. The draft of the John M. Donnelly was 9.5 feet."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b002-2": {
    "decision": "approve",
@@ -72,7 +72,7 @@
      "quote": "the 186-foot-long, steel-hulled towing vessel John M Donnelly was pushing 25 empty dry cargo barges in 5 strings of 5 barges upbound on the Lower Mississippi River."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b003-1": {
    "decision": "approve",
@@ -88,7 +88,7 @@
      "quote": "Each barge was loaded with about 24,000 barrels of vacuum gas oil (VGO), a thick heavy petroleum byproduct of the crude oil refinement process."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b003-2": {
    "decision": "approve",
@@ -108,7 +108,7 @@
      "quote": "At 0946, the aft port corner of the MMLP 321 struck a power transmission pole adjacent to, and on the east side of, the Pelican Island Bridge"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b004-1": {
    "decision": "approve",
@@ -140,7 +140,7 @@
      "quote": "he released carbon dioxide into the unloading generator space about 1630."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b004-2": {
    "decision": "approve",
@@ -164,7 +164,7 @@
      "quote": "the fire originated on the starboard side of the unloading generator engine when the engine block ruptured in the area of the no. 9 connecting rod"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b005-1": {
    "decision": "approve",
@@ -180,7 +180,7 @@
      "quote": "On March 18, 2025, about 1600 local time, the bulk carrier Cuyahoga was discovered partially flooded while docked in Ashtabula, Ohio"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b005-2": {
    "decision": "approve",
@@ -196,7 +196,7 @@
      "quote": "Persons on board None"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b006-1": {
    "decision": "approve",
@@ -212,7 +212,7 @@
      "quote": "Date May 5, 2025 Time 0957 central daylight time (coordinated universal time –5 hrs) Persons on board 10 Injuries None Property damage $941,000 est."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b006-2": {
    "decision": "approve",
@@ -228,7 +228,7 @@
      "quote": "Weather Visibility 10 mi, fair skies, winds south-southeast 5 mph, air temperature 70°F"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b007-1": {
    "decision": "approve",
@@ -252,7 +252,7 @@
      "quote": "was owned and operated by Algoma Shipping Ltd., a subsidiary of the Algoma Central Corporation"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b007-2": {
    "decision": "approve",
@@ -268,7 +268,7 @@
      "quote": "As the Algoma Verity passed under the Benjamin Franklin Bridge at a speed of about 9 knots, its bow was 140 feet to starboard of the channel (as measured from ship’s centerline) and moving to starboard."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b008-1": {
    "decision": "approve",
@@ -292,7 +292,7 @@
      "quote": "Towing vessels are inspected under the regulations in 46 Code of Federal Regulations Subchapter M; however, these regulations currently do not require vessel owners to incorporate structural fire protection on their vessels."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b008-2": {
    "decision": "approve",
@@ -308,7 +308,7 @@
      "quote": "Persons on board 6 (William D) Injuries None Property damage $500,000"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b009-1": {
    "decision": "approve",
@@ -324,7 +324,7 @@
      "quote": "Location Nushagak Bay, 28 nm south of Dillingham, Alaska 58°33.32' N, 158°29.52' W Date August 8, 2024"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b009-2": {
    "decision": "approve",
@@ -344,7 +344,7 @@
      "quote": "The vessel burned to the waterline, sank, and was not salvaged, so investigators could not access and inspect the vessel to determine the origin and cause of the fire. Therefore, the ignition source could not be determined."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b010-1": {
    "decision": "approve",
@@ -360,7 +360,7 @@
      "quote": "An electrical fault—such as a loose, broken, or frayed wire—within the plug or nearby boot warmer could have created excessive resistive heating. Resistive heating within electrical conductors can produce sufficient heat to ignite nearby combustibles. However, due to the extent of the fire damage, the exact ignition source and cause of the fire could not be determined."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b010-2": {
    "decision": "approve",
@@ -376,7 +376,7 @@
      "quote": "The captain had the crew secure ventilation, fuel sources, and natural air openings to the engine room before abandoning the towboat. The fire was extinguished by a responding fire boat a few hours later."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b011-1": {
    "decision": "approve",
@@ -396,7 +396,7 @@
      "quote": "Additionally, spaces should remain sealed for sufficient time to allow the fire suppression agent to smother fire, as well as for temperatures to drop, for up to 24 hours."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b011-2": {
    "decision": "approve",
@@ -416,7 +416,7 @@
      "quote": "Once the port engine room was sealed, the master gave the order to release half (7 of 14) of the CO 2 bottles in the vessel’s fixed fire extinguishing system to suppress the fire in the space."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b012-1": {
    "decision": "approve",
@@ -440,7 +440,7 @@
      "quote": "Therefore, the captain likely fell asleep about 1 to 3 minutes before the contact, sometime between 12:35:12 and 12:36:25 (see figure 4)."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b012-2": {
    "decision": "approve",
@@ -460,7 +460,7 @@
      "quote": "This poor sleep quality would have resulted in increased levels of fatigue on the day of the contact and increased the likelihood of the captain falling asleep while navigating the vessel."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b013-1": {
    "decision": "approve",
@@ -476,7 +476,7 @@
      "quote": "On June 15, 2024, the towing vessel Mackenzie Rose was approaching Chesapeake, Virginia, on the Elizabeth River, with the captain navigating the vessel."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b013-2": {
    "decision": "approve",
@@ -500,7 +500,7 @@
      "quote": "At 1626:41, the bow of the Weeks 281 contacted the western portion of the Warren through-truss approach span of the Norfolk and Portsmouth Belt Line Railroad Bridge"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b014-1": {
    "decision": "approve",
@@ -516,7 +516,7 @@
      "quote": "Persons on board 9 Injuries None Property damage $2 million est."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b014-2": {
    "decision": "approve",
@@ -532,7 +532,7 @@
      "quote": "While the towing vessel Chad Pregracke was pushing 34 loaded barges on the Lower Mississippi River southbound towards New Orleans, near mile 260.6, barge PTC 706 at the head of the tow became partially submerged, causing the tow to break up, and the barge later sank."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b015-1": {
    "decision": "approve",
@@ -556,7 +556,7 @@
      "quote": "The crew’s quick response and prompt action helped limit the fire damage and extinguish the fire."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b015-2": {
    "decision": "approve",
@@ -576,7 +576,7 @@
      "quote": "Due to the extent of the fire damage to the refrigerator and elsewhere within the crane cabin, the exact ignition source and cause of the fire could not be determined."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b016-1": {
    "decision": "approve",
@@ -596,7 +596,7 @@
      "quote": "Had a watch alarm been installed and set to appropriate intervals, it may have awoken the second captain before the contact."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b016-2": {
    "decision": "approve",
@@ -612,7 +612,7 @@
      "quote": "Injuries 1 minor (Dry Tortugas) Property damage $5 million (D r y To r t u g a s $500,000; platform VK-817A $4.5 million)"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b017-1": {
    "decision": "approve",
@@ -628,14 +628,14 @@
      "quote": "Property damage $720,000 Environmental damage Oil sheen observed; est. 4,000 gal diesel fuel on board"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b018-1": {
    "decision": "approve",
    "question": "Why did the Nickelena's captain not notice the crane boom striking the Mackinac Bridge while he was steering the tug under the span?",
    "expected_answer": "The premise is wrong: the captain was not steering. He was still in his stateroom when the tow passed under the bridge at 0213; a crewmember was at the helm, and the captain learned of the problem only when the engineer went below to notify him.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b018-2": {
    "decision": "approve",
@@ -647,7 +647,7 @@
      "quote": "Once the towing vessel and the barge were out of the harbor, the captain ordered the length of the tow line be increased to about 500 feet for the voyage"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b019-1": {
    "decision": "approve",
@@ -659,7 +659,7 @@
      "quote": "Persons on board 10 (Jack Edwards), 17 (Julie C)"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b019-2": {
    "decision": "approve",
@@ -671,7 +671,7 @@
      "quote": "Waterway information Unprotected approach channel, width 148 ft; charted depth 16 ft in channel, 8 ft outside of channel"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b020-1": {
    "decision": "approve",
@@ -683,7 +683,7 @@
      "quote": "However, when the deckhand attempted to drop the anchor, the lever to release the clutch on the windlass broke off, and the anchor held fast."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b020-2": {
    "decision": "approve",
@@ -699,7 +699,7 @@
      "quote": "However, due to the significant fire damage to the Jordyn Rose and onboard components, the ignition source and sequence could not be determined."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b021-1": {
    "decision": "approve",
@@ -719,7 +719,7 @@
      "quote": "Just after 1517, at a speed of 15 knots, the 6 Saturdays grounded and came to an abrupt stop about 0.2 miles east of the beach o n the shoals at the north side of the inlet."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b021-2": {
    "decision": "approve",
@@ -731,21 +731,21 @@
      "quote": "winds east 18 kts (at Northeast Florida Regional Airport, 4 nm north-northwest of grounding location)"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b022-1": {
    "decision": "approve",
    "question": "At what time on May 14, 2024, did the fishing vessel North American finally go down at its berth on the Lake Washington Ship Canal?",
    "expected_answer": "The report does not give the time of the sinking; it says only that the alarm was heard about 0550, salvors arrived about 0615, and the vessel eventually sank at the dock.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b022-2": {
    "decision": "approve",
    "question": "How many years of experience did the new captain who was being familiarized with the North American during its May 13, 2024, sea trial have?",
    "expected_answer": "The report does not state the new captain's experience; it gives no background, credentials or years of service for any of the crewmembers.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b023-1": {
    "decision": "approve",
@@ -757,7 +757,7 @@
      "quote": "The mate was then able to reach the Brunswick crew over VHF radio to make passing arrangements. The dredge captain informed the Royal Engineer mate that his preference was for the tow to pass between the dredge and the dock because “I had guys downstairs that were working on something. ... and I’d have to stop them to go do something else.”"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b023-2": {
    "decision": "approve",
@@ -773,7 +773,7 @@
      "quote": "However, the mate could not establish communications with the dredge crew until about 15 minutes before the Royal Engineer tow reached the dredging area."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b024-1": {
    "decision": "approve",
@@ -785,7 +785,7 @@
      "quote": "February 4, 2026 MIR-26-04 Fire aboard Fishing Vessel Spicy Lady MIR-26-04 2 Casualty Summary Casualty type Fire/Explosion Location Chatham Strait, about 1 mile west of Point Gardner, Alaska"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b024-2": {
    "decision": "approve",
@@ -805,7 +805,7 @@
      "quote": "due to severe fire damage in the berthing area, and because the space was unoccupied when the fire started, investigators were unable to determine when the bag containing the lithium-ion batteries caught fire or what caused it to ignite."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b025-1": {
    "decision": "approve",
@@ -821,7 +821,7 @@
      "quote": "The delamination was repaired by the captain and owner, but the Coast Guard was not notified about the issue and therefore was unable to oversee the repairs to ensure they were completed in accordance with recommended practices for fiberglass hull repairs."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b025-2": {
    "decision": "approve",
@@ -833,7 +833,7 @@
      "quote": "Persons on board 17 (5 crewmembers and 12 passengers)"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b026-1": {
    "decision": "approve",
@@ -845,7 +845,7 @@
      "quote": "The chief officer attempted to regain control by re- pressing the in-command FU button, without success. After about a minute, the master activated the steering control system’s emergency override mode. Although he was able to regain control of the rudder, it was too late to sufficiently turn the vessel before colliding with the moored bulk carrier Common Faith."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b026-2": {
    "decision": "approve",
@@ -857,14 +857,14 @@
      "quote": "Repairs performed in the shipyard in Swinemunde, Poland, were completed in November 2023."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b027-1": {
    "decision": "approve",
    "question": "How many crewmembers aboard the bulk carrier American Mariner were hurt when it struck the Munuscong Channel Junction Light, and what kinds of injuries did they suffer?",
    "expected_answer": "The premise is wrong: none of the 18 crewmembers aboard the American Mariner were injured in the contact.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b027-2": {
    "decision": "approve",
@@ -876,7 +876,7 @@
      "quote": "The chief engineer obtained permission from the shoreside port engineer to separate the linkage from the control motor to the main pump, isolating the no. 1 control motor. Once disconnected, the steering system properly responded to input commands."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b028-1": {
    "decision": "approve",
@@ -888,7 +888,7 @@
      "quote": "The vessel drifted about 475 yards downriver into a historic lock and damaged tribal fishing platforms mounted on the lock walls before its stern became wedged beneath the Thunder Island pedestrian bridge, which spanned the lock."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b028-2": {
    "decision": "approve",
@@ -900,7 +900,7 @@
      "quote": "As a result of the casualty, the operating company required mooring lines to be replaced annually."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b029-1": {
    "decision": "approve",
@@ -912,14 +912,14 @@
      "quote": "The City of Louisville was refloated and towed to a repair yard in Paducah, Kentucky, where it was dry docked on August 10."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b029-2": {
    "decision": "approve",
    "question": "What malfunction in the City of Louisville's autopilot allowed the tow to wander out of the channel while the pilot was away from the helm on the Upper Mississippi River?",
    "expected_answer": "The premise is wrong: the City of Louisville had no autopilot system; the pilot left the helm unattended, and the probable cause was the pilot leaving the helm, not an autopilot failure.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b030-1": {
    "decision": "approve",
@@ -935,14 +935,14 @@
      "quote": "The chief engineer was declared dead at the scene by the responding New York City Fire Department paramedics."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b030-2": {
    "decision": "approve",
    "question": "How long did firefighters take to put out the blaze that burned on deck after the explosion aboard the sludge vessel Hunts Point?",
    "expected_answer": "The premise is wrong: there was no fire after the Hunts Point explosion; instead, sludge burst out of the tank and covered the assistant engineer and the vessel's exterior.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b031-1": {
    "decision": "approve",
@@ -954,7 +954,7 @@
      "quote": "The MPC 644 was carrying about 23,000 barrels of no. 2 ultra low sulfur (MV15) diesel fuel. The MPC 907 was carrying about 27,328 barrels of no. 84 conventional-blend-grade gasoline."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b031-2": {
    "decision": "approve",
@@ -966,7 +966,7 @@
      "quote": "The barges were recovered by EMS tugs near mile 802 about 0700 and returned to the MPC facility dock."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b032-1": {
    "decision": "approve",
@@ -982,7 +982,7 @@
      "quote": "morning twilight 0718, sunrise 0743"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b032-2": {
    "decision": "approve",
@@ -998,7 +998,7 @@
      "quote": "The operating company has since updated its maintenance procedures to mandate that, following maintenance on an engine, two crewmembers inspect the equipment before starting the engine."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b033-1": {
    "decision": "approve",
@@ -1010,7 +1010,7 @@
      "quote": "A security guard who was on duty at the shipyard entrance heard popping noises from the enclosed dock area and saw smoke coming from the facility. She went to investigate, discovered the fire, called 911, and then notified the facility manager."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b033-2": {
    "decision": "approve",
@@ -1030,7 +1030,7 @@
      "quote": "In response, the vessel manufacturer, shipyard personnel, an electrician, and the vessel owner’s representative developed a new procedure to increase the charging speed of the lithium-ion batteries by bypassing the BMS of each battery bank."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b034-1": {
    "decision": "approve",
@@ -1050,7 +1050,7 @@
      "quote": "Investigators noted that the plotted location corresponded with the location of the ship’s GPS antenna at 0554."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b034-2": {
    "decision": "approve",
@@ -1062,14 +1062,14 @@
      "quote": "At 1226, the owner of AUSE-2 received an alert indicating a loss of data transmission on the fiber optic cable segment. The next day, November 16, about 0900, the Belle Mer’s agent notified the crew of an “underwater disturbance to an underwater cable” via email."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b035-1": {
    "decision": "approve",
    "question": "How many riggers aboard the C-Enforcer were hurt when the Island Venture's crane wire parted and the wire reel fell onto the deck?",
    "expected_answer": "The premise is wrong: nobody was hurt; the rigging crew on the C-Enforcer and the crane operator on the Island Venture were uninjured, and no injuries were reported.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b035-2": {
    "decision": "approve",
@@ -1081,7 +1081,7 @@
      "quote": "Property damage  $3.8 million est; $766,000 (C-Enforcer), $3 million (Island Venture)"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b036-1": {
    "decision": "approve",
@@ -1101,7 +1101,7 @@
      "quote": "About 1315, the captain and deckhand decided to abandon the sinking vessel."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b036-2": {
    "decision": "approve",
@@ -1121,14 +1121,14 @@
      "quote": "About 1330, the crew on the fishing vessel Red Sky picked up the captain and deckhand."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b037-1": {
    "decision": "approve",
    "question": "How much water entered the pump room of the tanker Platanos after its hull was holed below the waterline when it struck the Martinez Refining Company Wharf pier?",
    "expected_answer": "The premise is wrong: the penetration was about 4 feet above the waterline, no damage below the waterline was found, and none of the ship's internal spaces flooded.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b037-2": {
    "decision": "approve",
@@ -1144,7 +1144,7 @@
      "quote": "However, on the morning of the contact, he transposed the names and positions of the tugs on his reference card. This resulted in the pilot having an incorrect mental model of the tugboat positions and the effect each would have on the Platanos as it maneuvered off the pier."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b038-1": {
    "decision": "approve",
@@ -1164,7 +1164,7 @@
      "quote": "At 1855, as the captain of the Tom Frazier attempted to maneuver the tow back into the channel while making a speed of about 4 mph, the Tom Frazier grounded on one of the jetties"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b038-2": {
    "decision": "approve",
@@ -1176,7 +1176,7 @@
      "quote": "The National Transportation Safety Board determines that the probable cause of the grounding of the towing vessel Tom Frazier on submerged jetties was the captain maneuvering his tow too close to the bank in order to avoid a downbound tow, and not identifying the hazard posed by the charted jetties."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b039-1": {
    "decision": "approve",
@@ -1188,7 +1188,7 @@
      "quote": "The vessel was stopped by the crushable concrete and timber fendering system at Pier 17, and the bow overhang contacted the pier’s A-frame."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b039-2": {
    "decision": "approve",
@@ -1212,7 +1212,7 @@
      "quote": "Total 0.001405 0.001516 0.002921"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b040-1": {
    "decision": "approve",
@@ -1228,7 +1228,7 @@
      "quote": "The vessel was heading directly toward the Appaloosa. The able seafarer informed the second mate, who called the master and the chief officer and sounded the Appaloosa’s horn. However, the Papa Rod continued on its course toward the Appaloosa."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b040-2": {
    "decision": "approve",
@@ -1240,7 +1240,7 @@
      "quote": "With the Papa Rod’s engines still engaged, the fishing vessel slid forward along the hull of the Appaloosa, entangling its outriggers in the ship’s anchor chain."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b041-1": {
    "decision": "approve",
@@ -1256,21 +1256,21 @@
      "quote": "Because there were not enough immersion suits available for everyone, t he captain elected not to wear one."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b041-2": {
    "decision": "approve",
    "question": "What was the name of the tugboat that recovered the burning fishing vessel Three Girls and brought it into Portland, Maine?",
    "expected_answer": "The report does not give this detail; it says only that a tugboat was dispatched to recover the Three Girls, which was docked in Portland on August 14.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b042-1": {
    "decision": "approve",
    "question": "Why did the Bonnie G crew re-anchor using the starboard anchor after the port anchor chain parted off St. Thomas, and why did that second anchor fail to hold?",
    "expected_answer": "The premise is wrong: after learning the port anchor chain had parted, the captain chose not to anchor again with the starboard anchor and instead maneuvered toward familiar waters and open water, grounding on a charted rock.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b042-2": {
    "decision": "approve",
@@ -1282,7 +1282,7 @@
      "quote": "Engine power; manufacturer 2 x 3,000 hp (2,237 kW); GE 7FDL12 diesel engines"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b043-1": {
    "decision": "approve",
@@ -1294,21 +1294,21 @@
      "quote": "Casualty type Flooding/Hull Failure"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b043-2": {
    "decision": "approve",
    "question": "How much did the Cajole's spring 2024 maintenance and hull repair period at the JMI Elmwood shipyard cost before the towboat sank on the Mississippi?",
    "expected_answer": "The report does not state the cost of the Cajole's shipyard/drydock period; it only gives the $2 million damage estimate for the sinking.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b044-1": {
    "decision": "approve",
    "question": "How fast was the fishing vessel Mystery traveling when it struck the rocks near Seal Cape, Alaska?",
    "expected_answer": "The report does not state the Mystery's speed at the time of the grounding.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b044-2": {
    "decision": "approve",
@@ -1320,7 +1320,7 @@
      "quote": "However, the captain stated that the chart plotter, which the autopilot relied on for a heading to steer, would occasionally freeze, after which the autopilot would slowly turn the vessel to port."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b045-1": {
    "decision": "approve",
@@ -1332,7 +1332,7 @@
      "quote": "The pilots assigned numbers to the tugs from bow to stern, with the no. 1 tug (Ted C Litton) being the first tug at the bow, the no. 2 tug (Connolly M) on the port shoulder, the no. 3 tug (Cooper K) on the port quarter, the no. 4 tug (Mercury) at the stern, and the no. 5 tug (Zeus) as the standby tug."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b045-2": {
    "decision": "approve",
@@ -1344,7 +1344,7 @@
      "quote": "Persons on board 34 (31 crew and 3 pilots)"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b046-1": {
    "decision": "approve",
@@ -1364,7 +1364,7 @@
      "quote": "The pilot ordered the ship to stop engines and hard port rudder."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b046-2": {
    "decision": "approve",
@@ -1376,7 +1376,7 @@
      "quote": "Casualty type Collision"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b047-1": {
    "decision": "approve",
@@ -1388,7 +1388,7 @@
      "quote": "He checked the steering, rudder indicators, and stabilizers o n the bridge and found no problems."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b047-2": {
    "decision": "approve",
@@ -1400,7 +1400,7 @@
      "quote": "The vessel was towed to Yank Marine in Dorchester, New Jersey, on September 1 for survey and overhaul."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b048-1": {
    "decision": "approve",
@@ -1412,14 +1412,14 @@
      "quote": "Waterway information Harbor Figure 2. Area where the engine room flooding occurred aboard the Oliver Hazard Perry as indicated by a circled X. (Background source: Google Maps) Engine Room Flooding aboard Sailing School Vessel Oliver Hazard Perry MIR-26-09 3 1 Factual Information 1.1 Background The 128-foot-long, steel-hulled, three-masted, square-rigged tall ship Oliver Hazard Perry was certified by the US Coast Guard under Title 46 Code of Federal Regulations Subchapter R as a sailing school vessel."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b048-2": {
    "decision": "approve",
    "question": "How many years of experience did the bosun aboard the Oliver Hazard Perry have when he discovered the engine room flooding in Newport?",
    "expected_answer": "The report does not state the bosun's years of experience.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b049-1": {
    "decision": "approve",
@@ -1431,7 +1431,7 @@
      "quote": "when the towing vessel Steel Skipper, which was reconfiguring the tow, pushed the tow astern, and the William E Strait collided with two moored barges upstream at the Shell Norco Refinery dock, damaging the barges and dock"
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b049-2": {
    "decision": "approve",
@@ -1443,7 +1443,7 @@
      "quote": "the mate, who was on the bridge at the time, did not recognize that his vessel was in danger of colliding with the moored barges and dock aft of the tow, and therefore did not use his engines to attempt to avoid them."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b050-1": {
    "decision": "approve",
@@ -1455,7 +1455,7 @@
      "quote": "a crew of six, consisting of a captain (who had over 25 years in the maritime industry and about 5 months with the ferries), three deckhands, a chief engineer, and an oiler, reported to the vessel."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b050-2": {
    "decision": "approve",
@@ -1467,7 +1467,7 @@
      "quote": "As of the date of this report, installation was still pending on the remaining two ferries with similar control arrangements. Figure 7. Touch panel with plexiglass cover. (Background source: Texas Department of Transportation) Contact of Ferry Ray Stoker, Jr. with Floating Dock MIR-25-34 11 2 Analysis While the vehicle and passenger ferry Ray Stoker, Jr. was underway from Bolivar to Galveston, the crew experienced a loss of cycloidal propulsion system control (thrust and steering control), and the ferry struck a floating pier at Coast Guard Base Galveston before grounding and coming to a stop."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b051-1": {
    "decision": "approve",
@@ -1479,7 +1479,7 @@
      "quote": "He yelled and waved his arms in the direction of the crane operator trolley cab, which was about 200 feet away, to indicate that the operator should stop moving the crane."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b051-2": {
    "decision": "approve",
@@ -1491,14 +1491,14 @@
      "quote": "After the casualty, a technician determined the boom would not rise b ecause the crane’s trolley cab was not returned to the “parked” position. According to the technician, as the trolley cab was being moved toward the parked position, the “control off button was pressed prior to getting a parking acknowledge light.” Therefore, the start interlocks were not meeting, thus preventing the boom from rising."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b052-1": {
    "decision": "approve",
    "question": "What was the official cause of death for the chief engineer and third engineer who died in the Stride engine room fire at Barbours Cut, according to the medical examiner?",
    "expected_answer": "The report does not state a medical cause of death; it says only that local paramedics pronounced the chief engineer and third engineer dead on scene.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b052-2": {
    "decision": "approve",
@@ -1510,7 +1510,7 @@
      "quote": "The tankerman slowly increased the engine speed to 1,400 rpm and noticed the discharge pressure of the pump was 90 pounds per square inch ( psi) ( the maximum allowable pipeline pressure on the fuel barge was 100 psi)."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b053-1": {
    "decision": "approve",
@@ -1522,49 +1522,49 @@
      "quote": "The National Transportation Safety Board determines that the probable cause of the fire on the bulk carrier Lem Verbena was the failure of an O-ring seal on the composite boiler burner unit oil fittings block due to the radial misalignment of the two fuel ports on the block modules, causing pressurized diesel fuel to atomize and ignite on a nearby hot surface."
     }
    ],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b054-1": {
    "decision": "approve",
    "question": "What did the NTSB determine caused the fishing vessel Northern Halcyon to capsize while hauling crab pots in the Bering Sea in 2025?",
    "expected_answer": "The reports do not cover a capsizing of a fishing vessel named Northern Halcyon; no report in the corpus addresses this casualty.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b054-2": {
    "decision": "approve",
    "question": "How many passengers were injured when the ferry Marisol Bay collided with a sailboat in Puget Sound in 2024?",
    "expected_answer": "The reports do not cover a collision involving a ferry named Marisol Bay; no report in the corpus addresses this casualty.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b054-3": {
    "decision": "approve",
    "question": "Where did the fire start aboard the excursion boat Delta Lantern on the Mississippi River at Natchez, Mississippi, in 2025?",
    "expected_answer": "The reports do not cover a fire aboard a vessel named Delta Lantern; no report in the corpus addresses this casualty.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b054-4": {
    "decision": "approve",
    "question": "What was the estimated damage when the product tanker Coral Meridian ran aground in Delaware Bay in 2024?",
    "expected_answer": "The reports do not cover a grounding of a tanker named Coral Meridian; no report in the corpus addresses this casualty.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b054-5": {
    "decision": "approve",
    "question": "Why did the towboat Harlan Creek and its barges strike the lock wall at Markland Locks and Dam on the Ohio River in 2025?",
    "expected_answer": "The reports do not cover a contact by a tow of the Harlan Creek at Markland Locks and Dam; no report in the corpus addresses this casualty.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   },
   "b054-6": {
    "decision": "approve",
    "question": "How did the dive boat Reef Wanderer come to flood and sink off Key Largo, Florida, in 2025, and were any divers lost?",
    "expected_answer": "The reports do not cover a flooding or sinking of a dive boat named Reef Wanderer; no report in the corpus addresses this casualty.",
    "evidence": [],
-   "reason": "Blanket approval: the owner approved all candidates in chat on 2026-10-23 without reviewing them item by item."
+   "reason": ""
   }
  }
 }

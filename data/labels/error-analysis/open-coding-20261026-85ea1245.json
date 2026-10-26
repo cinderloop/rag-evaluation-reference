@@ -1,0 +1,534 @@
+{
+ "coder": "",
+ "traces_sha256": "f851a8bd179f13cf245cee51789abdff6410057f59acfd5f0f106c8adaa730da",
+ "notes": {
+  "t-43e8ac6644": {
+   "ok": true,
+   "note": "Declined. A passage says there was no fire, so it could have corrected the premise, but declining is acceptable."
+  },
+  "t-cffa5ea260": {
+   "ok": false,
+   "note": "Retrieval: the passage with the annual mooring-line replacement was not retrieved (one passage only); the model then declined."
+  },
+  "t-29b867d4b7": {
+   "ok": false,
+   "note": "Retrieval: the passage naming Yank Marine and the date was not retrieved; the model declined."
+  },
+  "t-fb00cd57e0": {
+   "ok": true,
+   "note": ""
+  },
+  "t-0d0ac361c4": {
+   "ok": true,
+   "note": "The table row was not retrieved, but another passage gives 5 crew and 12 passengers, and the answer is correct."
+  },
+  "t-a29bd3ea54": {
+   "ok": false,
+   "note": "Retrieval: the summary table with the sunset time was not retrieved. The answer then makes up \"about 2 hours 30 minutes after sunset\" instead of saying the sunset time is missing."
+  },
+  "t-3ffa1a857f": {
+   "ok": true,
+   "note": ""
+  },
+  "t-6ec66ca174": {
+   "ok": true,
+   "note": "Declined. The passage shows the captain was in his stateroom, so it could have corrected the premise, but declining is acceptable."
+  },
+  "t-4166934deb": {
+   "ok": false,
+   "note": "Retrieval: the passage about recovery near mile 802 at 0700 was not retrieved; the model declined."
+  },
+  "t-393dd5d3bd": {
+   "ok": false,
+   "note": "Retrieval: the cell-phone texting evidence for the Amber Brittany was not retrieved, so the answer blames the current instead of the pilot texting. It also says the Schweiger drifted for about 3 minutes, when the retrieved times (1235:12 to about 1236:30) give about 1 minute."
+  },
+  "t-0551961abf": {
+   "ok": false,
+   "note": "Retrieval: departure and contact times for both vessels were missing (one partly); the model declined."
+  },
+  "t-7d501a07d6": {
+   "ok": true,
+   "note": ""
+  },
+  "t-7fbfd5a91b": {
+   "ok": false,
+   "note": "Retrieval: nothing from the Pathfinder report was retrieved, so the answer says there is no Pathfinder incident. It also hedges on the Ocean Navigator rod although the retrieved analysis names no. 13."
+  },
+  "t-8254cd6ea8": {
+   "ok": true,
+   "note": "Leaves out \"about 1 mile west\" of Point Gardner, but the category and place are right."
+  },
+  "t-f2deeede6e": {
+   "ok": true,
+   "note": ""
+  },
+  "t-014ad8c952": {
+   "ok": false,
+   "note": "Retrieval: the Baylor J. Tregre towline evidence (single barge astern on an 800-foot wire) was not retrieved. The barge count is right, but the answer describes the arrangements with details not in the passages (\"barges arranged in a line\", raked end facing the tug)."
+  },
+  "t-6c64afa74b": {
+   "ok": true,
+   "note": "Says \"approximately 6 months\" (actual about 5.5); close enough for \"roughly\"."
+  },
+  "t-e214989bfc": {
+   "ok": true,
+   "note": ""
+  },
+  "t-2a9e4b2f8a": {
+   "ok": true,
+   "note": ""
+  },
+  "t-477e38bdb0": {
+   "ok": false,
+   "note": "Retrieval: none of the four time quotes were retrieved (one passage only); the model declined."
+  },
+  "t-e9729a44ab": {
+   "ok": false,
+   "note": "Retrieval: the passages with the slow charging (34 to 39 volts in 5 days) and the BMS blocking the charger were not retrieved. The answer gives a circular reason and says the volts per day are not stated."
+  },
+  "t-b8cbb58f66": {
+   "ok": true,
+   "note": ""
+  },
+  "t-8435b91fb1": {
+   "ok": false,
+   "note": "Retrieval: neither departure time (0948, 1500) was retrieved. The answer makes up a 1000 start for the Mackenzie Rose and a \"less than 1 hour\" for the Hafnia Amessi; the conclusion is right only by chance."
+  },
+  "t-beb2d784cc": {
+   "ok": true,
+   "note": "Declined. A passage says the vessel had no autopilot, so it could have corrected the premise, but declining is acceptable."
+  },
+  "t-e187af9d56": {
+   "ok": false,
+   "note": "Retrieval: only one passage, from the Baylor J. Tregre report (which does give $2 million and four crew); nothing from the Chad Pregracke report, so the model declined the whole question."
+  },
+  "t-14bdaafe52": {
+   "ok": true,
+   "note": ""
+  },
+  "t-82e8d70b09": {
+   "ok": false,
+   "note": "The facts are retrieved and the core reason is right, but the answer pads it with speculation not in the passages (the captain \"prioritizing the survival of the remaining crew\", fire spreading rapidly)."
+  },
+  "t-5d8e8ab744": {
+   "ok": false,
+   "note": "Evidence retrieved (pickup at 1330), but the answer says pickup was about 40 minutes after 1315; it took the 40 minutes from the later sinking sentence."
+  },
+  "t-5f20b7484c": {
+   "ok": true,
+   "note": ""
+  },
+  "t-7a4fa27ad0": {
+   "ok": true,
+   "note": "Declined. The passage shows the captain was in his stateroom, so it could have corrected the premise."
+  },
+  "t-5359c37dea": {
+   "ok": true,
+   "note": ""
+  },
+  "t-cf7cb11f6c": {
+   "ok": true,
+   "note": ""
+  },
+  "t-45fc0916f9": {
+   "ok": true,
+   "note": ""
+  },
+  "t-8edb7100f3": {
+   "ok": false,
+   "note": "Says the speed is not stated, then guesses \"5 to 10 knots\" from the weather and autopilot use. Speculation on an unanswerable question."
+  },
+  "t-6f75031c2e": {
+   "ok": false,
+   "note": "Retrieval: nothing from the Rickey Hughes report was retrieved (all four passages are Myra Eckstein). The model correctly says it cannot compare."
+  },
+  "t-cf09b99bb5": {
+   "ok": false,
+   "note": "Retrieval: only one passage, from the Chad Pregracke report; the Baylor J. Tregre towline evidence is missing, and the model declined."
+  },
+  "t-56a39ffa86": {
+   "ok": false,
+   "note": "Retrieval: none of the evidence was retrieved (no Subchapter M sentence, nothing from the William D report). The answer is a generic paraphrase of the Johnny M lessons-learned passage and does not name the regulation or cover the William D."
+  },
+  "t-0718209570": {
+   "ok": false,
+   "note": "Evidence retrieved, but the answer garbles it: it says he would have had to stop his workers if the tow passed on the other side, and gives him the clearance judgement that the mate actually made."
+  },
+  "t-65584941e7": {
+   "ok": true,
+   "note": ""
+  },
+  "t-e8fe4221e6": {
+   "ok": false,
+   "note": "Retrieval: only the Algoma Verity passage (one passage); the Algoma Discovery date is missing, and the model declined."
+  },
+  "t-47dc1467a4": {
+   "ok": true,
+   "note": ""
+  },
+  "t-ac295759e4": {
+   "ok": true,
+   "note": ""
+  },
+  "t-66a218dfdd": {
+   "ok": false,
+   "note": "Retrieval: the GITN'R DUN passages (no fixed system, two handheld extinguishers) were not retrieved. The answer gets the fixed-system part right, then guesses the crew \"likely\" used extinguishers or water."
+  },
+  "t-022ed0b877": {
+   "ok": true,
+   "note": ""
+  },
+  "t-3d2c2f5d40": {
+   "ok": true,
+   "note": ""
+  },
+  "t-eae89fbf02": {
+   "ok": true,
+   "note": "Long, but correct and supported by the passages."
+  },
+  "t-3410a66876": {
+   "ok": false,
+   "note": "Retrieval: none of the three explanation passages were retrieved (several possible sources, arcing timing unclear, severe damage and empty space). The answer is circular: they could not find the cause because the probable cause was \"unknown\"."
+  },
+  "t-fee84e8b73": {
+   "ok": true,
+   "note": ""
+  },
+  "t-275befe954": {
+   "ok": false,
+   "note": "Retrieval: the GITN'R DUN firefighting passages were not retrieved. The model declined the whole question, although the Scot Stuttgart half was answerable from the passages."
+  },
+  "t-ed303fabf6": {
+   "ok": false,
+   "note": "Retrieval: the Chad Pregracke summary table (9 aboard) was not retrieved. The answer makes up \"35 people aboard (the towing vessel and the 34 barges)\"."
+  },
+  "t-c63863d331": {
+   "ok": true,
+   "note": ""
+  },
+  "t-9b041b2ad5": {
+   "ok": true,
+   "note": ""
+  },
+  "t-ca5e306c87": {
+   "ok": true,
+   "note": ""
+  },
+  "t-41de45b070": {
+   "ok": true,
+   "note": ""
+  },
+  "t-558dca1cd2": {
+   "ok": false,
+   "note": "Retrieval: nothing from the Amber Brittany report (one passage only), and the answer says so. It also gives the Schweiger drift as 2 minutes 12 seconds; the retrieved times give about 1 minute 20 seconds."
+  },
+  "t-48ff6915ac": {
+   "ok": false,
+   "note": "Retrieval: nothing from the Ovide J report (all four passages are Kitty). The model declined, although the Kitty speed (1.4 mph) was retrieved."
+  },
+  "t-0244749d09": {
+   "ok": false,
+   "note": "Retrieval: the Chad Pregracke summary table (9 aboard) was not retrieved. The answer says the Chad Pregracke \"also had four crewmembers aboard\", copying the Baylor J. Tregre figure."
+  },
+  "t-2bdcea8ee3": {
+   "ok": false,
+   "note": "Retrieval: none of the evidence was retrieved (one passage only); the model declined."
+  },
+  "t-ca5c401ae5": {
+   "ok": false,
+   "note": "Retrieval: the passage naming Yank Marine and September 1 was not retrieved. The model correctly says it is not in the context."
+  },
+  "t-8fb2de28cc": {
+   "ok": false,
+   "note": "Retrieval: the Ovide J speed (0.35 mph) was not retrieved. The answer still concludes the Kitty was faster, after admitting it has no Ovide J speed: an unsupported conclusion that happens to be right."
+  },
+  "t-e56a85318d": {
+   "ok": false,
+   "note": "Retrieval: the passage stops mid-sentence at \"the captain stated that the chart plotter,\" (chunk boundary); the rest was not retrieved, and the model declined."
+  },
+  "t-99ce75516a": {
+   "ok": false,
+   "note": "Retrieval: the passage with the dredge captain's reason was not retrieved (one passage only); the model declined."
+  },
+  "t-6c85fc55b8": {
+   "ok": true,
+   "note": "Mostly right from a nearby passage (moving the last two barges into place at the head of the tow); misses that the push moved the tow astern into the dock."
+  },
+  "t-dabd894910": {
+   "ok": false,
+   "note": "Retrieval: the summary table with the time and sunrise was not retrieved (one passage only, which does give 1435); the model declined."
+  },
+  "t-f8ea159c03": {
+   "ok": true,
+   "note": ""
+  },
+  "t-2cddbb3671": {
+   "ok": false,
+   "note": "Retrieval: nothing from the Rickey Hughes report; the model declined, although the Myra Eckstein temperature was retrieved."
+  },
+  "t-39365f998b": {
+   "ok": false,
+   "note": "Retrieval: the Baylor J. Tregre 800-foot-wire sentence was not retrieved. The passages still give 34 barges for the Chad Pregracke and a towline diagram for the MARMAC 27, but the model declined the whole question."
+  },
+  "t-378b79e786": {
+   "ok": true,
+   "note": ""
+  },
+  "t-7ae366c2af": {
+   "ok": false,
+   "note": "Retrieval: the summary table with the sunset time was not retrieved. The model declined, which is the right response to the missing sunset time."
+  },
+  "t-eef70496b1": {
+   "ok": true,
+   "note": ""
+  },
+  "t-83e65fe31d": {
+   "ok": true,
+   "note": ""
+  },
+  "t-dafb3798e1": {
+   "ok": true,
+   "note": ""
+  },
+  "t-f1cc1d9fb8": {
+   "ok": true,
+   "note": ""
+  },
+  "t-04ce64eb07": {
+   "ok": false,
+   "note": "Corrects the premise (no autopilot), but then calls the missing autopilot \"the malfunction\" and says it contributed to the drift: a causal claim the passages do not make (they put it on the pilot leaving the helm)."
+  },
+  "t-661691c93d": {
+   "ok": true,
+   "note": "Same as the other Steel Skipper answer: right action (moving the last two barges into position), misses that this pushed the tow astern."
+  },
+  "t-de9cc9b324": {
+   "ok": true,
+   "note": ""
+  },
+  "t-bcc890f436": {
+   "ok": true,
+   "note": "Declines correctly; long, and ends by asking the user for more context."
+  },
+  "t-73491690a0": {
+   "ok": true,
+   "note": ""
+  },
+  "t-eb19209763": {
+   "ok": true,
+   "note": "Correct, though it leaves out why there were too few suits (two could not be reached through the smoke)."
+  },
+  "t-1e67dc4dd7": {
+   "ok": false,
+   "note": "Declined although the one retrieved passage states the core reason (\"not enough immersion suits available for everyone, the captain elected not to wear one\"). The missing part (only five of seven suits reached) was not retrieved."
+  },
+  "t-df94ac4721": {
+   "ok": false,
+   "note": "Retrieval: the summary table (\"Flooding/Hull Failure\") was not retrieved. The answer says \"flooding\" only, so half of the category is missing."
+  },
+  "t-0208d5168c": {
+   "ok": false,
+   "note": "Out-of-corpus question: says the incident is not documented, then speculates at length about likely causes from other reports (Amber Brittany, Tom Frazier)."
+  },
+  "t-2320aa65c5": {
+   "ok": false,
+   "note": "Retrieval: the passage naming the tugs by position was not retrieved (one passage only); the model declined."
+  },
+  "t-135df4cbb5": {
+   "ok": true,
+   "note": "Declined. The passage does not mention an autopilot, so declining is reasonable."
+  },
+  "t-ff9b8fcd62": {
+   "ok": true,
+   "note": ""
+  },
+  "t-6f501fe3a5": {
+   "ok": false,
+   "note": "Retrieval: nothing from the Bonnie G report; all four passages describe engines of other vessels. The model correctly declined rather than borrowing those figures."
+  },
+  "t-9bee6f4b4d": {
+   "ok": true,
+   "note": ""
+  },
+  "t-89abcae936": {
+   "ok": false,
+   "note": "Retrieval: nothing from the Pathfinder report. The model declined the whole question, although the Ocean Navigator half (no. 13 rod) was retrieved."
+  },
+  "t-f716938d89": {
+   "ok": true,
+   "note": ""
+  },
+  "t-41b14396a0": {
+   "ok": true,
+   "note": "Correct; the extra context about the RCA team is supported by the passages."
+  },
+  "t-e27ac099ee": {
+   "ok": true,
+   "note": ""
+  },
+  "t-2eaf756e98": {
+   "ok": false,
+   "note": "Unanswerable question answered with a made-up fact: it gives \"smoke inhalation, including carbon monoxide intoxication\", which comes from a retrieved passage about firefighters on a different vessel (Grande Costa D'Avorio)."
+  },
+  "t-f4c48caf61": {
+   "ok": false,
+   "note": "Retrieval: nothing from the Pathfinder report; the model declined the whole question, although a passage names the no. 13 rod for the Ocean Navigator."
+  },
+  "t-3985c5cfc1": {
+   "ok": true,
+   "note": ""
+  },
+  "t-dedbb20ce1": {
+   "ok": true,
+   "note": ""
+  },
+  "t-9705b70e2c": {
+   "ok": true,
+   "note": ""
+  },
+  "t-66e41c370f": {
+   "ok": false,
+   "note": "Evidence retrieved (pickup at 1330), but the answer says about 40 minutes after 1315; it took the 40 minutes from the later sinking sentence."
+  },
+  "t-50eebba70d": {
+   "ok": false,
+   "note": "Retrieval: the tug list is cut at a chunk boundary (\"assigned numbers to the tugs from bow\"); the part naming Mercury and Zeus was not retrieved, and the model declined."
+  },
+  "t-475c881599": {
+   "ok": true,
+   "note": "States the Subchapter M gap correctly from the William D passages; does not mention the Johnny M's unprotected ducting."
+  },
+  "t-25db0e2cd3": {
+   "ok": true,
+   "note": "Correct on Subchapter M and the Johnny M ducting; says the William D \"likely\" had similar deficiencies, a mild guess."
+  },
+  "t-215fc9a5ed": {
+   "ok": false,
+   "note": "Retrieval: the slow-charging figures and \"BMS blocking the portable charger\" were not retrieved. The answer gives the 24-volt construction problem as the reason and says the 48-volt BMS was functional, which the passages do not say; the volts per day are reported as missing."
+  },
+  "t-65249668c4": {
+   "ok": false,
+   "note": "Retrieval: none of the three explanation passages were retrieved. The answer fills the gap with made-up factors (\"limited witness accounts\", firefighting \"limited the ability to gather physical evidence\")."
+  },
+  "t-9dbf812f9d": {
+   "ok": false,
+   "note": "Retrieval: neither temperature reading was retrieved (one passage only); the model declined."
+  },
+  "t-090bb16fe7": {
+   "ok": false,
+   "note": "Retrieval: nothing from the Bonnie G report. The answer gives the Ocean Navigator's engines (Caterpillar 3516B, 2,000 hp) as the Bonnie G's: facts from the wrong report."
+  },
+  "t-965b653636": {
+   "ok": true,
+   "note": ""
+  },
+  "t-5e62cbe69f": {
+   "ok": true,
+   "note": ""
+  },
+  "t-a580a9eb2a": {
+   "ok": false,
+   "note": "Retrieval: the tug list is cut at a chunk boundary, so Mercury and Zeus are never named. The answer says tug no. 1 was at the back, contradicting its own breakdown that puts tug no. 1 at the bow."
+  },
+  "t-114b6c7556": {
+   "ok": false,
+   "note": "Retrieval: nothing from the Bonnie G report. The answer gives the Ocean Navigator's engines as the Bonnie G's, from the first retrieved passage."
+  },
+  "t-c2caf6c9fe": {
+   "ok": false,
+   "note": "Evidence retrieved (pickup at 1330), but the answer says about 40 minutes after 1315, taken from the later sinking sentence."
+  },
+  "t-e56c8b0ac7": {
+   "ok": true,
+   "note": ""
+  },
+  "t-b35e44a604": {
+   "ok": false,
+   "note": "Retrieval: only the Duke passage (one passage); the Phillip C George cargo was not retrieved, and the model declined the whole question."
+  },
+  "t-6e3fefbfeb": {
+   "ok": true,
+   "note": ""
+  },
+  "t-dabe5c9f4a": {
+   "ok": true,
+   "note": "Captures the astern movement while the Steel Skipper pushed the last barges into place."
+  },
+  "t-f0b03579c7": {
+   "ok": true,
+   "note": ""
+  },
+  "t-b741e1b429": {
+   "ok": true,
+   "note": ""
+  },
+  "t-be9f599aa5": {
+   "ok": false,
+   "note": "Retrieval: the passage naming Yank Marine and September 1 was not retrieved; the model declined."
+  },
+  "t-4d9c419541": {
+   "ok": false,
+   "note": "Retrieval: neither speed was retrieved (one passage only); the model declined."
+  },
+  "t-1d28a9257f": {
+   "ok": true,
+   "note": ""
+  },
+  "t-df4b32dc02": {
+   "ok": true,
+   "note": ""
+  },
+  "t-5a2578f0db": {
+   "ok": false,
+   "note": "Accepts the false premise: it opens by repeating that the captain \"was steering the tug under the span\", then later says he was in his stateroom, and pads with speculation (\"limited visibility\") not in the passages."
+  },
+  "t-3606811b20": {
+   "ok": true,
+   "note": ""
+  },
+  "t-9b67a9d4f3": {
+   "ok": true,
+   "note": "Corrects the false premise from the passage (there was no fire after the explosion)."
+  },
+  "t-cd1f07db2c": {
+   "ok": false,
+   "note": "Retrieval: the cell-phone texting evidence for the Amber Brittany was not retrieved, so the answer gives the pilot's outdraft account. It also says the Schweiger drifted for about 3 minutes, when the retrieved times give about 1 minute."
+  },
+  "t-1e83ac5d6b": {
+   "ok": false,
+   "note": "Retrieval: none of the evidence was retrieved (one Scot Stuttgart passage about fuel piping); the model declined."
+  },
+  "t-751cb5b989": {
+   "ok": true,
+   "note": ""
+  },
+  "t-4ddd8de9e8": {
+   "ok": false,
+   "note": "Retrieval: nothing from the Pathfinder report (one passage only). The answer gives the Ocean Navigator half correctly and says the Pathfinder is not covered."
+  },
+  "t-66a1163e6e": {
+   "ok": false,
+   "note": "Retrieval: the sunset time and the grounding sentence were not retrieved (one passage only); the model declined."
+  },
+  "t-8b168a96d1": {
+   "ok": false,
+   "note": "Retrieval: none of the three explanation passages were retrieved (one passage only); the answer just restates \"unknown source\"."
+  },
+  "t-0233916026": {
+   "ok": false,
+   "note": "Core answer right for both vessels, but padded with misread details: it says the fire team entered at 0718 (the passage says 0721; 0718 is when the motorman was removed) and that the fire department \"assisted in ensuring the fire was fully extinguished\", which the passages do not say."
+  },
+  "t-34e686d3f4": {
+   "ok": false,
+   "note": "Retrieval: only one Lucinda Smith passage, nothing from the Sub Zero report. The model declined the whole question, although the Lucinda Smith half was in the passage."
+  },
+  "t-b5b3fab1d5": {
+   "ok": true,
+   "note": "Declined. The passage says there was no fire, so it could have corrected the premise."
+  },
+  "t-1df291a679": {
+   "ok": false,
+   "note": "Retrieval: the 475-yard sentence was not retrieved (one passage only); the model declined."
+  }
+ }
+}

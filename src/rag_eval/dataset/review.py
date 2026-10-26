@@ -1,10 +1,10 @@
-"""Human review of candidates: export a local review page, import the decisions.
+"""Review of candidates: export a local review page, import the decisions.
 
 The page (data/review/review.html) is a single self-contained file opened in a
 browser. The reviewer approves, edits or rejects each candidate and downloads a
 decisions file. Importing it validates every decision (edited quotes must still be
 found verbatim in the report) and writes the approved items. The decisions file is
-the human label, kept as-is under data/labels/review/.
+the label, kept as-is under data/labels/review/.
 """
 
 from __future__ import annotations

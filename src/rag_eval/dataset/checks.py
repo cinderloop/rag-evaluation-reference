@@ -1,4 +1,4 @@
-"""Automated checks on candidates, run before human review.
+"""Automated checks on candidates, run before review.
 
 - Near-duplicates: questions too similar to an earlier one are marked and dropped.
 - Lexical overlap: share of a question's content words that appear in its evidence.

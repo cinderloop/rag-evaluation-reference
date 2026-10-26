@@ -88,7 +88,7 @@ POST /api/v1/document/upload      (multipart: file=@doc.txt, addToWorkspaces=spi
 | workspace `/chat` with a new `sessionId` | no: `NONE` |
 | new thread (`POST /v1/workspace/{slug}/thread/new`, then `/thread/{threadSlug}/chat`) | no: `NONE` |
 
-**Decision proposed:** one new thread per case (`thread/new` → `thread/{slug}/chat`), with the thread slug recorded in the trace. Threads are visible in the UI, which helps human review, and can be deleted afterwards (`DELETE /v1/workspace/{slug}/thread/{threadSlug}`). A unique `sessionId` would also isolate, but threads are easier to inspect.
+**Decision proposed:** one new thread per case (`thread/new` → `thread/{slug}/chat`), with the thread slug recorded in the trace. Threads are visible in the UI, which helps review, and can be deleted afterwards (`DELETE /v1/workspace/{slug}/thread/{threadSlug}`). A unique `sessionId` would also isolate, but threads are easier to inspect.
 
 *Source-read facts that drive the design* (`utils/chats/apiChatHandler.js`, `utils/chats/index.js`):
 

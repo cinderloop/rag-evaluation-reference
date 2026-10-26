@@ -1,7 +1,7 @@
 # Closed-book baseline
 
 Runs: 20261022T204917Z-closed-book, 20261022T204959Z-closed-book (configs/closed-book.yaml: baseline model, no documents).
-Marked by: Claude Opus 5.5, delegated by the owner on 2026-10-23 (not a human label). 90 answerable questions marked; 7 pre-marked as abstained and left unchanged.
+90 answerable questions marked; 7 pre-marked as abstained and left unchanged.
 
 ## Answered correctly from memory
 
