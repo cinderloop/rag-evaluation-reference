@@ -1,0 +1,241 @@
+{
+ "mutation": "remove-document",
+ "baseline_run": "20261027T002255Z-baseline",
+ "mutation_run": "20261027T053443Z-m-remove-document",
+ "metrics": [
+  {
+   "metric": "passage_hit",
+   "expected": "none",
+   "questions": 54,
+   "baseline": 0.6851851851851852,
+   "mutation": 0.7037037037037037,
+   "difference": 0.01851851851851849,
+   "interval": [
+    0.0,
+    0.05555555555555558
+   ],
+   "p_value": 1.0,
+   "mde": 0.05188120774283274,
+   "significant": false,
+   "outcome": "as expected"
+  },
+  {
+   "metric": "passage_recall",
+   "expected": "none",
+   "questions": 54,
+   "baseline": 0.4876543209876543,
+   "mutation": 0.4876543209876543,
+   "difference": 0.0,
+   "interval": [
+    -0.02777777777777779,
+    0.02777777777777779
+   ],
+   "p_value": null,
+   "mde": null,
+   "significant": false,
+   "outcome": "as expected"
+  },
+  {
+   "metric": "deterministic_refusal",
+   "expected": "any",
+   "questions": 66,
+   "baseline": 0.0,
+   "mutation": 0.0,
+   "difference": 0.0,
+   "interval": [
+    0.0,
+    0.0
+   ],
+   "p_value": 1.0,
+   "mde": 0.042448260880499515,
+   "significant": false,
+   "outcome": "not pre-registered"
+  },
+  {
+   "metric": "groundedness",
+   "expected": "any",
+   "questions": 66,
+   "baseline": 0.803030303030303,
+   "mutation": 0.7878787878787878,
+   "difference": -0.015151515151515138,
+   "interval": [
+    -0.07575757575757569,
+    0.030303030303030387
+   ],
+   "p_value": 1.0,
+   "mde": 0.07352254453796357,
+   "significant": false,
+   "outcome": "not pre-registered"
+  },
+  {
+   "metric": "correctness",
+   "expected": "none",
+   "questions": 54,
+   "baseline": 0.4074074074074074,
+   "mutation": 0.3888888888888889,
+   "difference": -0.01851851851851849,
+   "interval": [
+    -0.05555555555555558,
+    0.0
+   ],
+   "p_value": 1.0,
+   "mde": 0.05188120774283274,
+   "significant": false,
+   "outcome": "as expected"
+  },
+  {
+   "metric": "refusal",
+   "expected": "any",
+   "questions": 54,
+   "baseline": 0.8333333333333334,
+   "mutation": 0.8333333333333334,
+   "difference": 0.0,
+   "interval": [
+    0.0,
+    0.0
+   ],
+   "p_value": 1.0,
+   "mde": 0.05188120774283274,
+   "significant": false,
+   "outcome": "not pre-registered"
+  },
+  {
+   "metric": "abstention",
+   "expected": "any",
+   "questions": 12,
+   "baseline": 0.9166666666666666,
+   "mutation": 0.9166666666666666,
+   "difference": 0.0,
+   "interval": [
+    0.0,
+    0.0
+   ],
+   "p_value": 1.0,
+   "mde": 0.23346543484274732,
+   "significant": false,
+   "outcome": "not pre-registered"
+  }
+ ],
+ "targeted": [
+  {
+   "case_id": "q-b005-1",
+   "metric": "passage_hit",
+   "baseline": [
+    1.0
+   ],
+   "mutation": [
+    1.0
+   ]
+  },
+  {
+   "case_id": "q-b005-1",
+   "metric": "passage_recall",
+   "baseline": [
+    1.0
+   ],
+   "mutation": [
+    0.5
+   ]
+  },
+  {
+   "case_id": "q-b005-1",
+   "metric": "deterministic_refusal",
+   "baseline": [
+    0.0
+   ],
+   "mutation": [
+    0.0
+   ]
+  },
+  {
+   "case_id": "q-b005-1",
+   "metric": "groundedness",
+   "baseline": [
+    0.0
+   ],
+   "mutation": [
+    1.0
+   ]
+  },
+  {
+   "case_id": "q-b005-1",
+   "metric": "correctness",
+   "baseline": [
+    0.0
+   ],
+   "mutation": [
+    0.0
+   ]
+  },
+  {
+   "case_id": "q-b005-1",
+   "metric": "refusal",
+   "baseline": [
+    1.0
+   ],
+   "mutation": [
+    1.0
+   ]
+  },
+  {
+   "case_id": "q-b005-2",
+   "metric": "passage_hit",
+   "baseline": [
+    1.0
+   ],
+   "mutation": [
+    1.0
+   ]
+  },
+  {
+   "case_id": "q-b005-2",
+   "metric": "passage_recall",
+   "baseline": [
+    0.5
+   ],
+   "mutation": [
+    0.5
+   ]
+  },
+  {
+   "case_id": "q-b005-2",
+   "metric": "deterministic_refusal",
+   "baseline": [
+    0.0
+   ],
+   "mutation": [
+    0.0
+   ]
+  },
+  {
+   "case_id": "q-b005-2",
+   "metric": "groundedness",
+   "baseline": [
+    1.0
+   ],
+   "mutation": [
+    1.0
+   ]
+  },
+  {
+   "case_id": "q-b005-2",
+   "metric": "correctness",
+   "baseline": [
+    0.0
+   ],
+   "mutation": [
+    0.0
+   ]
+  },
+  {
+   "case_id": "q-b005-2",
+   "metric": "refusal",
+   "baseline": [
+    1.0
+   ],
+   "mutation": [
+    1.0
+   ]
+  }
+ ]
+}

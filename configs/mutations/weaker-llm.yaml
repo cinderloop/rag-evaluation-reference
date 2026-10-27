@@ -1,0 +1,10 @@
+# Mutation 1 (docs/mutations.md): a weaker LLM. qwen3:1.7b with the same thinking-off
+# template as the baseline model, built from models/qwen3-nothink-1.7b.Modelfile.
+extends: ../baseline.yaml
+name: m-weaker-llm
+description: Baseline with qwen3 1.7B (thinking off) instead of 8B.
+
+llm:
+  model:
+    name: qwen3-nothink:1.7b
+    digest: e136b1fe9f51c90a9426512673ec7f625dc92250b9cb93025593de90ab018646

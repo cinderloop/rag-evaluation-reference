@@ -1,0 +1,181 @@
+{
+ "mutation": "knowledge-edit",
+ "baseline_run": "20261027T002255Z-baseline",
+ "mutation_run": "20261027T135307Z-m-knowledge-edit",
+ "metrics": [
+  {
+   "metric": "passage_hit",
+   "expected": "none",
+   "questions": 54,
+   "baseline": 0.6851851851851852,
+   "mutation": 0.6851851851851852,
+   "difference": 0.0,
+   "interval": [
+    0.0,
+    0.0
+   ],
+   "p_value": 1.0,
+   "mde": 0.05188120774283274,
+   "significant": false,
+   "outcome": "as expected"
+  },
+  {
+   "metric": "passage_recall",
+   "expected": "none",
+   "questions": 54,
+   "baseline": 0.4876543209876543,
+   "mutation": 0.4876543209876543,
+   "difference": 0.0,
+   "interval": [
+    0.0,
+    0.0
+   ],
+   "p_value": null,
+   "mde": null,
+   "significant": false,
+   "outcome": "as expected"
+  },
+  {
+   "metric": "deterministic_refusal",
+   "expected": "any",
+   "questions": 66,
+   "baseline": 0.0,
+   "mutation": 0.0,
+   "difference": 0.0,
+   "interval": [
+    0.0,
+    0.0
+   ],
+   "p_value": 1.0,
+   "mde": 0.042448260880499515,
+   "significant": false,
+   "outcome": "not pre-registered"
+  },
+  {
+   "metric": "groundedness",
+   "expected": "any",
+   "questions": 66,
+   "baseline": 0.803030303030303,
+   "mutation": 0.7727272727272727,
+   "difference": -0.030303030303030276,
+   "interval": [
+    -0.0757575757575758,
+    0.0
+   ],
+   "p_value": 0.5,
+   "mde": 0.06003090623635371,
+   "significant": false,
+   "outcome": "not pre-registered"
+  },
+  {
+   "metric": "correctness",
+   "expected": "none",
+   "questions": 54,
+   "baseline": 0.4074074074074074,
+   "mutation": 0.4074074074074074,
+   "difference": 0.0,
+   "interval": [
+    -0.05555555555555558,
+    0.055555555555555525
+   ],
+   "p_value": 1.0,
+   "mde": 0.0733711076222101,
+   "significant": false,
+   "outcome": "as expected"
+  },
+  {
+   "metric": "refusal",
+   "expected": "any",
+   "questions": 54,
+   "baseline": 0.8333333333333334,
+   "mutation": 0.8333333333333334,
+   "difference": 0.0,
+   "interval": [
+    0.0,
+    0.0
+   ],
+   "p_value": 1.0,
+   "mde": 0.05188120774283274,
+   "significant": false,
+   "outcome": "not pre-registered"
+  },
+  {
+   "metric": "abstention",
+   "expected": "any",
+   "questions": 12,
+   "baseline": 0.9166666666666666,
+   "mutation": 0.9166666666666666,
+   "difference": 0.0,
+   "interval": [
+    0.0,
+    0.0
+   ],
+   "p_value": 1.0,
+   "mde": 0.23346543484274732,
+   "significant": false,
+   "outcome": "not pre-registered"
+  }
+ ],
+ "targeted": [
+  {
+   "case_id": "q-b029-1",
+   "metric": "passage_hit",
+   "baseline": [
+    0.0
+   ],
+   "mutation": [
+    0.0
+   ]
+  },
+  {
+   "case_id": "q-b029-1",
+   "metric": "passage_recall",
+   "baseline": [
+    0.0
+   ],
+   "mutation": [
+    0.0
+   ]
+  },
+  {
+   "case_id": "q-b029-1",
+   "metric": "deterministic_refusal",
+   "baseline": [
+    0.0
+   ],
+   "mutation": [
+    0.0
+   ]
+  },
+  {
+   "case_id": "q-b029-1",
+   "metric": "groundedness",
+   "baseline": [
+    1.0
+   ],
+   "mutation": [
+    1.0
+   ]
+  },
+  {
+   "case_id": "q-b029-1",
+   "metric": "correctness",
+   "baseline": [
+    0.0
+   ],
+   "mutation": [
+    0.0
+   ]
+  },
+  {
+   "case_id": "q-b029-1",
+   "metric": "refusal",
+   "baseline": [
+    1.0
+   ],
+   "mutation": [
+    1.0
+   ]
+  }
+ ]
+}

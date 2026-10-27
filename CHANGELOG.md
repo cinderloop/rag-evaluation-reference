@@ -53,3 +53,7 @@ All notable changes to this project are documented here. The format follows
   intervals, cluster-robust standard errors and cluster bootstrap for repeated runs, exact
   McNemar and paired (and paired-cluster) bootstrap for config comparisons, run consistency, and minimum
   detectable effect; unit-tested against hand-computed values. ADR 0011.
+- Mutation experiments (`docs/mutations.md`): six mutations (weaker LLM, top-N 2, threshold
+  0.78, weakened prompt, removed document, knowledge edit), expectations pre-registered
+  before any run, one run per config on the test set, and `rag-eval mutations compare`.
+  8 of 11 predicted changes detected; all 13 no-change predictions held.

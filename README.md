@@ -2,7 +2,7 @@
 
 Reference implementation of RAG evaluation: error analysis, validated binary LLM judges, mutation testing and statistically sound results. System under test: AnythingLLM, with DeepEval.
 
-> **Status:** work in progress. Provisioning, the runner, the dataset, the closed-book baseline, the [failure taxonomy](docs/failure-taxonomy.md), the evaluators, [judge validation](docs/judges.md) and the [statistics module](docs/decisions/0011-statistics.md) are in place; mutation results are not yet.
+> **Status:** work in progress. Provisioning, the runner, the dataset, the closed-book baseline, the [failure taxonomy](docs/failure-taxonomy.md), the evaluators, [judge validation](docs/judges.md) and the [statistics module](docs/decisions/0011-statistics.md) and the [mutation experiments](docs/mutations.md) are in place; the eval gate is not yet.
 
 ## Quick start
 

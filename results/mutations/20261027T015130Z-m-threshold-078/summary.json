@@ -1,0 +1,63 @@
+{
+  "evaluated_at": "2026-10-27T14:33:43+00:00",
+  "n_traces": 66,
+  "retrieval": {
+    "passage": {
+      "n": 54,
+      "hit_rate": 0.48148148148148145,
+      "recall": 0.32098765432098764,
+      "mrr": 0.38425925925925924
+    },
+    "document": {
+      "n": 54,
+      "hit_rate": 0.7592592592592593,
+      "recall": 0.7037037037037037,
+      "mrr": 0.7376543209876543
+    }
+  },
+  "judge_config": {
+    "path": "configs/judges/claude-code-haiku.yaml",
+    "sha256": "5d1efd8bb4e6ab1177b967cab4be46eded1a8372643fc8bcc6fe318b5467bc3d"
+  },
+  "judge_provider": "claude_code",
+  "judge_model": "claude-haiku-5-5",
+  "judges": {
+    "groundedness": {
+      "failure_modes": "B, E, F",
+      "prompt_sha256": "70979614658cb6026562550854ecb4514764caf01b265579821082a2d60b2c27",
+      "n": 66,
+      "passed": 56,
+      "pass_rate": 0.8484848484848485,
+      "by_rule": 16,
+      "errors": 0
+    },
+    "correctness": {
+      "failure_modes": "D",
+      "prompt_sha256": "1921299340a624a37c97a744a7af3d81d57083162b0bc2ac6dc7621e415b8545",
+      "n": 54,
+      "passed": 17,
+      "pass_rate": 0.3148148148148148,
+      "by_rule": 12,
+      "errors": 0
+    },
+    "abstention": {
+      "failure_modes": "E",
+      "prompt_sha256": "e87235ef167d012538cb736c854cfd74c79a23884bb71eeb537f54b6c5548dc1",
+      "n": 12,
+      "passed": 11,
+      "pass_rate": 0.9166666666666666,
+      "by_rule": 4,
+      "errors": 0
+    },
+    "refusal": {
+      "failure_modes": "C",
+      "prompt_sha256": "a859e568596007879885785fed509e927787ad8b50906aa0fb1edf7c92f4fe9f",
+      "n": 54,
+      "passed": 47,
+      "pass_rate": 0.8703703703703703,
+      "by_rule": 12,
+      "errors": 0
+    }
+  },
+  "judge_cost_usd": 0.022153
+}

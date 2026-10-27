@@ -1,0 +1,120 @@
+{
+ "mutation": "weaker-llm",
+ "baseline_run": "20261027T002255Z-baseline",
+ "mutation_run": "20261027T005502Z-m-weaker-llm",
+ "metrics": [
+  {
+   "metric": "passage_hit",
+   "expected": "none",
+   "questions": 54,
+   "baseline": 0.6851851851851852,
+   "mutation": 0.7037037037037037,
+   "difference": 0.01851851851851849,
+   "interval": [
+    0.0,
+    0.05555555555555558
+   ],
+   "p_value": 1.0,
+   "mde": 0.05188120774283274,
+   "significant": false,
+   "outcome": "as expected"
+  },
+  {
+   "metric": "passage_recall",
+   "expected": "none",
+   "questions": 54,
+   "baseline": 0.4876543209876543,
+   "mutation": 0.49691358024691357,
+   "difference": 0.009259259259259245,
+   "interval": [
+    0.0,
+    0.02777777777777779
+   ],
+   "p_value": null,
+   "mde": null,
+   "significant": false,
+   "outcome": "as expected"
+  },
+  {
+   "metric": "deterministic_refusal",
+   "expected": "none",
+   "questions": 66,
+   "baseline": 0.0,
+   "mutation": 0.0,
+   "difference": 0.0,
+   "interval": [
+    0.0,
+    0.0
+   ],
+   "p_value": 1.0,
+   "mde": 0.042448260880499515,
+   "significant": false,
+   "outcome": "as expected"
+  },
+  {
+   "metric": "groundedness",
+   "expected": "down",
+   "questions": 66,
+   "baseline": 0.803030303030303,
+   "mutation": 0.6666666666666666,
+   "difference": -0.13636363636363635,
+   "interval": [
+    -0.24242424242424243,
+    -0.030303030303030276
+   ],
+   "p_value": 0.03515625,
+   "mde": 0.1644014074656424,
+   "significant": true,
+   "outcome": "detected"
+  },
+  {
+   "metric": "correctness",
+   "expected": "down",
+   "questions": 54,
+   "baseline": 0.4074074074074074,
+   "mutation": 0.24074074074074073,
+   "difference": -0.16666666666666666,
+   "interval": [
+    -0.2777777777777778,
+    -0.07407407407407407
+   ],
+   "p_value": 0.00390625,
+   "mde": 0.1556436232284982,
+   "significant": true,
+   "outcome": "detected"
+  },
+  {
+   "metric": "refusal",
+   "expected": "any",
+   "questions": 54,
+   "baseline": 0.8333333333333334,
+   "mutation": 0.7962962962962963,
+   "difference": -0.03703703703703709,
+   "interval": [
+    -0.14814814814814814,
+    0.05555555555555558
+   ],
+   "p_value": 0.7265625,
+   "mde": 0.1467422152444202,
+   "significant": false,
+   "outcome": "not pre-registered"
+  },
+  {
+   "metric": "abstention",
+   "expected": "any",
+   "questions": 12,
+   "baseline": 0.9166666666666666,
+   "mutation": 0.9166666666666666,
+   "difference": 0.0,
+   "interval": [
+    0.0,
+    0.0
+   ],
+   "p_value": 1.0,
+   "mde": 0.23346543484274732,
+   "significant": false,
+   "outcome": "not pre-registered"
+  }
+ ],
+ "targeted": []
+}

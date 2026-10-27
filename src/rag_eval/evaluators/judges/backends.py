@@ -128,6 +128,10 @@ class ClaudeCodeBackend:
                 raise JudgeBackendError(
                     "Claude Code CLI not found; install it and log in (see README)"
                 ) from error
+            except subprocess.TimeoutExpired as error:
+                raise JudgeBackendError(
+                    f"claude -p timed out after {self.config.timeout_s:.0f} s"
+                ) from error
         try:
             payload = cast(dict[str, Any], json.loads(done.stdout))
         except json.JSONDecodeError as error:

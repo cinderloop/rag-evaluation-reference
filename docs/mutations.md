@@ -106,5 +106,99 @@ the minimum detectable effect, not a claim that nothing changed.
 
 ## Results
 
-Not yet run. Results will be added from `results/mutations/comparisons/`, each linked
-to its run manifests.
+**Runs.** One run per config on the 66 test questions, judged with Claude Haiku 5.5. The
+runs are in [`results/mutations/`](../results/mutations/) and the comparisons in
+[`results/mutations/comparisons/`](../results/mutations/comparisons/). All seven runs
+are from commit `a714fbc`, which holds these expectations. The manifests record the
+working tree as modified, for two reasons:
+
+- the weaker-LLM config and its Modelfile were added after that commit, and are
+  committed with these results;
+- a local, uncommitted runner change paused between questions to keep the host cool;
+  it does not change answers or recorded latencies.
+
+No run had an error. Judge cost was about $0.29 at list-price equivalent.
+
+**Baseline** (`20261027T002255Z-baseline`):
+
+| Metric | Value |
+|---|---|
+| Passage hit | 68.5% |
+| Passage recall | 48.8% |
+| Groundedness | 80.3% |
+| Correctness | 40.7% |
+| Refusal | 83.3% |
+| Abstention (12 questions) | 91.7% |
+| No-context refusals | 0% |
+
+### Pre-registered predictions
+
+Each difference is mutation minus baseline, with its 95% interval and the exact
+McNemar p (passage recall has no p; its interval decides).
+
+| Mutation | Metric | Predicted | Baseline → mutation | Difference (95% CI) | p | Result |
+|---|---|---|---|---|---|---|
+| weaker-llm | correctness | down | 40.7% → 24.1% | −16.7 (−27.8 to −7.4) | 0.004 | **detected** |
+| weaker-llm | groundedness | down | 80.3% → 66.7% | −13.6 (−24.2 to −3.0) | 0.035 | **detected** |
+| top-n-2 | passage hit | down | 68.5% → 53.7% | −14.8 (−24.1 to −5.6) | 0.008 | **detected** |
+| top-n-2 | passage recall | down | 48.8% → 34.0% | −14.8 (−22.8 to −7.7) | — | **detected** |
+| top-n-2 | correctness | down | 40.7% → 37.0% | −3.7 (−13.0 to +5.6) | 0.69 | not detected (MDE 12.7) |
+| threshold-078 | passage hit | down | 68.5% → 48.1% | −20.4 (−33.3 to −9.3) | 0.003 | **detected** |
+| threshold-078 | passage recall | down | 48.8% → 32.1% | −16.7 (−25.9 to −8.0) | — | **detected** |
+| threshold-078 | no-context refusals | up | 0% → 24.2% | +24.2 (+15.2 to +34.8) | <0.001 | **detected** |
+| threshold-078 | correctness | down | 40.7% → 31.5% | −9.3 (−18.5 to 0.0) | 0.125 | not detected (MDE 13.7) |
+| weak-prompt | groundedness | down | 80.3% → 56.1% | −24.2 (−37.9 to −10.6) | 0.002 | **detected** |
+| weak-prompt | abstention | down | 91.7% → 75.0% | −16.7 (−41.7 to 0.0) | 0.5 | not detected (12 questions; judge not validated) |
+
+**Summary.** 8 of the 11 predicted changes were detected. All 13 "no change"
+predictions held, including:
+
+- retrieval unchanged under the weaker model and the weaker prompt;
+- no-context refusals unchanged where nothing touched the threshold;
+- no aggregate change for the removed document and the edited fact.
+
+### What the evaluation caught, and what it missed
+
+- **Retrieval metrics.** They respond to every retrieval mutation and stay still under
+  the others. Passage-level metrics carry the signal: under threshold-078 a quarter of
+  the questions got no context at all.
+- **Groundedness.** It catches the two generation mutations. The weaker model and the
+  prompt without grounding rules both add unsupported claims.
+- **Correctness under retrieval mutations.** It did not detect top-n-2 or
+  threshold-078. Correctness is already 41% at baseline, mostly because the evidence
+  passage is often not retrieved even with four passages (see `docs/failure-taxonomy.md`).
+  Removing passages therefore turns few correct answers into wrong ones, and the drops
+  (3.7 and 9.3 points) are below what 66 questions can detect. The retrieval metrics
+  are the sensitive measure for these mutations.
+- **Abstention.** It moved in the predicted direction under weak-prompt, but 12
+  questions cannot show a 17-point drop to be significant, and this judge is not
+  validated. This is a blind spot, as `docs/judges.md` warned.
+- **Not pre-registered: refusal under weak-prompt.** The refusal judge rose by 14.8
+  points (p = 0.008). Without the instruction to decline, the model gives whatever the
+  passages contain, so it holds back less. This is the same change in behaviour that
+  groundedness detects as harm.
+
+### Targeted checks
+
+- **remove-document.** As predicted, the aggregate metrics did not move. The targeted
+  check is weaker than planned: both affected questions (q-b005-1, q-b005-2) already
+  failed correctness at baseline, so the mutation could not make them fail. The removal
+  does show in passage recall for q-b005-1 (1.0 → 0.5), the evidence from MIR-26-03 that
+  is no longer there.
+- **knowledge-edit.** The edited report was ingested: AnythingLLM's stored copy says
+  "repair yard in Cape Girardeau, Missouri". But retrieval never returned that sentence
+  for q-b029-1, in the baseline or the mutation, and both answers said the documents do
+  not contain the answer. The check is **inconclusive**: it cannot show whether answers
+  follow an edited fact the system never retrieves.
+
+**Lesson for both checks.** A targeted mutation only tests something if the baseline
+gets the targeted questions right first. The questions and the edited fact should be
+chosen from those the baseline answers correctly.
+
+### Measurement noise
+
+Every config re-embeds the corpus in its own workspace. The embeddings are not
+bit-identical between workspaces: passage scores differ by about ±0.0005, which
+occasionally reorders two near-tied passages. This explains the +1.9-point passage hit
+change, from a single question, under mutations that do not touch retrieval. It is far
+below the size of any detected effect.
