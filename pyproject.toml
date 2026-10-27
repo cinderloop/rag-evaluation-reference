@@ -1,6 +1,6 @@
 [project]
 name = "rag-eval"
-version = "0.1.0"
+version = "1.0.0"
 description = "Reference RAG evaluation suite for AnythingLLM: error analysis, validated binary LLM judges, mutation testing and sound statistics."
 authors = [{ name = "Ashen J" }]
 license = "MIT"

@@ -1,42 +1,79 @@
 # rag-evaluation-reference
 
-Reference implementation of RAG evaluation: error analysis, validated binary LLM judges, mutation testing and statistically sound results. System under test: AnythingLLM, with DeepEval.
+A reference implementation of RAG evaluation: error analysis first, binary LLM judges validated against labels, mutation testing to prove the evaluation catches regressions, and statistics that stay honest at small sample sizes. The system under test is [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm), answering questions over 77 NTSB marine accident reports; the judges are [DeepEval](https://deepeval.com) custom metrics.
 
-> **Status:** work in progress. Provisioning, the runner, the dataset, the closed-book baseline, the [failure taxonomy](docs/failure-taxonomy.md), the evaluators, [judge validation](docs/judges.md) and the [statistics module](docs/decisions/0011-statistics.md) the [mutation experiments](docs/mutations.md) and the [eval gate](docs/decisions/0012-gate-thresholds.md) are in place; the final documentation pass is not yet.
+> **Companion article:** _link to be added_. It covers the reasoning behind the methods; this repository is the code-level companion.
+
+## What is evaluated, and why
+
+A RAG answer can fail in two places: retrieval can miss the passage that holds the answer, or generation can mishandle what it was given (make things up, misread it, hold it back). A single "answer quality" score cannot tell these apart, and an LLM judge's score means nothing until you know how often the judge is right. So this repository:
+
+1. **Looks at real failures before measuring anything** ([failure taxonomy](docs/failure-taxonomy.md)), and builds one evaluator per failure mode that actually occurs.
+2. **Measures retrieval deterministically**, against verbatim evidence quotes, at passage level.
+3. **Judges generation with binary Pass/Fail judges**, each validated against labels before its numbers are used ([judges](docs/judges.md)).
+4. **Breaks the system on purpose** to check the evaluation notices ([mutations](docs/mutations.md)), with expectations written down before any run.
+5. **Gates changes** on the metrics that proved trustworthy ([eval gate](docs/decisions/0012-gate-thresholds.md)).
+
+The full walk-through is in [`docs/methodology.md`](docs/methodology.md); one failure traced end to end is in [`docs/worked-example.md`](docs/worked-example.md); what to change for another RAG system is in [`docs/adapting-to-your-rag-app.md`](docs/adapting-to-your-rag-app.md).
+
+## The evaluation pyramid
+
+Cheap and certain at the bottom, expensive and uncertain at the top; use the lowest level that can answer the question.
+
+| Level | What | Cost | Trust |
+|---|---|---|---|
+| Judged | Groundedness, correctness, abstention, unnecessary refusal: one binary LLM judge per failure mode | judge calls | only after validation (TPR/TNR against labels) |
+| Retrieval | Hit rate, recall@k, MRR at passage and document level, matched to evidence quotes | free | exact, given the matching rule |
+| Deterministic | No-context refusals (exact match), config and pin checks, unit-tested logic | free | exact |
+
+## Findings
+
+All numbers come from committed runs; each links to its source.
+
+- **Correct answers come from the documents, not from memory.** With no documents, the model answered 3 of 90 questions correctly, all guessable ([closed-book baseline](docs/results/closed-book-baseline.md); [run manifest](results/closed-book/20261022T204917Z-closed-book/manifest.json)).
+- **Most failures start at retrieval.** In error analysis on dev, 55 of 66 failures began with the answer's passage not being retrieved ([taxonomy](docs/failure-taxonomy.md); [baseline manifest](results/error-analysis/20261022T222121Z-baseline/manifest.json)).
+- **Finding the right report is not finding the answer.** On the 66 test questions the baseline retrieved the right report for 96.3% of answerable questions but a passage holding the evidence for only 68.5%; groundedness 80.3%, correctness 40.7% ([manifest](results/mutations/20261027T002255Z-baseline/manifest.json); [summary](results/mutations/20261027T002255Z-baseline/summary.json)).
+- **Two judges are validated, one is not.** Groundedness agrees with labels on 98% of passes and 100% of failures, correctness on 95% and 98%; abstention could not be validated (one failure to test on) ([judges](docs/judges.md); [judge-test result](results/judge-validation/agreement/20261026T222019Z-judge-test.json)).
+- **The evaluation catches most deliberate regressions.** Of 11 pre-registered changes across six mutations, 8 were detected; all 13 "no change" predictions held. Correctness alone missed the retrieval mutations; the retrieval metrics caught them ([mutations](docs/mutations.md); [comparisons](results/mutations/comparisons/)).
+- **The gate fails every detected regression and passes the baseline** ([thresholds](configs/gate.yaml); per-run results in each `results/mutations/*/gate.json`).
 
 ## Quick start
 
-Requirements: Docker, [uv](https://docs.astral.sh/uv/), and [Ollama](https://ollama.com) running natively on the host (on Apple Silicon this gives the models GPU acceleration; AnythingLLM in Docker reaches it via `host.docker.internal`).
+Requirements: Docker, [uv](https://docs.astral.sh/uv/), [Ollama](https://ollama.com) running natively on the host (on Apple Silicon this gives the models GPU acceleration; AnythingLLM in Docker reaches it via `host.docker.internal`), and, for the default judge, the [Claude Code](https://claude.com/claude-code) CLI logged in.
 
 ```bash
-# 1. Models (digests are pinned in configs/baseline.yaml and verified on every run)
-ollama pull qwen3:8b
+# Setup (once)
+ollama pull qwen3:8b && ollama pull nomic-embed-text
 ollama create qwen3-nothink:8b -f models/qwen3-nothink.Modelfile   # thinking off (ADR 0005)
-ollama pull nomic-embed-text
-
-# 2. AnythingLLM (pinned image, localhost only)
-docker compose up -d
-
-# 3. API key and environment (see .env.example)
-cp .env.example .env   # then set ANYTHINGLLM_API_KEY as described in the file
+docker compose up -d                                                # pinned AnythingLLM, localhost only
+cp .env.example .env   # set ANYTHINGLLM_API_KEY as described in the file
 set -a; source .env; set +a
-
-# 4. Fetch and verify the corpus (~110 MB from ntsb.gov)
 uv sync
-uv run rag-eval fetch-corpus
+uv run rag-eval fetch-corpus                                        # ~110 MB from ntsb.gov, checksums verified
 
-# 5. Provision and run (smoke test on two synthetic documents)
-uv run rag-eval provision -c tests/smoke/smoke.yaml
-uv run rag-eval run -c tests/smoke/smoke.yaml -d tests/smoke/cases.jsonl
+# 1. Provision: workspace, documents and settings from the config (idempotent)
+uv run rag-eval provision -c configs/baseline.yaml
 
-# 6. Score a run: retrieval metrics, then the judges (shows an estimate and asks first)
+# 2. Run the test set, then score it (the judge step shows an estimate and asks first)
+uv run rag-eval run -c configs/baseline.yaml -d data/test.jsonl
 uv run rag-eval evaluate results/<run-id>
-
-# 7. Eval gate: run the baseline on the test set, score it, fail if a gated metric drops
-uv run rag-eval gate run
 ```
 
-Each run writes `results/<run-id>/traces.jsonl` (one record per case) and `manifest.json` (git commit, config hash, pinned image and model digests, dataset and corpus hashes).
+`rag-eval run` provisions too, so any reported run is reproduced with its config and dataset: `rag-eval run -c <config> -d <dataset>`. A two-document smoke test is in `tests/smoke/`.
+
+## How to read the results
+
+Each run directory under `results/` holds:
+
+| File | Contents |
+|---|---|
+| `manifest.json` | git commit, config file and hash, AnythingLLM image digest, model digests, dataset and corpus hashes, timestamps |
+| `traces.jsonl` | one record per question: the answer, the passages the model saw with scores, latency, token usage |
+| `scores.jsonl` | per question: retrieval scores and each judge's verdict with its reason |
+| `summary.json` | rates per metric, the judge model and prompt hashes, judge cost |
+| `gate.json` | gate result per gated metric (after `rag-eval gate check`) |
+
+Read a failure from the bottom of the pyramid up: did retrieval find the evidence (`scores.jsonl` → `retrieval`)? If not, the answer could not be right, whatever the judges say. If it did, the judges' reasons show what generation did with it. [`docs/worked-example.md`](docs/worked-example.md) does this for one case.
 
 ## Corpus
 
@@ -44,90 +81,7 @@ The system is evaluated on the **77 NTSB Marine Investigation Reports published 
 
 The PDFs are not committed. `uv run rag-eval fetch-corpus` downloads them from ntsb.gov into `corpus/documents/` and verifies each against the SHA-256 pinned in [`corpus/sources.yaml`](corpus/sources.yaml).
 
-<details>
-<summary>All 77 reports</summary>
-
-| Report | Title |
-|---|---|
-| [MIR-25-01](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2501.pdf) | Contact of Kitty Tow with Algiers Lock Gate |
-| [MIR-25-02](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2502.pdf) | Contact of Crane on Deck Barge BMI 209 Towed by Nickelena with Mackinac Bridge |
-| [MIR-25-03](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2503.pdf) | Grounding of Cargo Vessel Bonnie G |
-| [MIR-25-04](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2504.pdf) | Engine Room Fire aboard Fishing Vessel Three Girls |
-| [MIR-25-05](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2505.pdf) | Engine Room Fire aboard Cargo Vessel Stride |
-| [MIR-25-06](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2506.pdf) | Container Loss aboard Containership President Eisenhower |
-| [MIR-25-07](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2507.pdf) | Contact of Small Passenger Vessel Columbia Gorge with Pedestrian Bridge and Tribal Fishing Platforms |
-| [MIR-25-08](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2508.pdf) | Collapse of Chalmette Refinery Dock Section During Docking of Ovide J Tow |
-| [MIR-25-09](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2509.pdf) | Contact of Crane on board Royal Engineer Tow with Terminal Cargo Crane |
-| [MIR-25-10](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2510.pdf) | Safeguarding Bridges from Vessel Strikes: Need for Vulnerability Assessment and Risk Reduction Strategies |
-| [MIR-25-11](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2511.pdf) | Contact of Tank Vessel Hafnia Amessi with Pier |
-| [MIR-25-12](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2512.pdf) | Collision between Fishing Vessel Papa Rod and Anchored Bulk Carrier Appaloosa |
-| [MIR-25-13](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2513.pdf) | Diesel Generator Engine Failure aboard Passenger Vessel Ocean Navigator |
-| [MIR-25-14](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2514.pdf) | Contact of Amber Brittany Tow with Vane Dike |
-| [MIR-25-15](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2515.pdf) | Engine Room Fire aboard Towing Vessel Johnny M |
-| [MIR-25-16](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2516.pdf) | Fire aboard Roll-on/Roll-off Container Vessel Grande Costa D’Avorio |
-| [MIR-25-17](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2517.pdf) | Contact of Towing Vessel Cocodrie with Valero St. Charles Refinery Walkway |
-| [MIR-25-18](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2518.pdf) | Contact of Bulk Carrier American Mariner with Munuscong Channel Junction Light |
-| [MIR-25-19](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2519.pdf) | Grounding of Towing Vessel City of Louisville |
-| [MIR-25-20](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2520.pdf) | Fire aboard Fishing Vessel Jordyn Rose |
-| [MIR-25-21](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2521.pdf) | Capsizing and Sinking of Towing Vessel Baylor J. Tregre |
-| [MIR-25-22](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2522.pdf) | Sinking of the Industrial Vessel Cape Douglas |
-| [MIR-25-23](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2523.pdf) | Grounding of Towing Vessel Tom Frazier |
-| [MIR-25-24](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2524.pdf) | Fire aboard Fishing Vessel Tarka II |
-| [MIR-25-25](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2525.pdf) | Contact of Duke Tow with Power Transmission Poles and Pelican Island Bridge |
-| [MIR-25-26](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2526.pdf) | Collision of William B Klunk Tow with Moored Barges |
-| [MIR-25-27](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2527.pdf) | Fire aboard Towing Vessel Lucinda Smith |
-| [MIR-25-28](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2528.pdf) | Contact of Joe B. Wyatt Tow with Fort Madison Bridge Protection Cell and Fendering System |
-| [MIR-25-29](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2529.pdf) | Listing and Partial Sinking of Yacht Lovebug |
-| [MIR-25-30](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2530.pdf) | Grounding of Recreational Vessel 6 Saturdays |
-| [MIR-25-31](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2531.pdf) | Fire aboard Yacht Flagship |
-| [MIR-25-32](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2532.pdf) | Grounding of Barge Cordova Provider |
-| [MIR-25-33](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2533.pdf) | Collision of Multi-Purpose Carrier BBC Africa with Bulk Carrier Common Faith |
-| [MIR-25-34](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2534.pdf) | Contact of Ferry Ray Stoker, Jr. with Floating Dock |
-| [MIR-25-35](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2535.pdf) | Contact of Tanker Cosflourish Lake with South Texas Gateway Terminal Dock |
-| [MIR-25-36](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2536.pdf) | Hull Failure and Implosion of Submersible Titan, North Atlantic Ocean, 370 nautical miles southeast of St. John’s, Newfoundland and Labrador, Canada, June 18, 2023 |
-| [MIR-25-37](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2537.pdf) | Grounding of the Towing Vessel John M Donnelly |
-| [MIR-25-38](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2538.pdf) | Fire aboard Bulk Carrier Cuyahoga |
-| [MIR-25-39](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2539.pdf) | Engine Room Fire aboard Dredging Vessel Stuyvesant |
-| [MIR-25-40](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf) | Contact of Containership Dali with Francis Scott Key Bridge and Subsequent Bridge Collapse |
-| [MIR-25-41](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2541.pdf) | Lithium-ion Battery Fires aboard Cargo Vessel Genius Star XI |
-| [MIR-25-42](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2542.pdf) | Collision between Offshore Supply Vessel Jack Edwards and Cargo Vessel Julie C |
-| [MIR-25-43](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2543.pdf) | Collision Between Towing Vessel William E Strait and Moored Barges at Shell Norco Refinery Dock |
-| [MIR-25-44](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2544.pdf) | Flooding and Sinking of Towing Vessel Cajole |
-| [MIR-25-45](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2545.pdf) | Contact of Bulk Carrier Algoma Discovery with BNSF Allouez Taconite Facility |
-| [MIR-25-46](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2546.pdf) | Sinking of Barge PTC 706 and Subsequent Breakup of Chad Pregracke Tow |
-| [MIR-25-47](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2547.pdf) | Contact of Towing Vessel Schweiger with US Coast Guard Station Cape Disappointment Docks |
-| [MIR-26-01](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2601.pdf) | Engine Room Fire on Towing Vessel Thor |
-| [MIR-26-02](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2602.pdf) | Diesel Generator Engine Failure aboard Self unloading Barge Pathfinder |
-| [MIR-26-03](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2603.pdf) | Flooding of Bulk Carrier Cuyahoga |
-| [MIR-26-04](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2604.pdf) | Fire aboard Fishing Vessel Spicy Lady |
-| [MIR-26-05](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2605.pdf) | Contact of Tanker Platanos with Martinez Refining Company Wharf Pier |
-| [MIR-26-06](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2606.pdf) | Grounding of Dry Bulk Carrier Algoma Verity |
-| [MIR-26-07](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2607.pdf) | Grounding of Fishing Vessel Eileen Rita |
-| [MIR-26-08](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2608.pdf) | Engine Room Fire aboard Cargo Vessel Lem Verbena |
-| [MIR-26-09](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2609.pdf) | Engine Room Flooding aboard Sailing School Vessel Oliver Hazard Perry |
-| [MIR-26-10](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2610.pdf) | Breakaway of Barges MPC 907 and MPC 644 and Subsequent Contact with Mooring Cells |
-| [MIR-26-11](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2611.pdf) | Crane Wire Failure on Offshore Construction Vessel Island Venture and Subsequent Damage to Offshore Supply Vessel C-Enforcer |
-| [MIR-26-12](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2612.pdf) | Fire aboard Pipelayer Deep Energy |
-| [MIR-26-13](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2613.pdf) | Collision between Towing Vessel Patrick J Studdert and Bulk Carrier Clara B and Subsequent Sinking of Patrick J Studdert |
-| [MIR-26-14](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2614.pdf) | Contact of LCPL Phillip C George Tow with Terminal Dolphin, Power Transmission Pole, and Pelican Island Bridge |
-| [MIR-26-15](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2615.pdf) | Contact of Mackenzie Rose Tow with Norfolk and Portsmouth Belt Line Railroad Bridge |
-| [MIR-26-16](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2616.pdf) | Flooding and Sinking of Fishing Vessel North American |
-| [MIR-26-17](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2617.pdf) | Contact of Rickey Hughes Tow with the Vicksburg Highway 80 Bridge |
-| [MIR-26-18](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2618.pdf) | Contact of Josset Tow with the Bayou Grosse Tête Bridge |
-| [MIR-26-19](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2619.pdf) | Collapse of Emissions Control Barge STAX 1 Capture and Control Articulated Arm |
-| [MIR-26-20](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2620.pdf) | Contact of Myra Eckstein Tow with Vicksburg Highway 80 Bridge |
-| [MIR-26-21](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2621.pdf) | Fire aboard Towing Vessel William D |
-| [MIR-26-22](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2622.pdf) | Explosion aboard Sludge Vessel Hunts Point |
-| [MIR-26-23](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2623.pdf) | Fire aboard Fishing Vessel Sub Zero |
-| [MIR-26-24](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2624.pdf) | Collision Between Bulk Carrier Yangze 7 and Towing Vessel Miss Peggy |
-| [MIR-26-25](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2625.pdf) | Fire aboard Fishing Vessel GITN’R DUN |
-| [MIR-26-26](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2626.pdf) | Contact of Bulk Carrier Belle Mer Anchor with Subsea Cable |
-| [MIR-26-27](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2627.pdf) | Contact of Offshore Supply Vessel Dry Tortugas with Offshore Gas and Condensate Production Platform VK-817A |
-| [MIR-26-28](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2628.pdf) | Flooding and Sinking of Charter Fishing Vessel Jig Strike |
-| [MIR-26-29](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2629.pdf) | Engine Room Fire aboard Chemical Tanker Scot Stuttgart |
-| [MIR-26-30](https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2630.pdf) | Grounding of Fishing Vessel Mystery |
-
-</details>
+The full list, with a link to each report, is in [`corpus/README.md`](corpus/README.md).
 
 ## Dataset
 
@@ -175,4 +129,8 @@ Pull-request CI stays fast and makes no LLM calls; the gate runs manually throug
 uv run ruff check . && uv run ruff format --check . && uv run pyright && uv run pytest
 ```
 
-Design notes: [`docs/spike-findings.md`](docs/spike-findings.md) and [`docs/decisions/`](docs/decisions/).
+Design notes: [`docs/spike-findings.md`](docs/spike-findings.md) and the decision records in [`docs/decisions/`](docs/decisions/).
+
+## License
+
+Code: [MIT](LICENSE). The NTSB reports are US government works in the public domain; see [`corpus/ATTRIBUTION.md`](corpus/ATTRIBUTION.md).

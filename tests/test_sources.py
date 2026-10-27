@@ -30,8 +30,8 @@ def test_committed_sources_file_is_valid() -> None:
     assert all(s.url.endswith(s.doc_id) for s in sources)
 
 
-def test_every_source_is_linked_from_the_readme() -> None:
-    readme = Path("README.md").read_text(encoding="utf-8")
+def test_every_source_is_linked_from_the_corpus_readme() -> None:
+    readme = Path("corpus/README.md").read_text(encoding="utf-8")
     missing = [s.doc_id for s in load_sources(SOURCES) if s.url not in readme]
     assert missing == []
 

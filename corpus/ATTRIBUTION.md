@@ -1,6 +1,6 @@
 # Corpus attribution
 
-The evaluation corpus is the set of **NTSB Marine Investigation Reports published in 2025 and 2026** (`MIR-25-01` to `MIR-25-47`, `MIR-26-01` to `MIR-26-30`). They are listed with links in [`sources.yaml`](sources.yaml) and in the README.
+The evaluation corpus is the set of **NTSB Marine Investigation Reports published in 2025 and 2026** (`MIR-25-01` to `MIR-25-47`, `MIR-26-01` to `MIR-26-30`). They are listed with links in [`README.md`](README.md) and, with checksums, in [`sources.yaml`](sources.yaml).
 
 Courtesy: National Transportation Safety Board.
 

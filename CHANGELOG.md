@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-10-27
+
+First release: the full evaluation suite, from dataset to eval gate, with results.
+
 ### Added
 
 - Spike findings for the AnythingLLM 1.18.0 developer API (`docs/spike-findings.md`).
@@ -61,3 +65,10 @@ All notable changes to this project are documented here. The format follows
   baseline with a family-wise 5% false-alarm rate (ADR 0012), checked against every
   mutation run, and a manual `eval-gate.yml` workflow for a self-hosted runner; PR CI
   stays LLM-free (ADR 0013).
+- Documentation: the README as a guided tour with findings linked to their runs,
+  `docs/methodology.md`, a worked example traced from metric to root cause
+  (`docs/worked-example.md`), `docs/adapting-to-your-rag-app.md`, and ADRs 0014 (query
+  mode) and 0015 (observability out of scope).
+
+[Unreleased]: https://github.com/cinderloop/rag-evaluation-reference/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/cinderloop/rag-evaluation-reference/releases/tag/v1.0.0
