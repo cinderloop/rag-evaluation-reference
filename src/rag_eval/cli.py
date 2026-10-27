@@ -28,6 +28,8 @@ from rag_eval.evaluators.evaluate import (
 )
 from rag_eval.evaluators.judges.backends import CachedBackend, load_judge_config, make_backend
 from rag_eval.evaluators.judges.judges import JUDGES, JudgeName, Verdict
+from rag_eval.gate.cli import GATE_CONFIG, run_check
+from rag_eval.gate.cli import app as gate_app
 from rag_eval.mutations.cli import app as mutations_app
 from rag_eval.mutations.knowledge_edit import edited_cases, load_edit
 from rag_eval.provision import ProvisionResult, provision
@@ -40,6 +42,7 @@ app = typer.Typer(no_args_is_help=True, add_completion=False)
 app.add_typer(dataset_app, name="dataset")
 app.add_typer(review_app, name="review")
 app.add_typer(mutations_app, name="mutations")
+app.add_typer(gate_app, name="gate")
 
 ConfigOption = Annotated[Path, typer.Option("--config", "-c", exists=True, dir_okay=False)]
 
@@ -109,20 +112,13 @@ def provision_command(config: ConfigOption) -> None:
         _provision(env, client, load_config(config))
 
 
-@app.command("run")
-def run_command(
-    config: ConfigOption,
-    dataset: Annotated[Path, typer.Option("--dataset", "-d", exists=True, dir_okay=False)],
-    repeats: Annotated[int, typer.Option(min=1)] = 1,
-    out: Annotated[Path, typer.Option("--out")] = Path("results"),
-) -> None:
-    """Provision (idempotently), then run every case in a fresh thread and write traces."""
+def _run(config: Path, dataset: Path, repeats: int, out: Path) -> Path:
     env = Env.from_environ()
     run_config = load_config(config)
     cases = load_cases(dataset)
     with AnythingLLMClient(env.anythingllm_base_url, env.anythingllm_api_key) as client:
         provisioned, verified = _provision(env, client, run_config)
-        run_dir = run(
+        return run(
             client=client,
             config=run_config,
             config_path=config,
@@ -134,7 +130,17 @@ def run_command(
             out_dir=out,
             run_id=new_run_id(run_config),
         )
-    typer.echo(f"Wrote {run_dir}")
+
+
+@app.command("run")
+def run_command(
+    config: ConfigOption,
+    dataset: Annotated[Path, typer.Option("--dataset", "-d", exists=True, dir_okay=False)],
+    repeats: Annotated[int, typer.Option(min=1)] = 1,
+    out: Annotated[Path, typer.Option("--out")] = Path("results"),
+) -> None:
+    """Provision (idempotently), then run every case in a fresh thread and write traces."""
+    typer.echo(f"Wrote {_run(config, dataset, repeats, out)}")
 
 
 def _not_yet(command: str) -> None:
@@ -233,7 +239,29 @@ def report_command() -> None:
     _not_yet("report")
 
 
-@app.command("gate")
-def gate_command() -> None:
-    """Fail if any metric drops below its threshold. Not implemented yet."""
-    _not_yet("gate")
+@gate_app.command("run")
+def gate_run_command(
+    config: ConfigOption = Path("configs/baseline.yaml"),
+    dataset: Annotated[Path, typer.Option("--dataset", "-d", exists=True, dir_okay=False)] = Path(
+        "data/test.jsonl"
+    ),
+    *,
+    gate_config: Annotated[Path, typer.Option("--gate-config", exists=True)] = GATE_CONFIG,
+    max_cost: Annotated[float, typer.Option(help="Judge spend cap (USD)")] = 2.0,
+    yes: Annotated[bool, typer.Option("--yes", help="Skip the confirmation prompt")] = False,
+    out: Annotated[Path, typer.Option("--out")] = Path("results/gate"),
+) -> None:
+    """Run the config on the dataset, score it, and check it against the gate thresholds."""
+    run_dir = _run(config, dataset, 1, out)
+    typer.echo(f"Wrote {run_dir}")
+    evaluate_command(
+        run_dir,
+        judge_config=DEFAULT_JUDGE_CONFIG,
+        judges=",".join(JUDGES),
+        max_cost=max_cost,
+        workers=4,
+        yes=yes,
+        knowledge_edit=None,
+    )
+    if not run_check(run_dir, gate_config):
+        raise typer.Exit(code=1)

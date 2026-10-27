@@ -1,0 +1,34 @@
+# Eval-gate thresholds (docs/decisions/0012-gate-thresholds.md), derived from a scored
+# baseline run with `rag-eval gate derive`. A gated metric fails the gate when it moves
+# past its threshold in the bad direction; report-only metrics never fail it.
+baseline_run: 20261027T002255Z-baseline
+family_alpha: 0.05
+metrics:
+  passage_hit:
+    direction: min
+    baseline: 0.6852
+    questions: 54
+    margin: 0.1421
+    threshold: 0.5431
+  groundedness:
+    direction: min
+    baseline: 0.803
+    questions: 66
+    margin: 0.1107
+    threshold: 0.6924
+  correctness:
+    direction: min
+    baseline: 0.4074
+    questions: 54
+    margin: 0.15
+    threshold: 0.2574
+  deterministic_refusal:
+    direction: max
+    baseline: 0.0
+    questions: 66
+    margin: 0.0237
+    threshold: 0.0237
+report_only:
+- passage_recall
+- refusal
+- abstention

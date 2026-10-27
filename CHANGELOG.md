@@ -57,3 +57,7 @@ All notable changes to this project are documented here. The format follows
   0.78, weakened prompt, removed document, knowledge edit), expectations pre-registered
   before any run, one run per config on the test set, and `rag-eval mutations compare`.
   8 of 11 predicted changes detected; all 13 no-change predictions held.
+- Eval gate (`rag-eval gate derive` / `check` / `run`): thresholds derived from the
+  baseline with a family-wise 5% false-alarm rate (ADR 0012), checked against every
+  mutation run, and a manual `eval-gate.yml` workflow for a self-hosted runner; PR CI
+  stays LLM-free (ADR 0013).

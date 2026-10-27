@@ -1,0 +1,55 @@
+{
+ "gate_config": "configs/gate.yaml",
+ "passed": true,
+ "checks": [
+  {
+   "metric": "passage_hit",
+   "value": 0.7037037037037037,
+   "threshold": 0.5431,
+   "direction": "min",
+   "passed": true
+  },
+  {
+   "metric": "groundedness",
+   "value": 0.7878787878787878,
+   "threshold": 0.6924,
+   "direction": "min",
+   "passed": true
+  },
+  {
+   "metric": "correctness",
+   "value": 0.3888888888888889,
+   "threshold": 0.2574,
+   "direction": "min",
+   "passed": true
+  },
+  {
+   "metric": "deterministic_refusal",
+   "value": 0.0,
+   "threshold": 0.0237,
+   "direction": "max",
+   "passed": true
+  },
+  {
+   "metric": "passage_recall",
+   "value": 0.4876543209876543,
+   "threshold": null,
+   "direction": null,
+   "passed": null
+  },
+  {
+   "metric": "refusal",
+   "value": 0.8333333333333334,
+   "threshold": null,
+   "direction": null,
+   "passed": null
+  },
+  {
+   "metric": "abstention",
+   "value": 0.9166666666666666,
+   "threshold": null,
+   "direction": null,
+   "passed": null
+  }
+ ]
+}

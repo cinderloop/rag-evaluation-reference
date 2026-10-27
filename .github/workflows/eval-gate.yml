@@ -1,0 +1,68 @@
+# Eval gate (docs/decisions/0013-ci-and-eval-gate.md): run the baseline config on a
+# dataset, score it with the judges and fail if a gated metric drops past its threshold
+# (configs/gate.yaml). Manual only: it needs a local model server and makes hosted judge
+# calls, so it never runs on pull requests.
+#
+# Runner requirements (a self-hosted runner labelled `rag-eval`; GitHub-hosted runners
+# cannot serve the models):
+#   - Docker, for AnythingLLM (started from docker-compose.yml below).
+#   - Ollama on the host with the pinned models (configs/baseline.yaml), including
+#     `ollama create qwen3-nothink:8b -f models/qwen3-nothink.Modelfile`.
+#   - The Claude Code CLI, for the default judge config.
+# Secrets:
+#   - ANYTHINGLLM_API_KEY: developer API key of that AnythingLLM instance.
+#   - CLAUDE_CODE_OAUTH_TOKEN: a token from `claude setup-token`, so the judges can call
+#     Claude Code without an interactive login.
+name: Eval gate
+
+on:
+  workflow_dispatch:
+    inputs:
+      dataset:
+        description: Dataset to gate on
+        default: data/test.jsonl
+      max_cost:
+        description: Judge spend cap in USD (list-price equivalent)
+        default: "2.0"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: eval-gate
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    runs-on: [self-hosted, rag-eval]
+    timeout-minutes: 180
+    env:
+      ANYTHINGLLM_API_KEY: ${{ secrets.ANYTHINGLLM_API_KEY }}
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: "0.13.4"
+      - name: Install (locked)
+        run: uv sync --locked
+      - name: Start AnythingLLM
+        run: docker compose up -d --wait
+      - name: Fetch and verify the corpus
+        run: uv run rag-eval fetch-corpus
+      - name: Run the gate
+        # Inputs reach the shell as environment variables, never interpolated into it.
+        env:
+          DATASET: ${{ inputs.dataset }}
+          MAX_COST: ${{ inputs.max_cost }}
+        run: uv run rag-eval gate run --dataset "$DATASET" --max-cost "$MAX_COST" --yes
+      - name: Summary
+        if: always()
+        run: |
+          for f in results/gate/*/gate.json; do
+            [ -f "$f" ] || continue
+            echo "### $(basename "$(dirname "$f")")" >> "$GITHUB_STEP_SUMMARY"
+            echo '```json' >> "$GITHUB_STEP_SUMMARY"
+            cat "$f" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          done

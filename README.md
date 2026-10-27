@@ -2,7 +2,7 @@
 
 Reference implementation of RAG evaluation: error analysis, validated binary LLM judges, mutation testing and statistically sound results. System under test: AnythingLLM, with DeepEval.
 
-> **Status:** work in progress. Provisioning, the runner, the dataset, the closed-book baseline, the [failure taxonomy](docs/failure-taxonomy.md), the evaluators, [judge validation](docs/judges.md) and the [statistics module](docs/decisions/0011-statistics.md) and the [mutation experiments](docs/mutations.md) are in place; the eval gate is not yet.
+> **Status:** work in progress. Provisioning, the runner, the dataset, the closed-book baseline, the [failure taxonomy](docs/failure-taxonomy.md), the evaluators, [judge validation](docs/judges.md) and the [statistics module](docs/decisions/0011-statistics.md) the [mutation experiments](docs/mutations.md) and the [eval gate](docs/decisions/0012-gate-thresholds.md) are in place; the final documentation pass is not yet.
 
 ## Quick start
 
@@ -31,6 +31,9 @@ uv run rag-eval run -c tests/smoke/smoke.yaml -d tests/smoke/cases.jsonl
 
 # 6. Score a run: retrieval metrics, then the judges (shows an estimate and asks first)
 uv run rag-eval evaluate results/<run-id>
+
+# 7. Eval gate: run the baseline on the test set, score it, fail if a gated metric drops
+uv run rag-eval gate run
 ```
 
 Each run writes `results/<run-id>/traces.jsonl` (one record per case) and `manifest.json` (git commit, config hash, pinned image and model digests, dataset and corpus hashes).
@@ -159,6 +162,12 @@ Each judge is a DeepEval custom metric that returns Pass or Fail with a reason; 
 | [`anthropic-api.yaml`](configs/judges/anthropic-api.yaml) | Claude via the API | `ANTHROPIC_API_KEY` |
 
 Other models plug in the same way: a config with `provider: openai_compatible`, a `base_url`, an `api_key_env` and a pinned `model` uses any Chat Completions endpoint, and a new kind of provider is one small class in [`backends.py`](src/rag_eval/evaluators/judges/backends.py). The judge must come from a different model family than the system under test. Judge replies are cached by provider, model and full prompt, every run shows an estimate first, and `--max-cost` stops a run before it exceeds a cap. Judges are validated against Pass/Fail labels before their scores are used ([results](docs/judges.md)) (`rag-eval review judges-export`, `judges-import`, `judges-validate`; [ADR 0010](docs/decisions/0010-judge-validation.md)).
+
+## Eval gate
+
+`rag-eval gate run` runs the baseline config on the test set, scores it, and exits with an error if a gated metric (passage hit, groundedness, correctness, no-context refusals) moves past its threshold in [`configs/gate.yaml`](configs/gate.yaml). The thresholds are derived from the baseline with `rag-eval gate derive`, at a 5% false-alarm rate for the gate as a whole ([ADR 0012](docs/decisions/0012-gate-thresholds.md)). The gate fails all four mutations the evaluation detects and passes the baseline. `rag-eval gate check <run>` checks an already scored run.
+
+Pull-request CI stays fast and makes no LLM calls; the gate runs manually through [`eval-gate.yml`](.github/workflows/eval-gate.yml) on a self-hosted runner that can serve the models ([ADR 0013](docs/decisions/0013-ci-and-eval-gate.md)).
 
 ## Development
 
