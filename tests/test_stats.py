@@ -30,6 +30,12 @@ def test_wilson_zero_successes() -> None:
     assert high == pytest.approx(0.277533, abs=1e-6)
 
 
+def test_wilson_all_successes_has_an_exact_upper_bound() -> None:
+    low, high = wilson(10, 10)
+    assert high == 1.0
+    assert low == pytest.approx(1 - 0.277533, abs=1e-6)
+
+
 def test_wilson_half() -> None:
     # p = 0.5, n = 10: centre = 0.5; half = z * sqrt(0.025 + z²/400) / (1 + z²/10)
     # = 1.959964 * 0.186020 / 1.384146 = 0.263407.

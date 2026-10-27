@@ -31,7 +31,11 @@ def wilson(successes: int, n: int, confidence: float = 0.95) -> Interval:
     denominator = 1 + z * z / n
     centre = (p + z * z / (2 * n)) / denominator
     half = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / denominator
-    return (max(0.0, centre - half), min(1.0, centre + half))
+    # With no successes (or no failures) the bound is exactly 0 (or 1); computing it as
+    # centre - half can leave a rounding residue such as 2.8e-17 on some platforms.
+    low = 0.0 if successes == 0 else max(0.0, centre - half)
+    high = 1.0 if successes == n else min(1.0, centre + half)
+    return (low, high)
 
 
 def percentile(sorted_values: Sequence[float], q: float) -> float:
