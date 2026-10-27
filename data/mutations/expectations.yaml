@@ -1,0 +1,76 @@
+# Pre-registered expectations for the mutation experiments (docs/mutations.md), written
+# before any mutation was run. For each mutation: the metrics expected to move
+# (down/up), those expected not to (none), and the rest left without a prediction (any,
+# the default). Each config runs once on the 66 test questions. `rag-eval mutations
+# compare` scores each run against this file.
+mutations:
+  - name: weaker-llm
+    config: configs/mutations/weaker-llm.yaml
+    change: qwen3 1.7B instead of 8B (same template, thinking off)
+    expect:
+      correctness: down
+      groundedness: down
+      passage_hit: none
+      passage_recall: none
+      deterministic_refusal: none
+    note: Retrieval does not involve the LLM, so it must not move; a smaller model should
+      answer worse and add more unsupported claims from the same passages.
+
+  - name: top-n-2
+    config: configs/mutations/top-n-2.yaml
+    change: 2 retrieved passages instead of 4
+    expect:
+      passage_recall: down
+      passage_hit: down
+      correctness: down
+      deterministic_refusal: none
+    note: Multi-span and two-report questions lose evidence; the grounded prompt should make
+      the model decline rather than guess, so groundedness is left unpredicted.
+
+  - name: threshold-078
+    config: configs/mutations/threshold-078.yaml
+    change: similarity threshold 0.78 instead of 0.25
+    expect:
+      passage_hit: down
+      passage_recall: down
+      deterministic_refusal: up
+      correctness: down
+    note: About half of the baseline passages score below 0.78; questions with none above
+      it are refused without an LLM call.
+
+  - name: weak-prompt
+    config: configs/mutations/weak-prompt.yaml
+    change: system prompt without the grounding and refusal rules
+    expect:
+      groundedness: down
+      abstention: down
+      passage_hit: none
+      passage_recall: none
+      deterministic_refusal: none
+    note: Retrieval is unchanged; without the rules the model should add outside knowledge
+      and answer trick questions. The abstention judge is not validated (docs/judges.md),
+      so its result is reported with that caveat.
+
+  - name: remove-document
+    config: configs/mutations/remove-document.yaml
+    change: report MIR-26-03 left out of the workspace
+    expect:
+      correctness: none
+      passage_hit: none
+      passage_recall: none
+    targeted_cases: [q-b005-1, q-b005-2]
+    note: Only two of 66 held-out questions use this report, far below the minimum
+      detectable effect, so the aggregate metrics are expected not to detect it. The two
+      targeted questions are expected to lose their evidence and fail correctness.
+
+  - name: knowledge-edit
+    config: configs/mutations/knowledge-edit.yaml
+    change: in MIR-25-19, the repair yard moves from Paducah, Kentucky, to Cape Girardeau, Missouri
+    expect:
+      correctness: none
+      passage_hit: none
+      passage_recall: none
+    targeted_cases: [q-b029-1]
+    note: Scored against the edited expected answer. The targeted question should name Cape
+      Girardeau, showing that answers follow the documents rather than
+      the model's memory (the closed-book baseline found no memorised answers).

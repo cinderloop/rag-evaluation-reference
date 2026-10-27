@@ -1,0 +1,10 @@
+# Mutation 6 (docs/mutations.md): one fact changed in one document. Build the edited copy
+# first with `rag-eval mutations build-edit`; score the run with
+# `rag-eval evaluate <run> --knowledge-edit data/mutations/knowledge-edit.yaml`.
+extends: ../baseline.yaml
+name: m-knowledge-edit
+description: Baseline with one fact edited in report MIR-25-19 (data/mutations/knowledge-edit.yaml).
+
+corpus:
+  replace:
+    MIR2519.pdf: corpus/edits/MIR2519.pdf

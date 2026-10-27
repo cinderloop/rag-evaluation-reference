@@ -1,0 +1,7 @@
+# Mutation 2 (docs/mutations.md): fewer retrieved passages.
+extends: ../baseline.yaml
+name: m-top-n-2
+description: Baseline retrieving 2 passages instead of 4.
+
+retrieval:
+  top_n: 2

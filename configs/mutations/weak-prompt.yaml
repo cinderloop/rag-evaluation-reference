@@ -1,0 +1,9 @@
+# Mutation 4 (docs/mutations.md): the system prompt no longer restricts answers to the
+# documents or asks for a refusal when they do not contain the answer. Still query mode.
+extends: ../baseline.yaml
+name: m-weak-prompt
+description: Baseline with a system prompt that drops the grounding and refusal rules.
+
+generation:
+  system_prompt: |-
+    Answer the user's question.

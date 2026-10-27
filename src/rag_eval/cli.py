@@ -28,6 +28,8 @@ from rag_eval.evaluators.evaluate import (
 )
 from rag_eval.evaluators.judges.backends import CachedBackend, load_judge_config, make_backend
 from rag_eval.evaluators.judges.judges import JUDGES, JudgeName, Verdict
+from rag_eval.mutations.cli import app as mutations_app
+from rag_eval.mutations.knowledge_edit import edited_cases, load_edit
 from rag_eval.provision import ProvisionResult, provision
 from rag_eval.provision.pins import verify_container_image, verify_ollama_models
 from rag_eval.provision.sources import fetch_sources, load_sources
@@ -37,6 +39,7 @@ from rag_eval.runner import new_run_id, run
 app = typer.Typer(no_args_is_help=True, add_completion=False)
 app.add_typer(dataset_app, name="dataset")
 app.add_typer(review_app, name="review")
+app.add_typer(mutations_app, name="mutations")
 
 ConfigOption = Annotated[Path, typer.Option("--config", "-c", exists=True, dir_okay=False)]
 
@@ -158,10 +161,21 @@ def evaluate_command(
     ] = 2.0,
     workers: Annotated[int, typer.Option(min=1, max=16)] = 4,
     yes: Annotated[bool, typer.Option("--yes", help="Skip the confirmation prompt")] = False,
+    knowledge_edit: Annotated[
+        Path | None,
+        typer.Option(
+            "--knowledge-edit",
+            exists=True,
+            dir_okay=False,
+            help="Score against the edited expected answers of a knowledge-edit mutation",
+        ),
+    ] = None,
 ) -> None:
     """Score a run: retrieval metrics, then binary judges (asks before any judge call)."""
     traces = load_traces(run_dir)
     cases = {c.id: c for split in ("dev", "test") for c in load_cases(Path(f"data/{split}.jsonl"))}
+    if knowledge_edit is not None:
+        cases = edited_cases(cases, load_edit(knowledge_edit))
     names = [] if judges == "none" else [n.strip() for n in judges.split(",") if n.strip()]
     unknown = sorted(set(names) - set(JUDGES))
     if unknown:

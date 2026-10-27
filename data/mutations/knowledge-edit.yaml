@@ -1,0 +1,16 @@
+# Knowledge-edit mutation (docs/mutations.md): one fact changed in one report. The
+# City of Louisville was towed to a repair yard in Paducah, Kentucky; the edited report
+# says Cape Girardeau, Missouri. The test case that asks about it expects the edited fact.
+doc_id: MIR2519.pdf
+find: repair yard in Paducah, Kentucky
+replace: repair yard in Cape Girardeau, Missouri
+cases:
+  - id: q-b029-1
+    expected_answer: >-
+      It was refloated and towed to a repair yard in Cape Girardeau, Missouri, where it
+      was dry docked on August 10.
+    evidence:
+      - doc_id: MIR2519.pdf
+        quote: >-
+          The City of Louisville was refloated and towed to a repair yard in Cape
+          Girardeau, Missouri, where it was dry docked on August 10.

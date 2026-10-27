@@ -1,0 +1,9 @@
+# Mutation 3 (docs/mutations.md): a raised similarity threshold. Baseline passages score
+# 0.67-0.88 (median 0.77 on the dev error-analysis run), so 0.78 drops about half of them,
+# and questions with no passage above it get AnythingLLM's no-context refusal.
+extends: ../baseline.yaml
+name: m-threshold-078
+description: Baseline with the similarity threshold raised from 0.25 to 0.78.
+
+retrieval:
+  similarity_threshold: 0.78

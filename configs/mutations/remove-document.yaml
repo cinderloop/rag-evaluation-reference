@@ -1,0 +1,9 @@
+# Mutation 5 (docs/mutations.md): one key document left out of the workspace. MIR2603 is
+# evidence for two held-out questions (q-b005-1 and q-b005-2) and for no other test case.
+extends: ../baseline.yaml
+name: m-remove-document
+description: Baseline without report MIR-26-03.
+
+corpus:
+  exclude:
+    - MIR2603.pdf
