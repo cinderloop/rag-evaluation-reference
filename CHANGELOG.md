@@ -6,7 +6,7 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
-## [1.0.0] - 2026-10-27
+## [1.0.0] - 2026-10-31
 
 First release: the full evaluation suite, from dataset to eval gate, with results.
 
@@ -69,6 +69,13 @@ First release: the full evaluation suite, from dataset to eval gate, with result
   `docs/methodology.md`, a worked example traced from metric to root cause
   (`docs/worked-example.md`), `docs/adapting-to-your-rag-app.md`, and ADRs 0014 (query
   mode) and 0015 (observability out of scope).
+- A link from the README to the companion article series, "The Tester's Guide to RAG
+  Evaluation".
+
+### Fixed
+
+- Wilson interval bounds are exact at 0 and 1, instead of a rounding residue of about
+  3e-17 that failed a unit test on Linux CI.
 
 [Unreleased]: https://github.com/cinderloop/rag-evaluation-reference/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/cinderloop/rag-evaluation-reference/releases/tag/v1.0.0
