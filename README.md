@@ -2,6 +2,8 @@
 
 A reference implementation of RAG evaluation: error analysis first, binary LLM judges validated against labels, mutation testing to prove the evaluation catches regressions, and statistics that stay honest at small sample sizes. The system under test is [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm), answering questions over 77 NTSB marine accident reports; the judges are [DeepEval](https://deepeval.com) custom metrics.
 
+> **Companion series:** [The Tester's Guide to RAG Evaluation](https://ashenasserts.hashnode.dev/series/testers-guide-rag-evaluation) explains the concepts behind this project from the ground up, for testers new to AI evaluation. This repository is a finished example that applies every stage of it.
+
 ## What is evaluated, and why
 
 A RAG answer can fail in two places: retrieval can miss the passage that holds the answer, or generation can mishandle what it was given (make things up, misread it, hold it back). A single "answer quality" score cannot tell these apart, and an LLM judge's score means nothing until you know how often the judge is right. So this repository:
